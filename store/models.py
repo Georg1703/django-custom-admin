@@ -1,6 +1,18 @@
 import uuid
 from django.db import models
+from django.utils.html import mark_safe
 from taggit.managers import TaggableManager
+
+
+def user_directory_path(instance, filename):
+    if hasattr(instance, 'product'):
+        return 'images/{0}/{1}'.format(instance.product.name, filename)
+    else:
+        return 'images/{0}/default_{1}'.format(instance, filename)
+
+
+def get_uuid_code(length: int = 8) -> str:
+    return str(uuid.uuid4())[:length].upper()
 
 
 class SoftDeleteManager(models.Manager):
@@ -28,13 +40,6 @@ class Category(models.Model):
         return ' -> '.join(full_path[::-1])
 
     objects = SoftDeleteManager()
-
-
-def user_directory_path(instance, filename):
-    if hasattr(instance, 'product'):
-        return 'images/{0}/{1}'.format(instance.product.name, filename)
-    else:
-        return 'images/{0}/default_{1}'.format(instance, filename)
 
 
 class Factory(models.Model):
@@ -68,20 +73,22 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     price_per_unit = models.FloatField(null=True)
     promo_price = models.FloatField(null=True, blank=True)
-    short_description = models.TextField(max_length=255, help_text='no more 255 letters', null=True)
-    description = models.TextField(null=True)
     category = models.ManyToManyField(Category)
     factory = models.ForeignKey(Factory, null=True, on_delete=models.SET_NULL)
     deposit = models.ManyToManyField(Deposit, null=True)
     default_image = models.FileField(upload_to=user_directory_path, null=True)
     tags = TaggableManager()
-    similars = models.ManyToManyField('self', blank=True, null=True)
-    code = models.CharField(default=str(uuid.uuid4())[:8], editable=False, unique=True, max_length=8)
-    # code = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    similar_products = models.ManyToManyField('self', blank=True, null=True)
+    product_code = models.CharField(max_length=8, default=get_uuid_code, unique=True)
     is_active = models.BooleanField(default=True)
 
     def categories(self):
         return ",".join([str(p) for p in self.category.all()])
+
+    def image_tag(self):
+        return mark_safe(f'<a href="/media/{self.default_image}"><img src="/media/{self.default_image}" width="60" height="50"/></a>')
+        image_tag.short_description = 'Image'
+        image_tag.allow_tags = True
 
     def __str__(self):
         return self.name
@@ -110,7 +117,7 @@ class ProductPropertyRelation(models.Model):
 
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, default=None, null=True, on_delete=models.SET_NULL)
-    image = models.FileField(upload_to=user_directory_path, default='images/')
+    image = models.ImageField(upload_to=user_directory_path, default='images/')
 
     def __str__(self):
         return self.product.name

@@ -42,10 +42,11 @@ class ProductTranslationAdmin(admin.StackedInline):
 
 @admin.register(Product)
 class ProductAdmin(SoftDelete):
-    fields = ['name', 'price_per_unit', 'promo_price', 'short_description', 'description', 'category',
-              'factory', 'deposit', 'default_image', 'tags', 'similars', 'code']
-    list_display = ['name', 'categories', 'description', 'default_image']
-    readonly_fields = ('code',)
+    fields = ['name', 'price_per_unit', 'promo_price', 'category',
+              'factory', 'deposit', 'default_image', 'tags', 'similar_products',
+              'product_code', 'image_tag']
+    list_display = ['name', 'categories', 'default_image', 'image_tag']
+    readonly_fields = ('product_code', 'image_tag')
     inlines = [ProductImageAdmin, ProductPropertyRelationAdmin, ProductBulkSalesAdmin, ProductTranslationAdmin]
 
     class Meta:
