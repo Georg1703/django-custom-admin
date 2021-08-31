@@ -76,7 +76,7 @@ class Product(models.Model):
     default_image = models.FileField(upload_to=user_directory_path, null=True)
     tags = TaggableManager()
     similars = models.ManyToManyField('self', blank=True, null=True)
-    code = models.CharField(default=str(uuid.uuid4())[:8], editable=False, unique=True)
+    code = models.CharField(default=str(uuid.uuid4())[:8], editable=False, unique=True, max_length=8)
     # code = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     is_active = models.BooleanField(default=True)
 
