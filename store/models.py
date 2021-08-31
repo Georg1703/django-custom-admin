@@ -1,11 +1,20 @@
+import uuid
 from django.db import models
 from taggit.managers import TaggableManager
+
+
+class SoftDeleteManager(models.Manager):
+    """ The manager who rewrites the method of obtaining the objects in
+    order not to display the ones with is_active = 0"""
+    def get_queryset(self):
+        return super().get_queryset().filter(is_active=True)
 
 
 class Category(models.Model):
     """ table that contain possible category of product """
     name = models.CharField(max_length=200)
     parent = models.ForeignKey('self', blank=True, null=True, related_name='children', on_delete=models.SET_NULL)
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         verbose_name_plural = "categories"
@@ -18,12 +27,7 @@ class Category(models.Model):
             k = k.parent
         return ' -> '.join(full_path[::-1])
 
-
-class ProductLanguage(models.Model):
-    name = models.CharField(max_length=2, help_text='ISO 2 Letter Language Codes')
-
-    def __str__(self):
-        return self.name
+    objects = SoftDeleteManager()
 
 
 def user_directory_path(instance, filename):
@@ -37,6 +41,7 @@ class Factory(models.Model):
     name = models.CharField(max_length=255)
     link = models.URLField()
     description = models.TextField(null=True)
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         verbose_name_plural = 'factories'
@@ -44,14 +49,19 @@ class Factory(models.Model):
     def __str__(self):
         return self.name
 
+    objects = SoftDeleteManager()
+
 
 class Deposit(models.Model):
     name = models.CharField(max_length=255)
     link = models.URLField()
     description = models.TextField(null=True)
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name
+
+    objects = SoftDeleteManager()
 
 
 class Product(models.Model):
@@ -65,23 +75,31 @@ class Product(models.Model):
     deposit = models.ManyToManyField(Deposit, null=True)
     default_image = models.FileField(upload_to=user_directory_path, null=True)
     tags = TaggableManager()
-    similars = models.ManyToManyField('self')
-
-    def __str__(self):
-        return self.name
+    similars = models.ManyToManyField('self', blank=True, null=True)
+    code = models.CharField(default=str(uuid.uuid4())[:8], editable=False, unique=True)
+    # code = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    is_active = models.BooleanField(default=True)
 
     def categories(self):
         return ",".join([str(p) for p in self.category.all()])
 
+    def __str__(self):
+        return self.name
+
+    objects = SoftDeleteManager()
+
 
 class ProductProperty(models.Model):
     name = models.CharField(max_length=255)
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         verbose_name_plural = 'product properties'
 
     def __str__(self):
         return self.name
+
+    objects = SoftDeleteManager()
 
 
 class ProductPropertyRelation(models.Model):
@@ -100,6 +118,7 @@ class ProductImage(models.Model):
 
 class BulkSales(models.Model):
     product_count = models.IntegerField()
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return str(self.product_count)
@@ -107,9 +126,104 @@ class BulkSales(models.Model):
     class Meta:
         verbose_name_plural = 'bulk sales'
 
+    objects = SoftDeleteManager()
+
 
 class ProductBulkSales(models.Model):
     product = models.ForeignKey(Product, default=None, null=True, on_delete=models.SET_NULL)
     product_count = models.ForeignKey(BulkSales, null=True, on_delete=models.SET_NULL)
     value = models.FloatField()
 
+
+class Language(models.Model):
+    name = models.CharField(max_length=2, help_text='ISO 2 Letter Language Codes')
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
+
+    objects = SoftDeleteManager()
+
+
+class TranslableProductFields(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
+class TranslableCategoryFields(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+class TranslableFactoryFields(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
+class TranslableDepositFields(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
+class TranslablePropertyFields(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
+class ProductTranslation(models.Model):
+    product = models.ForeignKey(Product, null=True, on_delete=models.SET_NULL)
+    field = models.ForeignKey(TranslableProductFields, null=True, on_delete=models.SET_NULL)
+    lang = models.ForeignKey(Language, null=True, on_delete=models.SET_NULL)
+    value = models.TextField()
+
+    class Meta:
+        unique_together = ['field', 'lang']
+
+
+class CategorytTranslation(models.Model):
+    category = models.ForeignKey(Category, null=True, on_delete=models.SET_NULL)
+    field = models.ForeignKey(TranslableCategoryFields, null=True, on_delete=models.SET_NULL)
+    lang = models.ForeignKey(Language, null=True, on_delete=models.SET_NULL)
+    value = models.TextField()
+
+    class Meta:
+        unique_together = ['field', 'lang']
+
+
+class FactoryTranslation(models.Model):
+    factory = models.ForeignKey(Factory, null=True, on_delete=models.SET_NULL)
+    field = models.ForeignKey(TranslableFactoryFields, null=True, on_delete=models.SET_NULL)
+    lang = models.ForeignKey(Language, null=True, on_delete=models.SET_NULL)
+    value = models.TextField()
+
+    class Meta:
+        unique_together = ['field', 'lang']
+
+
+class DepositTranslation(models.Model):
+    deposit = models.ForeignKey(Deposit, null=True, on_delete=models.SET_NULL)
+    field = models.ForeignKey(TranslableDepositFields, null=True, on_delete=models.SET_NULL)
+    lang = models.ForeignKey(Language, null=True, on_delete=models.SET_NULL)
+    value = models.TextField()
+
+    class Meta:
+        unique_together = ['field', 'lang']
+
+
+class PropertyTranslation(models.Model):
+    property = models.ForeignKey(ProductProperty, null=True, on_delete=models.SET_NULL)
+    field = models.ForeignKey(TranslablePropertyFields, null=True, on_delete=models.SET_NULL)
+    lang = models.ForeignKey(Language, null=True, on_delete=models.SET_NULL)
+    value = models.TextField()
+
+    class Meta:
+        unique_together = ['field', 'lang']

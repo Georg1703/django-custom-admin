@@ -1,6 +1,23 @@
 from django.contrib import admin
-from .models import Product, Category, ProductImage, ProductLanguage, Factory, Deposit, ProductPropertyRelation, \
-    ProductProperty, BulkSales, ProductBulkSales
+
+
+from .models import Product, Category, ProductImage, Factory, Deposit, ProductPropertyRelation, \
+    ProductProperty, BulkSales, ProductBulkSales, ProductTranslation, Language, CategorytTranslation, \
+    FactoryTranslation, DepositTranslation, PropertyTranslation
+
+
+class SoftDelete(admin.ModelAdmin):
+    """ The class who rewrites the method of obtaining the objects in
+    order not to display the ones with is_active = 0 """
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        return qs.filter(is_active=True)
+
+    def delete_queryset(self, request, queryset):
+        queryset.update(is_active=False)
+
+    class Meta:
+        abstract = True
 
 
 class ProductImageAdmin(admin.StackedInline):
@@ -18,18 +35,72 @@ class ProductBulkSalesAdmin(admin.StackedInline):
     model = ProductBulkSales
 
 
-class ProductAdmin(admin.ModelAdmin):
+class ProductTranslationAdmin(admin.StackedInline):
+    extra = 1
+    model = ProductTranslation
+
+
+@admin.register(Product)
+class ProductAdmin(SoftDelete):
+    fields = ['name', 'price_per_unit', 'promo_price', 'short_description', 'description', 'category',
+              'factory', 'deposit', 'default_image', 'tags', 'similars', 'code']
     list_display = ['name', 'categories', 'description', 'default_image']
-    inlines = [ProductImageAdmin, ProductPropertyRelationAdmin, ProductBulkSalesAdmin]
+    readonly_fields = ('code',)
+    inlines = [ProductImageAdmin, ProductPropertyRelationAdmin, ProductBulkSalesAdmin, ProductTranslationAdmin]
 
     class Meta:
         model = Product
 
 
-admin.site.register(Product, ProductAdmin)
-admin.site.register(Category)
-admin.site.register(ProductProperty)
-admin.site.register(BulkSales)
-# admin.site.register(ProductLanguage)
-admin.site.register(Factory)
-admin.site.register(Deposit)
+class CategoryTranslationAdmin(admin.StackedInline):
+    extra = 1
+    model = CategorytTranslation
+
+
+@admin.register(Category)
+class CategoryAdmin(SoftDelete):
+    fields = ['name', 'parent']
+    inlines = [CategoryTranslationAdmin]
+
+
+class FactoryTranslationAdmin(admin.StackedInline):
+    extra = 1
+    model = FactoryTranslation
+
+
+@admin.register(Factory)
+class FactoryAdmin(SoftDelete):
+    fields = ['name', 'link', 'description']
+    inlines = [FactoryTranslationAdmin]
+
+
+class DepositTranslationAdmin(admin.StackedInline):
+    extra = 1
+    model = DepositTranslation
+
+
+@admin.register(Deposit)
+class DepositAdmin(SoftDelete):
+    fields = ['name', 'link', 'description']
+    inlines = [DepositTranslationAdmin]
+
+
+class PropertyTranslationAdmin(admin.StackedInline):
+    extra = 1
+    model = PropertyTranslation
+
+
+@admin.register(ProductProperty)
+class ProductPropertyAdmin(SoftDelete):
+    fields = ['name']
+    inlines = [PropertyTranslationAdmin]
+
+
+@admin.register(BulkSales)
+class BulkSalesAdmin(SoftDelete):
+    fields = ['product_count']
+
+
+@admin.register(Language)
+class LanguageAdmin(SoftDelete):
+    fields = ['name']
