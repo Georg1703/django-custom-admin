@@ -1,0 +1,11 @@
+{% extends 'accounts/base.html' %}
+
+
+{% block content %}
+<h1>Home page</h1>
+{% if request.user.is_staff %}
+<h4>Some info only for admins</h4>
+{% endif %}
+<h4>Common information</h4>
+<a href="{% url 'accounts:logout' %}">logout</a>
+{% endblock %}

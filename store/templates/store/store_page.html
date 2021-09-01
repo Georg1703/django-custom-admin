@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ block.super}}lading page {% endblock title %}
+{% block content %}
+<h1>Store page</h1>
+<a href="{% url 'accounts:logout' %}">logout</a>
+    <a href="{% url 'store:order_page' %}">Orders {{ order_items }}</a>
+    <ol>
+        {% for product in products %}
+            <li>{{ product.name }}&nbsp <b>price</b>{{ product.price_per_unit }}
+                <button data-product="{{ product.id }}" data-action="add" class="update-cart">add</button>
+            </li>
+        {% endfor %}
+    </ol>
+{% endblock content %}
+
+{% block js %}
+    <script src="{% static "store/js/cart.js" %}"></script>
+{% endblock js %}

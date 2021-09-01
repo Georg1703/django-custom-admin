@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ block.super}}lading page {% endblock title %}
+{% block content %}
+<h1>Order page {{ order_items }}</h1>
+    <a href="{% url 'store:store_page' %}">Back to store</a><br>
+    {% for item in items %}
+        <b>name:</b> {{ item.product.name }}&nbsp
+        <b>quantity:</b> {{ item.quantity }}&nbsp
+        <b>unit price:</b> {{ item.product.price_per_unit }}&nbsp&nbsp&nbsp
+        <b>total price:</b> {{ item.get_total|floatformat:2 }}&nbsp
+        <button data-product="{{ item.product.id }}" data-action="add" class="update-cart">add</button>
+        <button data-product="{{ item.product.id }}" data-action="remove" class="update-cart">remove</button><br>
+    {% endfor %}
+    <br><br>Total quantity: {{ order.get_order_items }}
+    <br><br>Total price: {{ order.get_order_total|floatformat:2 }}
+{% endblock content %}
+
+{% block js %}
+    <script src="{% static "store/js/cart.js" %}"></script>
+{% endblock js %}

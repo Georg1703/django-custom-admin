@@ -2,6 +2,7 @@ import uuid
 from django.db import models
 from django.utils.html import mark_safe
 from taggit.managers import TaggableManager
+from django.contrib.auth.models import User
 
 
 def user_directory_path(instance, filename):
@@ -11,8 +12,8 @@ def user_directory_path(instance, filename):
         return 'images/{0}/default_{1}'.format(instance, filename)
 
 
-def get_uuid_code(length: int = 8) -> str:
-    return str(uuid.uuid4())[:length].upper()
+def get_uuid_code(prefix: str, length: int = 10) -> str:
+    return prefix + str(uuid.uuid4())[:10-len(prefix)].upper()
 
 
 class SoftDeleteManager(models.Manager):
@@ -75,11 +76,11 @@ class Product(models.Model):
     promo_price = models.FloatField(null=True, blank=True)
     category = models.ManyToManyField(Category)
     factory = models.ForeignKey(Factory, null=True, on_delete=models.SET_NULL)
-    deposit = models.ManyToManyField(Deposit, null=True)
+    deposit = models.ManyToManyField(Deposit)
     default_image = models.FileField(upload_to=user_directory_path, null=True)
     tags = TaggableManager()
-    similar_products = models.ManyToManyField('self', blank=True, null=True)
-    product_code = models.CharField(max_length=8, default=get_uuid_code, unique=True)
+    similar_products = models.ManyToManyField('self', blank=True)
+    product_code = models.CharField(max_length=10, unique=True)
     is_active = models.BooleanField(default=True)
 
     def categories(self):
@@ -90,8 +91,72 @@ class Product(models.Model):
         image_tag.short_description = 'Image'
         image_tag.allow_tags = True
 
+    def save(self, **kwargs):
+        self.product_code = get_uuid_code(prefix='prod')
+        super(Product, self).save(**kwargs)
+
     def __str__(self):
         return self.name
+
+    objects = SoftDeleteManager()
+
+
+class Customer(models.Model):
+    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255, null=True)
+    email = models.CharField(max_length=255, null=True)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
+
+    objects = SoftDeleteManager()
+
+
+class Order(models.Model):
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, default=None)
+    order_code = models.CharField(max_length=10, unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True)
+
+    @property
+    def get_order_total(self):
+        orderitems = self.orderitem_set.all()
+        total = sum([item.get_total for item in orderitems])
+        return total
+
+    @property
+    def get_order_items(self):
+        orderitems = self.orderitem_set.all()
+        total = sum([item.quantity for item in orderitems])
+        return total
+
+    def __str__(self):
+        return f'Order: {self.order_code}'
+
+    def save(self, **kwargs):
+        self.order_code = get_uuid_code(prefix='ord')
+        super(Order, self).save(**kwargs)
+
+    objects = SoftDeleteManager()
+
+
+class OrderItem(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
+    order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
+    quantity = models.IntegerField(default=0, null=True)
+    date_added = models.DateTimeField(auto_now_add=True)
+    is_active = models.BooleanField(default=True)
+
+    @property
+    def get_total(self):
+        total = self.product.price_per_unit * self.quantity
+        return total
+
+    def __str__(self):
+        return f'OrderItem id: {self.id}'
 
     objects = SoftDeleteManager()
 
@@ -150,6 +215,8 @@ class Language(models.Model):
         return self.name
 
     objects = SoftDeleteManager()
+
+
 
 
 class TranslableProductFields(models.Model):

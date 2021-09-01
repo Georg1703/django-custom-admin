@@ -3,7 +3,7 @@ from django.contrib import admin
 
 from .models import Product, Category, ProductImage, Factory, Deposit, ProductPropertyRelation, \
     ProductProperty, BulkSales, ProductBulkSales, ProductTranslation, Language, CategorytTranslation, \
-    FactoryTranslation, DepositTranslation, PropertyTranslation
+    FactoryTranslation, DepositTranslation, PropertyTranslation, Order, OrderItem, Customer
 
 
 class SoftDelete(admin.ModelAdmin):
@@ -42,11 +42,8 @@ class ProductTranslationAdmin(admin.StackedInline):
 
 @admin.register(Product)
 class ProductAdmin(SoftDelete):
-    fields = ['name', 'price_per_unit', 'promo_price', 'category',
-              'factory', 'deposit', 'default_image', 'tags', 'similar_products',
-              'product_code', 'image_tag']
+    exclude = ['image_tag', 'is_active', 'product_code']
     list_display = ['name', 'categories', 'default_image', 'image_tag']
-    readonly_fields = ('product_code', 'image_tag')
     inlines = [ProductImageAdmin, ProductPropertyRelationAdmin, ProductBulkSalesAdmin, ProductTranslationAdmin]
 
     class Meta:
@@ -105,3 +102,26 @@ class BulkSalesAdmin(SoftDelete):
 @admin.register(Language)
 class LanguageAdmin(SoftDelete):
     fields = ['name']
+
+
+class OrderItemAdmin(admin.StackedInline):
+    extra = 1
+    model = OrderItem
+    exclude = ['is_active']
+
+
+@admin.register(Order)
+class OrderAdmin(SoftDelete):
+    exclude = ['is_active', 'order_code']
+    readonly_fields = ['created_at', 'updated_at']
+    inlines = [OrderItemAdmin]
+
+    def get_readonly_fields(self, request, obj=None):
+        if obj:  # editing an existing object
+            return self.readonly_fields + ['customer']
+        return self.readonly_fields
+
+
+@admin.register(Customer)
+class CustomerAdmin(SoftDelete):
+    exclude = ['is_active']
