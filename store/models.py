@@ -262,6 +262,9 @@ class ProductTranslation(models.Model):
     class Meta:
         unique_together = ['field', 'lang']
 
+    def __str__(self):
+        return self.value
+
 
 class CategorytTranslation(models.Model):
     category = models.ForeignKey(Category, null=True, on_delete=models.SET_NULL)

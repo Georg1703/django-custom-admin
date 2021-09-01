@@ -12,10 +12,11 @@
         <button data-product="{{ item.product.id }}" data-action="add" class="update-cart">add</button>
         <button data-product="{{ item.product.id }}" data-action="remove" class="update-cart">remove</button><br>
     {% endfor %}
+    <br>
     <br><br>Total quantity: {{ order.get_order_items }}
     <br><br>Total price: {{ order.get_order_total|floatformat:2 }}
 {% endblock content %}
 
 {% block js %}
-    <script src="{% static "store/js/cart.js" %}"></script>
+    <script src="{% static 'store/js/cart.js' %}"></script>
 {% endblock js %}

@@ -72,3 +72,7 @@ def update_item(request):
 
     return JsonResponse('Item was added', safe=False)
 
+
+def process_order(request):
+    return JsonResponse('Process order', safe=False)
+
