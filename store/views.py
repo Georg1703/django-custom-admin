@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
+from django.contrib import messages
 import json
 
 from accounts.decorators import allowed_groups
@@ -17,11 +18,9 @@ def store(request):
 
     if request.user.is_authenticated:
         customer = request.user.customer
-        order, created = Order.objects.get_or_create(customer=customer)
-        items = order.orderitem_set.all()
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
         order_items = order.get_order_items
     else:
-        items = []
         order = {'get_order_items': 0, 'get_order_total': 0}
         order_items = order['get_order_items']
 
@@ -36,7 +35,7 @@ def order(request):
 
     if request.user.is_authenticated:
         customer = request.user.customer
-        order, created = Order.objects.get_or_create(customer=customer)
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
         items = order.orderitem_set.all()
         order_items = order.get_order_items
     else:
@@ -57,22 +56,60 @@ def update_item(request):
 
     customer = request.user.customer
     product = Product.objects.get(id=product_id)
-    order, created = Order.objects.get_or_create(customer=customer)
+    order, created = Order.objects.get_or_create(customer=customer, complete=False)
     order_item, created = OrderItem.objects.get_or_create(order=order, product=product)
+    is_deleted = False
 
     if action == 'add':
         order_item.quantity = (order_item.quantity + 1)
-    elif action == 'remove':
+        order_item.save()
+    elif action == 'down':
         order_item.quantity = (order_item.quantity - 1)
-
-    order_item.save()
+        order_item.save()
+    elif action == 'remove':
+        order_item.delete()
+        is_deleted = True
 
     if order_item.quantity <= 0:
         order_item.delete()
+        is_deleted = True
 
-    return JsonResponse('Item was added', safe=False)
+    context = {
+        'quantity': order_item.quantity,
+        'total_quantity': order.get_order_items,
+        'get_order_total': order.get_order_total,
+        'product_total_price': order_item.get_total,
+        'is_deleted': is_deleted,
+        'product_id': product_id,
+    }
+    return JsonResponse(context)
 
 
-def process_order(request):
-    return JsonResponse('Process order', safe=False)
+@login_required
+@allowed_groups(['user'])
+def place_order(request, order_id):
+
+    if request.user.is_authenticated:
+        order = Order.objects.get(id=order_id)
+        order.complete = True
+        order.save()
+        messages.success(request, 'Order was placed !')
+        return redirect('/order')
+    else:
+        messages.success(request, 'Order was not placed !')
+        return redirect('/order')
+
+
+@login_required
+@allowed_groups(['user'])
+def order_history(request):
+
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order = Order.objects.filter(customer=customer, complete=True).all()
+    else:
+        order = {'get_order_items': 0, 'get_order_total': 0}
+
+    context = {'orders': order}
+    return render(request, 'store/order_history.html', context=context)
 

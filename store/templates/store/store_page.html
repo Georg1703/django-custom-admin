@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load translation %}
-{% block title %}{{ block.super}}lading page {% endblock title %}
+{% block title %}{{ block.super}}store page {% endblock title %}
 {% block content %}
 <h1>Store page</h1>
-<a href="{% url 'accounts:logout' %}">logout</a>
-    <a href="{% url 'store:order_page' %}">Orders {{ order_items }}</a>
+<a href="{% url 'accounts:logout' %}">logout</a>&nbsp&nbsp
+    <a href="{% url 'store:order_page' %}">Orders <span class="total_quantity">{{ order_items }}</span></a>
+    <a href="{% url 'store:order_history' %}">Orders history</a>
     <ol>
         {% for product in products %}
-            <li>{{ product|translate }}&nbsp <b>price</b>{{ product.price_per_unit }}
+            <li>{{ product.name }}&nbsp <b>price</b>{{ product.price_per_unit }}
                 <button data-product="{{ product.id }}" data-action="add" class="update-cart">add</button>
             </li>
         {% endfor %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ block.super}}order history page {% endblock title %}
+{% block content %}
+<h1>Order history</h1>
+    <a href="{% url 'store:store_page' %}">Back to store</a><br><br><br>
+    {% for order in orders %}
+        <b>Order: {{ order.order_code }}</b><br><br>
+        {% for item in order.orderitem_set.all %}
+            <div id="order_item_{{ item.product.id }}">
+                <b>name:</b> {{ item.product.name }}&nbsp
+                <b>quantity:</b><span id="quantity_{{ item.product_id }}">{{ item.quantity }}</span>&nbsp
+                <b>unit price:</b> {{ item.product.price_per_unit }}&nbsp&nbsp&nbsp
+                <b>total price:</b> <span id="product_{{ item.product_id }}_total_price">{{ item.get_total }}</span>&nbsp
+            </div>
+        {% endfor %}
+    <br><br>Total quantity: <span class="total_quantity">{{ order.get_order_items }}</span>
+    <br><br>Total price: <span id="total_price">{{ order.get_order_total }}</span>
+    {% endfor %}
+{% endblock content %}
+
+{% block js %}
+    <script src="{% static "store/js/cart.js" %}"></script>
+{% endblock js %}

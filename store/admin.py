@@ -44,7 +44,6 @@ class ProductTranslationAdmin(admin.StackedInline):
 class ProductAdmin(SoftDelete):
     exclude = ['image_tag', 'is_active', 'product_code']
     list_display = ['name', 'categories', 'default_image', 'image_tag']
-    list_filter = ['factory']
     inlines = [ProductImageAdmin, ProductPropertyRelationAdmin, ProductBulkSalesAdmin, ProductTranslationAdmin]
 
     class Meta:

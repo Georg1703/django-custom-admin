@@ -1,22 +1,32 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}{{ block.super}}lading page {% endblock title %}
+{% block title %}{{ block.super}}order page {% endblock title %}
 {% block content %}
-<h1>Order page {{ order_items }}</h1>
+<h1>Order page <span class="total_quantity">{{ order_items }}</span></h1>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
     <a href="{% url 'store:store_page' %}">Back to store</a><br>
     {% for item in items %}
-        <b>name:</b> {{ item.product.name }}&nbsp
-        <b>quantity:</b> {{ item.quantity }}&nbsp
-        <b>unit price:</b> {{ item.product.price_per_unit }}&nbsp&nbsp&nbsp
-        <b>total price:</b> {{ item.get_total|floatformat:2 }}&nbsp
-        <button data-product="{{ item.product.id }}" data-action="add" class="update-cart">add</button>
-        <button data-product="{{ item.product.id }}" data-action="remove" class="update-cart">remove</button><br>
+        <div id="order_item_{{ item.product_id }}">
+            <b>name:</b> {{ item.product.name }}&nbsp
+            <b>quantity:</b><span id="quantity_{{ item.product_id }}">{{ item.quantity }}</span>&nbsp
+            <b>unit price:</b> {{ item.product.price_per_unit }}&nbsp&nbsp&nbsp
+            <b>total price:</b> <span id="product_{{ item.product_id }}_total_price">{{ item.get_total }}</span>&nbsp
+            <button data-product="{{ item.product.id }}" data-action="add" class="update-cart">up</button>
+            <button data-product="{{ item.product.id }}" data-action="down" class="update-cart">down</button>
+            <button data-product="{{ item.product.id }}" data-action="remove" class="update-cart">remove</button><br>
+        </div>
     {% endfor %}
-    <br>
-    <br><br>Total quantity: {{ order.get_order_items }}
-    <br><br>Total price: {{ order.get_order_total|floatformat:2 }}
+    <br><br>Total quantity: <span class="total_quantity">{{ order.get_order_items }}</span>
+    <br><br>Total price: <span id="total_price">{{ order.get_order_total }}</span>
+    <br><br><a href="{% url 'store:place_order' order.id %}"><button>Place order</button></a>
 {% endblock content %}
 
 {% block js %}
-    <script src="{% static 'store/js/cart.js' %}"></script>
+    <script src="{% static "store/js/cart.js" %}"></script>
 {% endblock js %}

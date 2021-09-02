@@ -72,8 +72,8 @@ class Deposit(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
-    price_per_unit = models.FloatField(null=True)
-    promo_price = models.FloatField(null=True, blank=True)
+    price_per_unit = models.DecimalField(null=True, max_digits=10, decimal_places=2)
+    promo_price = models.DecimalField(null=True, blank=True, max_digits=10, decimal_places=2)
     category = models.ManyToManyField(Category)
     factory = models.ForeignKey(Factory, null=True, on_delete=models.SET_NULL)
     deposit = models.ManyToManyField(Deposit)
@@ -116,9 +116,9 @@ class Customer(models.Model):
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, default=None)
     order_code = models.CharField(max_length=10, unique=True)
+    complete = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    is_active = models.BooleanField(default=True)
     is_active = models.BooleanField(default=True)
 
     @property
@@ -146,7 +146,7 @@ class Order(models.Model):
 class OrderItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
-    quantity = models.IntegerField(default=0, null=True)
+    quantity = models.PositiveIntegerField(default=0, null=True)
     date_added = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True)
 
@@ -261,9 +261,6 @@ class ProductTranslation(models.Model):
 
     class Meta:
         unique_together = ['field', 'lang']
-
-    def __str__(self):
-        return self.value
 
 
 class CategorytTranslation(models.Model):
