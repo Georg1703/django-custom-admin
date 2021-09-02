@@ -113,10 +113,24 @@ class Customer(models.Model):
     objects = SoftDeleteManager()
 
 
+class OrderStatus(models.Model):
+    name = models.CharField(max_length=100)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'order statuses'
+
+    objects = SoftDeleteManager()
+
+
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, default=None)
     order_code = models.CharField(max_length=10, unique=True)
-    complete = models.BooleanField(default=False)
+    order_status = models.ForeignKey(OrderStatus, null=True, on_delete=models.SET_NULL)
+    placed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     is_active = models.BooleanField(default=True)
@@ -159,6 +173,13 @@ class OrderItem(models.Model):
         return f'OrderItem id: {self.id}'
 
     objects = SoftDeleteManager()
+
+
+class OrderTicket(models.Model):
+    customer = models.ForeignKey(Customer, null=True, on_delete=models.SET_NULL)
+    order = models.ForeignKey(Order, null=True, on_delete=models.SET_NULL)
+    value = models.TextField()
+    is_active = models.BooleanField(default=True)
 
 
 class ProductProperty(models.Model):
@@ -215,8 +236,6 @@ class Language(models.Model):
         return self.name
 
     objects = SoftDeleteManager()
-
-
 
 
 class TranslableProductFields(models.Model):

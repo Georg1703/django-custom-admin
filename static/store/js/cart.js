@@ -33,6 +33,29 @@ function updateUserOrder(productId, action){
 
         .then((data) => {
             console.log('data:', data)
-            location.reload()
+            renderOrder(data)
+            // location.reload()
         })
+}
+
+
+function renderOrder(data){
+    if (product_price = document.getElementById('quantity_' + data.product_id)) {
+        product_price.innerHTML = data.quantity
+    }
+    if (total_price = document.getElementById('total_price')) {
+        total_price.innerHTML = data.get_order_total
+    }
+
+    if (product_total_price = document.getElementById('product_' + data.product_id + '_total_price')) {
+        product_total_price.innerHTML = data.product_total_price
+    }
+
+    $('.total_quantity').each(function(i, obj) {
+        obj.innerHTML = data.total_quantity
+    });
+
+    if (data.is_deleted) {
+        $('#order_item_' + data.product_id).remove()
+    }
 }

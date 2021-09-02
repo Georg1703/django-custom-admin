@@ -3,7 +3,8 @@ from django.contrib import admin
 
 from .models import Product, Category, ProductImage, Factory, Deposit, ProductPropertyRelation, \
     ProductProperty, BulkSales, ProductBulkSales, ProductTranslation, Language, CategorytTranslation, \
-    FactoryTranslation, DepositTranslation, PropertyTranslation, Order, OrderItem, Customer
+    FactoryTranslation, DepositTranslation, PropertyTranslation, Order, OrderItem, Customer, OrderStatus, \
+    OrderTicket
 
 
 class SoftDelete(admin.ModelAdmin):
@@ -110,11 +111,21 @@ class OrderItemAdmin(admin.StackedInline):
     exclude = ['is_active']
 
 
+class OrderTicketAdmin(admin.StackedInline):
+    extra = 1
+    model = OrderTicket
+    exclude = ['is_active']
+
+
 @admin.register(Order)
 class OrderAdmin(SoftDelete):
-    exclude = ['is_active', 'order_code']
+    exclude = ['is_active', 'order_code', 'placed']
     readonly_fields = ['created_at', 'updated_at']
-    inlines = [OrderItemAdmin]
+    inlines = [OrderItemAdmin, OrderTicketAdmin]
+
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        return qs.filter(placed=True)
 
     def get_readonly_fields(self, request, obj=None):
         if obj:  # editing an existing object
@@ -125,3 +136,8 @@ class OrderAdmin(SoftDelete):
 @admin.register(Customer)
 class CustomerAdmin(SoftDelete):
     exclude = ['is_active']
+
+
+@admin.register(OrderStatus)
+class OrderStatusAdmin(SoftDelete):
+    fields = ['name']
