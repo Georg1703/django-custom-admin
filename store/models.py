@@ -92,7 +92,8 @@ class Product(models.Model):
         image_tag.allow_tags = True
 
     def save(self, **kwargs):
-        self.product_code = get_uuid_code(prefix='prod')
+        if len(self.product_code) == 0:
+            self.product_code = get_uuid_code(prefix='prod')
         super(Product, self).save(**kwargs)
 
     def __str__(self):
@@ -151,10 +152,32 @@ class Order(models.Model):
         return f'Order: {self.order_code}'
 
     def save(self, **kwargs):
-        self.order_code = get_uuid_code(prefix='ord')
+        if len(self.order_code) == 0:
+            self.order_code = get_uuid_code(prefix='ord')
+
+        order_ticket = OrderTicket(customer=self.customer, order=self, message=self.order_status)
+        order_ticket.save()
+
         super(Order, self).save(**kwargs)
 
     objects = SoftDeleteManager()
+
+
+class OrderTicket(models.Model):
+
+    class TicketType(models.IntegerChoices):
+        order_status = 1
+        message = 2
+
+    order = models.ForeignKey(Order, null=True, on_delete=models.SET_NULL)
+    customer = models.ForeignKey(Customer, null=True, on_delete=models.SET_NULL)
+    type = models.IntegerField(choices=TicketType.choices, default=2)
+    message = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True, null=True)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f'Ticket added at {self.date_added}'
 
 
 class OrderItem(models.Model):
@@ -173,13 +196,6 @@ class OrderItem(models.Model):
         return f'OrderItem id: {self.id}'
 
     objects = SoftDeleteManager()
-
-
-class OrderTicket(models.Model):
-    customer = models.ForeignKey(Customer, null=True, on_delete=models.SET_NULL)
-    order = models.ForeignKey(Order, null=True, on_delete=models.SET_NULL)
-    value = models.TextField()
-    is_active = models.BooleanField(default=True)
 
 
 class ProductProperty(models.Model):

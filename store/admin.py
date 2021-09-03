@@ -69,7 +69,7 @@ class FactoryTranslationAdmin(admin.StackedInline):
 
 @admin.register(Factory)
 class FactoryAdmin(SoftDelete):
-    fields = ['name', 'link', 'description']
+    fields = (('name', 'link'), 'description')
     inlines = [FactoryTranslationAdmin]
 
 
@@ -80,7 +80,7 @@ class DepositTranslationAdmin(admin.StackedInline):
 
 @admin.register(Deposit)
 class DepositAdmin(SoftDelete):
-    fields = ['name', 'link', 'description']
+    fields = (('name', 'link'), 'description')
     inlines = [DepositTranslationAdmin]
 
 
@@ -114,7 +114,7 @@ class OrderItemAdmin(admin.StackedInline):
 class OrderTicketAdmin(admin.StackedInline):
     extra = 1
     model = OrderTicket
-    exclude = ['is_active']
+    exclude = ['is_active', 'type', 'customer']
 
 
 @admin.register(Order)
@@ -136,6 +136,7 @@ class OrderAdmin(SoftDelete):
 @admin.register(Customer)
 class CustomerAdmin(SoftDelete):
     exclude = ['is_active']
+    change_list_template = 'asd'
 
 
 @admin.register(OrderStatus)

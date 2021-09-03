@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}{{ block.super}}order history page {% endblock title %}
 {% block content %}
-<h1>Order detail</h1>
+<h1>Order {{ order.order_code }} detail</h1>
     <a href="{% url 'store:order_history' %}">Back to order history</a><br><br><br>
     {% if messages %}
         <ul class="messages">
@@ -22,10 +22,13 @@
     <br><br>Total quantity: <span class="total_quantity">{{ order.get_order_items }}</span>
     <br><br>Total price: <span id="total_price">{{ order.get_order_total }}</span>
     <br><br>Order status: <span id="total_price"><b>{{ order.order_status.name }}</b></span><br>
+    {% for ticket in tickets %}
+        <p><b>{{ ticket.get_type_display }}</b> {{ ticket.message }}</p>
+    {% endfor %}
     {% if order.order_status.name == "placed" %}
         <form action = "" method = "post">
             {% csrf_token %}
-            {{form.as_p}}
+            {{ form }}
             <input type="submit" value="Submit">
         </form>
     {% endif %}

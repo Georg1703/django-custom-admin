@@ -5,7 +5,7 @@ from django.contrib import messages
 import json
 
 from accounts.decorators import allowed_groups
-from store.models import Product, Order, OrderItem
+from .models import Product, Order, OrderItem, OrderTicket, Customer
 from .forms import OrderTicketForm
 
 
@@ -122,22 +122,34 @@ def order_history(request):
 @login_required
 @allowed_groups(['user'])
 def order_detail(request, order_id):
+
     order = Order.objects.get(id=order_id)
-    form = OrderTicketForm()
-    context = {'order': order}
+    tickets = order.orderticket_set.all()
+    customer = request.user.customer
+    form = OrderTicketForm(initial={'order': order.id, 'customer': customer.id})
+
+    context = {
+        'order': order,
+        'tickets': tickets,
+        'form': form
+    }
 
     if request.method == 'POST':
         form = OrderTicketForm(request.POST)
 
         if form.is_valid():
-            form.save()
+            message = form.cleaned_data['message']
+            order = Order(id=form.cleaned_data['order'])
+            customer = Customer(id=form.cleaned_data['customer'])
+
+            ticket = OrderTicket(message=message, customer=customer, order=order)
+            ticket.save()
             messages.success(request, 'Comment was saved !')
-            return redirect('store:order_detail')
+            return redirect('store:order_detail', order_id=order.id)
         else:
             messages.success(request, 'Error!')
             context['form'] = form
             return render(request, 'store/order_detail.html', context)
     else:
-        context['form'] = form
         return render(request, 'store/order_detail.html', context)
 
