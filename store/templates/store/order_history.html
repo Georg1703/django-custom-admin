@@ -5,7 +5,7 @@
 <h1>Order history</h1>
     <a href="{% url 'store:store_page' %}">Back to store</a><br><br><br>
     {% for order in orders %}
-        <br><br><br><a href="{% url 'store:order_detail' order.id %}"><b>Order: {{ order.order_code }}</b></a>
+        <br><br><br><a href="{% url 'store:order_detail' order.order_code %}"><b>Order: {{ order.order_code }}</b></a>
     Total quantity: <span class="total_quantity">{{ order.get_order_items }}</span>
     Total price: <span id="total_price">{{ order.get_order_total }}</span>
     {% endfor %}

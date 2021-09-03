@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load translation %}
 {% block title %}{{ block.super}}store page {% endblock title %}
 {% block content %}
 <h1>Store page</h1>
@@ -8,7 +9,10 @@
     <a href="{% url 'store:order_history' %}">Orders history</a>
     <ol>
         {% for product in products %}
-            <li>{{ product.name }}&nbsp <b>price</b>{{ product.price_per_unit }}
+            <li>
+                {% translate product lang 1 %}
+                &nbsp<b>description: </b>{% translate product lang 2 %}
+                &nbsp<b>price: </b>{{ product.price_per_unit }}
                 <button data-product="{{ product.id }}" data-action="add" class="update-cart">add</button>
             </li>
         {% endfor %}

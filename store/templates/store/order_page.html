@@ -24,7 +24,7 @@
     {% endfor %}
     <br><br>Total quantity: <span class="total_quantity">{{ order.get_order_items }}</span>
     <br><br>Total price: <span id="total_price">{{ order.get_order_total }}</span>
-    <br><br><a href="{% url 'store:place_order' order.id %}"><button>Place order</button></a>
+    <br><br><a href="{% url 'store:place_order' order.order_code %}"><button>Place order</button></a>
 {% endblock content %}
 
 {% block js %}

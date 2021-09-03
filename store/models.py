@@ -130,7 +130,7 @@ class OrderStatus(models.Model):
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, default=None)
     order_code = models.CharField(max_length=10, unique=True)
-    order_status = models.ForeignKey(OrderStatus, null=True, on_delete=models.SET_NULL)
+    order_status = models.ForeignKey(OrderStatus, null=True, on_delete=models.SET_NULL, default=1)
     placed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -155,8 +155,9 @@ class Order(models.Model):
         if len(self.order_code) == 0:
             self.order_code = get_uuid_code(prefix='ord')
 
-        order_ticket = OrderTicket(customer=self.customer, order=self, message=self.order_status)
-        order_ticket.save()
+        if self.id:
+            order_ticket = OrderTicket(customer=self.customer, order=self, message=self.order_status)
+            order_ticket.save()
 
         super(Order, self).save(**kwargs)
 
@@ -172,7 +173,7 @@ class OrderTicket(models.Model):
     order = models.ForeignKey(Order, null=True, on_delete=models.SET_NULL)
     customer = models.ForeignKey(Customer, null=True, on_delete=models.SET_NULL)
     type = models.IntegerField(choices=TicketType.choices, default=2)
-    message = models.TextField()
+    message = models.TextField(null=True)
     date_added = models.DateTimeField(auto_now_add=True, null=True)
     is_active = models.BooleanField(default=True)
 
@@ -295,7 +296,10 @@ class ProductTranslation(models.Model):
     value = models.TextField()
 
     class Meta:
-        unique_together = ['field', 'lang']
+        unique_together = ('product', 'field', 'lang',)
+
+    def __str__(self):
+        return self.value
 
 
 class CategorytTranslation(models.Model):
@@ -305,7 +309,7 @@ class CategorytTranslation(models.Model):
     value = models.TextField()
 
     class Meta:
-        unique_together = ['field', 'lang']
+        unique_together = ('category', 'field', 'lang',)
 
 
 class FactoryTranslation(models.Model):
@@ -315,7 +319,7 @@ class FactoryTranslation(models.Model):
     value = models.TextField()
 
     class Meta:
-        unique_together = ['field', 'lang']
+        unique_together = ('factory', 'field', 'lang',)
 
 
 class DepositTranslation(models.Model):
@@ -325,7 +329,7 @@ class DepositTranslation(models.Model):
     value = models.TextField()
 
     class Meta:
-        unique_together = ['field', 'lang']
+        unique_together = ('deposit', 'field', 'lang',)
 
 
 class PropertyTranslation(models.Model):
@@ -335,4 +339,4 @@ class PropertyTranslation(models.Model):
     value = models.TextField()
 
     class Meta:
-        unique_together = ['field', 'lang']
+        unique_together = ('property', 'field', 'lang',)

@@ -26,7 +26,7 @@ def store(request):
         order_items = order['get_order_items']
 
     products = Product.objects.all()
-    context = {'products': products, 'order_items': order_items}
+    context = {'products': products, 'order_items': order_items, 'lang': request.LANGUAGE_CODE}
     return render(request, 'store/store_page.html', context=context)
 
 
@@ -88,12 +88,13 @@ def update_item(request):
 
 @login_required
 @allowed_groups(['user'])
-def place_order(request, order_id):
+def place_order(request, order_code):
 
     if request.user.is_authenticated:
-        order = Order.objects.get(id=order_id)
+        order = Order.objects.get(order_code=order_code)
         if order.orderitem_set.count() > 0:
             order.placed = True
+            order_status = 1
             order.save()
             messages.success(request, 'Order was placed !')
             return redirect('/order')
@@ -121,12 +122,11 @@ def order_history(request):
 
 @login_required
 @allowed_groups(['user'])
-def order_detail(request, order_id):
+def order_detail(request, order_code):
 
-    order = Order.objects.get(id=order_id)
+    order = Order.objects.get(order_code=order_code)
     tickets = order.orderticket_set.all()
-    customer = request.user.customer
-    form = OrderTicketForm(initial={'order': order.id, 'customer': customer.id})
+    form = OrderTicketForm(initial={'order': order_code})
 
     context = {
         'order': order,
@@ -139,13 +139,14 @@ def order_detail(request, order_id):
 
         if form.is_valid():
             message = form.cleaned_data['message']
-            order = Order(id=form.cleaned_data['order'])
-            customer = Customer(id=form.cleaned_data['customer'])
+            order = Order.objects.get(order_code=order_code)
+            customer = request.user.customer
 
+            print(order.order_code)
             ticket = OrderTicket(message=message, customer=customer, order=order)
             ticket.save()
             messages.success(request, 'Comment was saved !')
-            return redirect('store:order_detail', order_id=order.id)
+            return redirect('store:order_detail', order_code=order.order_code)
         else:
             messages.success(request, 'Error!')
             context['form'] = form
