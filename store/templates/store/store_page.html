@@ -6,13 +6,19 @@
 <h1>Store page</h1>
 <a href="{% url 'accounts:logout' %}">logout</a>&nbsp&nbsp
     <a href="{% url 'store:order_page' %}">Orders <span class="total_quantity">{{ order_items }}</span></a>
-    <a href="{% url 'store:order_history' %}">Orders history</a>
+    <a href="{% url 'store:order_history' %}">Orders history</a><br>
+    {% for tag in tags %}
+        <a href="{% url 'store:get_products_by_tag' tag.name %}">{{ tag.name }}</a>
+    {% endfor %}
     <ol>
         {% for product in products %}
             <li>
                 {% translate product lang 1 %}
                 &nbsp<b>description: </b>{% translate product lang 2 %}
                 &nbsp<b>price: </b>{{ product.price_per_unit }}
+                {% for tag in product.tags.all %}
+                    <a href="{% url 'store:get_products_by_tag' tag.name %}">{{ tag.name }}</a>
+                {% endfor %}
                 <button data-product="{{ product.id }}" data-action="add" class="update-cart">add</button>
             </li>
         {% endfor %}

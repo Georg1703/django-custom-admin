@@ -4,7 +4,7 @@ from django.contrib import admin
 from .models import Product, Category, ProductImage, Factory, Deposit, ProductPropertyRelation, \
     ProductProperty, BulkSales, ProductBulkSales, ProductTranslation, Language, CategorytTranslation, \
     FactoryTranslation, DepositTranslation, PropertyTranslation, Order, OrderItem, Customer, OrderStatus, \
-    OrderTicket
+    OrderTicket, Tag
 
 
 class SoftDelete(admin.ModelAdmin):
@@ -136,9 +136,15 @@ class OrderAdmin(SoftDelete):
 @admin.register(Customer)
 class CustomerAdmin(SoftDelete):
     exclude = ['is_active']
-    change_list_template = 'asd'
+    # change_list_template = 'asd'
 
 
 @admin.register(OrderStatus)
 class OrderStatusAdmin(SoftDelete):
+    fields = ['name']
+
+
+
+@admin.register(Tag)
+class TagAdmin(SoftDelete):
     fields = ['name']

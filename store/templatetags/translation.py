@@ -14,9 +14,9 @@ def translate(product, language, field):
 
         if elem is not None:
             return elem
-        else:
-            lang = Language.objects.get(name='en')
-            return product.producttranslation_set.filter(product=product, lang=lang.id, field=field).first()
-    else:
+
         lang = Language.objects.get(name='en')
         return product.producttranslation_set.filter(product=product, lang=lang.id, field=field).first()
+
+    lang = Language.objects.get(name='en')
+    return product.producttranslation_set.filter(product=product, lang=lang.id, field=field).first()

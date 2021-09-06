@@ -1,7 +1,6 @@
 import uuid
 from django.db import models
 from django.utils.html import mark_safe
-from taggit.managers import TaggableManager
 from django.contrib.auth.models import User
 
 
@@ -70,6 +69,14 @@ class Deposit(models.Model):
     objects = SoftDeleteManager()
 
 
+class Tag(models.Model):
+    name = models.CharField(max_length=100)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Product(models.Model):
     name = models.CharField(max_length=255)
     price_per_unit = models.DecimalField(null=True, max_digits=10, decimal_places=2)
@@ -77,8 +84,8 @@ class Product(models.Model):
     category = models.ManyToManyField(Category)
     factory = models.ForeignKey(Factory, null=True, on_delete=models.SET_NULL)
     deposit = models.ManyToManyField(Deposit)
-    default_image = models.FileField(upload_to=user_directory_path, null=True)
-    tags = TaggableManager()
+    default_image = models.ImageField(upload_to=user_directory_path, null=True)
+    tags = models.ManyToManyField(Tag)
     similar_products = models.ManyToManyField('self', blank=True)
     product_code = models.CharField(max_length=10, unique=True)
     is_active = models.BooleanField(default=True)
@@ -88,13 +95,16 @@ class Product(models.Model):
 
     def image_tag(self):
         return mark_safe(f'<a href="/media/{self.default_image}"><img src="/media/{self.default_image}" width="60" height="50"/></a>')
-        image_tag.short_description = 'Image'
         image_tag.allow_tags = True
 
     def save(self, **kwargs):
         if len(self.product_code) == 0:
             self.product_code = get_uuid_code(prefix='prod')
         super(Product, self).save(**kwargs)
+        if self.tags:
+            for tag in self.tags.all():
+                tag_item = TaggedItems(product=self.id, tag=tag)
+                tag_item.save()
 
     def __str__(self):
         return self.name
@@ -340,3 +350,10 @@ class PropertyTranslation(models.Model):
 
     class Meta:
         unique_together = ('property', 'field', 'lang',)
+
+
+class TagTranslation(models.Model):
+    property = models.ForeignKey(Tag, on_delete=models.CASCADE)
+    field = models.ForeignKey(TranslablePropertyFields, null=True, on_delete=models.SET_NULL)
+    lang = models.ForeignKey(Language, null=True, on_delete=models.SET_NULL)
+    value = models.TextField()

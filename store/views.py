@@ -2,6 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, reverse
 from django.http import JsonResponse
 from django.contrib import messages
+from store.models import Tag
 import json
 
 from accounts.decorators import allowed_groups
@@ -25,8 +26,9 @@ def store(request):
         order = {'get_order_items': 0, 'get_order_total': 0}
         order_items = order['get_order_items']
 
+    tags = Tag.objects.all()
     products = Product.objects.all()
-    context = {'products': products, 'order_items': order_items, 'lang': request.LANGUAGE_CODE}
+    context = {'products': products, 'order_items': order_items, 'tags': tags, 'lang': request.LANGUAGE_CODE}
     return render(request, 'store/store_page.html', context=context)
 
 
@@ -153,4 +155,22 @@ def order_detail(request, order_code):
             return render(request, 'store/order_detail.html', context)
     else:
         return render(request, 'store/order_detail.html', context)
+
+
+@login_required
+@allowed_groups(['user'])
+def get_products_by_tag(request, tag_name):
+
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order, created = Order.objects.get_or_create(customer=customer, placed=False)
+        order_items = order.get_order_items
+    else:
+        order = {'get_order_items': 0, 'get_order_total': 0}
+        order_items = order['get_order_items']
+
+    tags = Tag.objects.all()
+    products = Product.objects.filter(tags__name=tag_name)
+    context = {'products': products, 'order_items': order_items, 'tags': tags, 'lang': request.LANGUAGE_CODE}
+    return render(request, 'store/store_page.html', context=context)
 
