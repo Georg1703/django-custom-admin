@@ -14,8 +14,10 @@ def get_lading_page(request):
     return render(request, 'store/lading_page.html')
 
 
-@login_required
-@allowed_groups(['user'])
+def get_company_page(request):
+    return render(request, 'store/company_page.html')
+
+
 def store(request):
 
     if request.user.is_authenticated:

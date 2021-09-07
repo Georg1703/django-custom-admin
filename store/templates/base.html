@@ -1,37 +1,259 @@
 {% load static %}
 <!doctype html>
-<html lang="en">
+<html class="no-js" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %}Store - {% endblock title %}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="ThemeZaa">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+    <meta name="description" content="Litho is a clean and modern design, BootStrap 4 responsive, business and portfolio multipurpose HTML5 template with 36+ ready homepage demos.">
+    <!-- favicon icon -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/apple-touch-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/apple-touch-icon-114x114.png' %}">
+    <!-- style sheets and font icons  -->
+    <link rel="stylesheet" type="text/css" href="css/font-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/theme-vendors.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" />
+    <!-- revolution slider -->
+    <link rel="stylesheet" type="text/css" href="{% static 'revolution/css/settings.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'revolution/css/layers.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'revolution/css/navigation.css' %}">
+    <title>Store - {% block title %}{% endblock title %}</title>
 </head>
 <body>
+    <!-- start header -->
+    <header class="header-with-topbar">
+        <nav class="navbar navbar-expand-lg navbar-boxed navbar-light bg-white border-bottom border-color-white-transparent header-light fixed-top header-reverse-scroll">
+            <div class="container-fluid nav-header-container">
+                <div class="col-auto col-sm-6 col-lg-2 mr-auto pl-lg-0">
+                    <a class="navbar-brand" href="{% url 'store:lading_page' %}">
+                        <img src="{% static 'images/logo-fast-blue-black.png' %}" data-at2x="{% static 'images/logo-white@2x.png' %}" class="default-logo" alt="">
+                        <img src="{% static 'images/logo-fast-blue-black.png' %}" data-at2x="{% static 'images/logo-fast-blue-black@2x.png' %}" class="alt-logo" alt="">
+                        <img src="{% static 'images/logo-fast-blue-black.png' %}" data-at2x="{% static 'images/logo-fast-blue-black@2x.png' %}" class="mobile-logo" alt="">
+                    </a>
+                </div>
+                <div class="col-auto menu-order px-lg-0">
+                    <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav alt-font">
+                            <li class="nav-item dropdown megamenu">
+                                <a href="{% url 'store:lading_page' %}" class="nav-link">Home</a>
+                                <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
+                            </li>
+                            <li class="nav-item dropdown simple-dropdown">
+                                <a href="{% url 'store:store_page' %}" class="nav-link">Products</a>
+                                <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
+                            </li>
+                            <li class="nav-item dropdown simple-dropdown">
+                                <a href="{% url 'store:company_page' %}" class="nav-link">Company</a>
+                                <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <a href="javascript:void(0);" class="nav-link">Contact us</a>
+                                <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-auto text-right hidden-xs pr-0 font-size-0">
+                    <div class="header-search-icon search-form-wrapper">
+                        <a href="javascript:void(0)" class="search-form-icon header-search-form"><i class="feather icon-feather-search"></i></a>
+                        <!-- start search input -->
+                        <div class="form-wrapper">
+                            <button title="Close" type="button" class="search-close alt-font">×</button>
+                            <form id="search-form" role="search" method="get" class="search-form text-left" action="search-result.html">
+                                <div class="search-form-box">
+                                    <span class="search-label alt-font text-small text-uppercase text-medium-gray">What are you looking for?</span>
+                                    <input class="search-input alt-font" id="search-form-input5e219ef164995" placeholder="Enter your keywords..." name="s" value="" type="text" autocomplete="off">
+                                    <button type="submit" class="search-button">
+                                        <i class="feather icon-feather-search" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- end search input -->
+                    </div>
+                    <div class="header-language dropdown d-lg-inline-block">
+                        <a href="javascript:void(0);"><i class="feather icon-feather-globe"></i></a>
+                        <ul class="dropdown-menu alt-font">
+                            <li><a href="javascript:void(0);" title="English"><span class="icon-country"><img src="{% static 'images/country-flag-16X16/usa.png' %}" alt=""></span>English</a></li>
+                            <li><a href="javascript:void(0);" title="England"><span class="icon-country"><img src="{% static 'images/country-flag-16X16/england.png' %}" alt=""></span>England</a></li>
+                            <li><a href="javascript:void(0);" title="France"><span class="icon-country"><img src="{% static 'images/country-flag-16X16/france.png' %}" alt=""></span>France</a></li>
+                            <li><a href="javascript:void(0);" title="Russian"><span class="icon-country"><img src="{% static 'images/country-flag-16X16/russian.png' %}" alt=""></span>Russian</a></li>
+                            <li><a href="javascript:void(0);" title="Spain"><span class="icon-country"><img src="{% static 'images/country-flag-16X16/spain.png' %}" alt=""></span>Spain</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-push-button d-none d-lg-inline-block hidden-xs">
+                        <a href="javascript:void(0);" class="push-button">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- end navigation -->
+        <div class="push-menu padding-50px-lr bg-white">
+            <a href="javascript:void(0);" class="close-menu text-extra-dark-gray"><i class="fas fa-times"></i></a>
+            <div class="push-menu-wrapper text-center" data-scroll-options='{ "theme": "dark" }'>
+                <h1 class="text-extra-dark-gray alt-font font-weight-700 letter-spacing-minus-3px text-uppercase no-margin-bottom">Hello</h1>
+                <span class="alt-font text-fast-blue text-large text-uppercase d-block">Let's be friends.</span>
+                <div class="w-100 margin-5-rem-tb lg-margin-3-rem-tb">
+                    <ul class="instafeed-grid instafeed-wrapper grid grid-3col xl-grid-3col lg-grid-3col md-grid-3col sm-grid-3col xs-grid-3col gutter-small" data-total="6">
+                        <li class="grid-item"><figure><a href="#" data-href="{{link}}" target="_blank"><img src="#" data-src="{{image}}" class="insta-image" alt="" /><span class="insta-counts"><i class="fab fa-instagram"></i>{{likes}}</span></a></figure></li>
+                    </ul>
+                </div>
+                <div class="margin-5-rem-bottom text-center lg-margin-3-rem-bottom">
+                    <span class="alt-font text-large margin-3-rem-bottom w-70 mx-auto text-extra-dark-gray d-inline-block line-height-26px lg-margin-2-rem-bottom">Get latest update for our trusted applications</span>
+                    <form action="{% static 'email-templates/subscribe-newsletter.php' %}" method="post">
+                        <div class="newsletter-email position-relative">
+                            <input class="border-radius-5px medium-input m-0 required" name="email" placeholder="Enter your email address" type="email">
+                            <input type="hidden" name="redirect" value="">
+                            <button class="btn btn-medium line-height-18px submit" type="submit"><i class="far fa-envelope text-fast-blue left-icon"></i>subscribe</button>
+                            <div class="form-results rounded d-none position-absolute"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="text-center elements-social social-icon-style-02 margin-10px-bottom">
+                    <ul class="small-icon dark">
+                        <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+                        <li><a class="twitter" href="http://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a class="linkedin" href="http://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+
     {% block content %}{% endblock content %}
 
-<script type="text/javascript">
-    var user = '{{ request.user }}'
+    <!-- start footer -->
+    <footer class="footer-decor footer-dark bg-extra-dark-gray">
+        <div class="footer-top padding-five-tb lg-padding-eight-tb md-padding-50px-tb">
+            <div class="container">
+                <div class="row">
+                    <!-- start footer column -->
+                    <div class="col-12 col-lg-3 col-sm-6 last-paragraph-no-margin md-margin-40px-bottom xs-margin-25px-bottom">
+                        <span class="alt-font font-weight-500 d-block text-white margin-20px-bottom xs-margin-10px-bottom">About company</span>
+                        <p class="md-w-80">Lorem ipsum dolor amet consectetur adipiscing do tempor incididunt labore magna ut enim minim exercitation laboris nisiex ea commodo.</p>
+                    </div>
+                    <!-- end footer column -->
+                    <!-- start footer column -->
+                    <div class="col-12 col-lg-2 offset-lg-1 col-sm-6 md-margin-40px-bottom xs-margin-25px-bottom">
+                        <span class="alt-font font-weight-500 d-block text-white margin-20px-bottom xs-margin-10px-bottom">Company</span>
+                        <ul>
+                            <li><a href="about-us.html">About company</a></li>
+                            <li><a href="our-services.html">Company services</a></li>
+                            <li><a href="our-team.html">Job opportunities</a></li>
+                            <li><a href="contact-us-classic.html">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <!-- end footer column -->
+                    <!-- start footer column -->
+                    <div class="col-12 col-lg-3 col-sm-6 xs-margin-25px-bottom">
+                        <span class="alt-font font-weight-500 d-block text-white margin-20px-bottom xs-margin-10px-bottom">Get in touch</span>
+                        <p class="w-85 margin-15px-bottom">27 Eden walk eden centre, Orchard view, Paris, France</p>
+                        <div><i class="feather icon-feather-phone-call icon-very-small margin-10px-right"></i>+1 234 567 8910</div>
+                        <div><i class="feather icon-feather-mail icon-very-small margin-10px-right"></i><a href="mailto:info@yourdomain.com">info@yourdomain.com</a></div>
+                    </div>
+                    <!-- end footer column -->
+                    <!-- start footer column -->
+                    <div class="col-12 col-lg-3 col-sm-6">
+                        <span class="alt-font font-weight-500 d-block text-white margin-20px-bottom">Follow us on Instagram</span>
+                        <div class="w-100 d-inline-block margin-10px-top">
+                            <ul class="instafeed-grid instafeed-wrapper grid grid-3col xl-grid-3col lg-grid-3col md-grid-3col sm-grid-3col xs-grid-3col gutter-small" data-total="3">
+                                <li class="grid-item"><figure><a href="#" data-href="{{link}}" target="_blank"><img src="#" data-src="{{image}}" class="insta-image" alt="" /><span class="insta-counts"><i class="fab fa-instagram"></i>{{likes}}</span></a></figure></li>
+                            </ul>
+                            <a class="alt-font text-extra-small text-uppercase font-weight-500 margin-20px-top d-inline-block" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram icon-extra-small align-middle margin-10px-right text-dark-golden-yellow"></i><span class="d-inline-block align-middle text-dark-golden-yellow">Follow instagram</span></a>
+                        </div>
+                    </div>
+                    <!-- end footer column -->
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom padding-40px-tb border-top border-color-white-transparent">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-3 text-center text-md-left sm-margin-20px-bottom">
+                        <a href="index.html" class="footer-logo"><img src="images/logo-white.png" data-at2x="images/logo-white@2x.png" alt=""></a>
+                    </div>
+                    <div class="col-12 col-md-6 text-center last-paragraph-no-margin sm-margin-20px-bottom">
+                        <p>&copy; 2021 Litho is Proudly Powered by <a href="https://www.themezaa.com/" target="_blank">ThemeZaa</a></p>
+                    </div>
+                    <div class="col-12 col-md-3 text-center text-md-right">
+                        <div class="social-icon-style-12">
+                            <ul class="extra-small-icon light">
+                                <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+                                <li><a class="twitter" href="http://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                <li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
 
-    function getToken(name) {
-        let cookieValue = null;
-        if (document.cookie && document.cookie !== '') {
-            const cookies = document.cookie.split(';');
-            for (let i = 0; i < cookies.length; i++) {
-                const cookie = cookies[i].trim();
-                // Does this cookie string begin with the name we want?
-                if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                    break;
+    <!-- start scroll to top -->
+    <a class="scroll-top-arrow" href="javascript:void(0);"><i class="feather icon-feather-arrow-up"></i></a>
+    <!-- end scroll to top -->
+
+    <!-- javascript -->
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/theme-vendors.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+
+    <!-- revolution js files -->
+    <script type="text/javascript" src="{% static 'revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+
+    <!-- slider revolution 5.0 extensions (load extensions only on local file systems ! the following part can be removed on server for on demand loading) -->
+    <script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.actions.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.carousel.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.kenburn.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.migration.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.video.min.js' %}"></script>
+
+
+    <script type="text/javascript">
+        var user = '{{ request.user }}'
+
+        function getToken(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
                 }
             }
+            return cookieValue;
         }
-        return cookieValue;
-    }
-    const csrftoken = getToken('csrftoken');
-</script>
-<script src="{% static "js/jquery.js" %}"></script>
-{% block js %}{% endblock js %}
+        const csrftoken = getToken('csrftoken');
+    </script>
+    {% block js %}{% endblock js %}
 </body>
 </html>
