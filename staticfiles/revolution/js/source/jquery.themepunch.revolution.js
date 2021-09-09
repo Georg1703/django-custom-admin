@@ -4,7 +4,7 @@
  * @requires jQuery v1.7 or later (tested on 1.9)
  * @author ThemePunch
 **************************************************************************/
-;(function(jQuery,undefined){
+(function(jQuery,undefined){
 "use strict";
 		
 	var version = {
@@ -317,7 +317,7 @@
 				}				
 				t +=("---------------------------------------------------------")+"\n";
 				return t;
-			};					
+			}					
 		},
 
 		
@@ -1635,7 +1635,7 @@ var initSlider = function (container,opt) {
 				if (nctype==="column") {
 					specec = _ndata.verticalalign === undefined ?  " vertical-align:bottom;"  : " vertical-align:"+_ndata.verticalalign+";";					
 					preclas = "rev_column";
-					_nc.addClass("rev_column_inner").removeClass("tp-resizeme");;
+					_nc.addClass("rev_column_inner").removeClass("tp-resizeme");
 					_nc.data('width','auto');
 					punchgs.TweenLite.set(_nc,{width:'auto'});					
 				} else

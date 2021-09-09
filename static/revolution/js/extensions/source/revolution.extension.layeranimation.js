@@ -4,7 +4,7 @@
  * @requires jquery.themepunch.revolution.js
  * @author ThemePunch
 ************************************************/
-;(function($) {
+(function($) {
 	"use strict";
 
 var _R = jQuery.fn.revolution,
@@ -392,7 +392,7 @@ jQuery.extend(true,_R, {
 			obj.offsety = _._gh/2 - (opt.gridheight[opt.curWinRange]*opt.bh)/2;
 
 		if (opt.autoHeight=="on" || (opt.minHeight!=undefined && opt.minHeight>0))
-			  obj.offsety = opt.conh/2 - (opt.gridheight[opt.curWinRange]*opt.bh)/2;;
+			  obj.offsety = opt.conh/2 - (opt.gridheight[opt.curWinRange]*opt.bh)/2;
 
 		if (obj.offsety<0) obj.offsety=0;
 		
@@ -950,7 +950,7 @@ jQuery.extend(true,_R, {
 
 					 		_.hovertimelines.pwhoveranim = punchgs.TweenLite.to(_._pw,frame.speed/1000,{overwrite:"auto",zIndex:_.hoverzIndex});
 					 		_.hovertimelines.pwhoveranim.eventCallback("onComplete",function(_) {					 			
-				 				_.inhoverinanimation=false;;
+				 				_.inhoverinanimation=false;
 				 			},[_])
 					 	}
 					 	if ($svg.svg)  					 		
@@ -978,7 +978,7 @@ jQuery.extend(true,_R, {
 				 		if (frame.speed==0) _.inhoveroutanimation= false;				 		
 				 		_.hovertimelines.item.eventCallback("onComplete",function(_) {
 				 	
-				 			_.inhoveroutanimation=false;;
+				 			_.inhoveroutanimation=false;
 				 		},[_])
 				 		if (_.hovertimelines.pwhoveranim!==undefined) _.hovertimelines.pwhoveranim = punchgs.TweenLite.to(_._pw,frame.speed/1000,{overwrite:"auto",zIndex:_.basiczindex}); 
 				 		if ($svg.svg) punchgs.TweenLite.to([$svg.svg, $svg.svg.find('path')],frame.speed/1000,_.idlesvg.anim);	 

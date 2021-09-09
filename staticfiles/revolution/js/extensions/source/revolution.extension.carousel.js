@@ -283,7 +283,7 @@ var setCarouselDefaults = function(opt) {
 
 // DIRECTION CHECK
 var dircheck = function(d,b) {		
-	return d===null || jQuery.isEmptyObject(d) ? b : d === undefined ?  "right" : d;;
+	return d===null || jQuery.isEmptyObject(d) ? b : d === undefined ?  "right" : d;
 }
 
 // ANIMATE THE CAROUSEL WITH OFFSETS

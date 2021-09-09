@@ -4,7 +4,7 @@
  * @requires jquery.themepunch.revolution.js
  * @author ThemePunch
 *********************************************/
-;(function($) {
+(function($) {
 	"use strict";
 var _R = jQuery.fn.revolution,
 	_ISM = _R.is_mobile(),
@@ -722,7 +722,7 @@ jQuery.extend(true,_R, {
 
 function getStartSec(st) {						
 	return st == undefined ? -1 :jQuery.isNumeric(st) ? st : st.split(":").length>1 ? parseInt(st.split(":")[0],0)*60 + parseInt(st.split(":")[1],0) : st;
-};
+}
 
 // 	-	VIMEO ADD EVENT /////
 var addEvent = function(element, eventName, callback) {

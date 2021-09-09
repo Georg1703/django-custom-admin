@@ -1,4 +1,4 @@
-;var RsAddonDuotone = function($, api, simplified, easing, timing) {
+var RsAddonDuotone = function($, api, simplified, easing, timing) {
 	
 	if(!$ || typeof api === 'undefined' || !api.length) return;
 	var supports = "CSS" in window && "supports" in window.CSS;

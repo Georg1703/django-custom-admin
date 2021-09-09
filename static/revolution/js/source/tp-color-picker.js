@@ -4,7 +4,7 @@
  * @author ThemePunch
 **************************************************************************/
 
-;window.RevColor = {
+window.RevColor = {
 	
 	defaultValue: '#ffffff',
 	isColor: /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i,
