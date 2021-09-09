@@ -13,10 +13,11 @@
     <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/apple-touch-icon-72x72.png' %}">
     <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/apple-touch-icon-114x114.png' %}">
     <!-- style sheets and font icons  -->
-    <link rel="stylesheet" type="text/css" href="css/font-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-icons.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/theme-vendors.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/micromodal.css' %}" />
     <!-- revolution slider -->
     <link rel="stylesheet" type="text/css" href="{% static 'revolution/css/settings.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'revolution/css/layers.css' %}">
@@ -29,7 +30,7 @@
         <nav class="navbar navbar-expand-lg navbar-boxed navbar-light bg-white border-bottom border-color-white-transparent header-light fixed-top header-reverse-scroll">
             <div class="container-fluid nav-header-container">
                 <div class="col-auto col-sm-6 col-lg-2 mr-auto pl-lg-0">
-                    <a class="navbar-brand" href="{% url 'store:lading_page' %}">
+                    <a class="navbar-brand" href="{% url 'store:lading' %}">
                         <img src="{% static 'images/logo-fast-blue-black.png' %}" data-at2x="{% static 'images/logo-white@2x.png' %}" class="default-logo" alt="">
                         <img src="{% static 'images/logo-fast-blue-black.png' %}" data-at2x="{% static 'images/logo-fast-blue-black@2x.png' %}" class="alt-logo" alt="">
                         <img src="{% static 'images/logo-fast-blue-black.png' %}" data-at2x="{% static 'images/logo-fast-blue-black@2x.png' %}" class="mobile-logo" alt="">
@@ -45,19 +46,19 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav alt-font">
                             <li class="nav-item dropdown megamenu">
-                                <a href="{% url 'store:lading_page' %}" class="nav-link">Home</a>
+                                <a href="{% url 'store:lading' %}" class="nav-link">Home</a>
                                 <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
                             </li>
                             <li class="nav-item dropdown simple-dropdown">
-                                <a href="{% url 'store:store_page' %}" class="nav-link">Products</a>
+                                <a href="{% url 'store:products' %}" class="nav-link">Products</a>
                                 <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
                             </li>
                             <li class="nav-item dropdown simple-dropdown">
-                                <a href="{% url 'store:company_page' %}" class="nav-link">Company</a>
+                                <a href="{% url 'store:company' %}" class="nav-link">Company</a>
                                 <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
                             </li>
                             <li class="nav-item dropdown megamenu">
-                                <a href="javascript:void(0);" class="nav-link">Contact us</a>
+                                <a href="{% url 'store:contact_us' %}" class="nav-link">Contact us</a>
                                 <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
                             </li>
                         </ul>
@@ -91,50 +92,19 @@
                             <li><a href="javascript:void(0);" title="Spain"><span class="icon-country"><img src="{% static 'images/country-flag-16X16/spain.png' %}" alt=""></span>Spain</a></li>
                         </ul>
                     </div>
-                    <div class="header-push-button d-none d-lg-inline-block hidden-xs">
-                        <a href="javascript:void(0);" class="push-button">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </a>
-                    </div>
+                    {% if user.is_authenticated %}
+                        <div class="header-push-button d-none d-lg-inline-block hidden-xs">
+                            <a href="{% url 'accounts:logout' %}">Log out</a>
+                        </div>
+                    {% else %}
+                        <div class="header-push-button d-none d-lg-inline-block hidden-xs">
+                            <a href="javascript:void(0);" data-micromodal-trigger="modal-1">Login</a>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </nav>
         <!-- end navigation -->
-        <div class="push-menu padding-50px-lr bg-white">
-            <a href="javascript:void(0);" class="close-menu text-extra-dark-gray"><i class="fas fa-times"></i></a>
-            <div class="push-menu-wrapper text-center" data-scroll-options='{ "theme": "dark" }'>
-                <h1 class="text-extra-dark-gray alt-font font-weight-700 letter-spacing-minus-3px text-uppercase no-margin-bottom">Hello</h1>
-                <span class="alt-font text-fast-blue text-large text-uppercase d-block">Let's be friends.</span>
-                <div class="w-100 margin-5-rem-tb lg-margin-3-rem-tb">
-                    <ul class="instafeed-grid instafeed-wrapper grid grid-3col xl-grid-3col lg-grid-3col md-grid-3col sm-grid-3col xs-grid-3col gutter-small" data-total="6">
-                        <li class="grid-item"><figure><a href="#" data-href="{{link}}" target="_blank"><img src="#" data-src="{{image}}" class="insta-image" alt="" /><span class="insta-counts"><i class="fab fa-instagram"></i>{{likes}}</span></a></figure></li>
-                    </ul>
-                </div>
-                <div class="margin-5-rem-bottom text-center lg-margin-3-rem-bottom">
-                    <span class="alt-font text-large margin-3-rem-bottom w-70 mx-auto text-extra-dark-gray d-inline-block line-height-26px lg-margin-2-rem-bottom">Get latest update for our trusted applications</span>
-                    <form action="{% static 'email-templates/subscribe-newsletter.php' %}" method="post">
-                        <div class="newsletter-email position-relative">
-                            <input class="border-radius-5px medium-input m-0 required" name="email" placeholder="Enter your email address" type="email">
-                            <input type="hidden" name="redirect" value="">
-                            <button class="btn btn-medium line-height-18px submit" type="submit"><i class="far fa-envelope text-fast-blue left-icon"></i>subscribe</button>
-                            <div class="form-results rounded d-none position-absolute"></div>
-                        </div>
-                    </form>
-                </div>
-                <div class="text-center elements-social social-icon-style-02 margin-10px-bottom">
-                    <ul class="small-icon dark">
-                        <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i class="fab fa-dribbble"></i></a></li>
-                        <li><a class="twitter" href="http://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                        <li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        <li><a class="linkedin" href="http://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
     </header>
     <!-- end header -->
 
@@ -209,6 +179,27 @@
     </footer>
     <!-- end footer -->
 
+    <!-- Start modal -->
+    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+                <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                    <header class="modal__header">
+                        <h2 class="modal__title" id="modal-1-title">Log in</h2>
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                    </header>
+                <main class="modal__content" id="modal-1-content">
+                    <form action="{% url 'accounts:login' %}" method="post">
+                        {% csrf_token %}
+                        <input class="medium-input border-radius-5px margin-25px-bottom" type="text" name="username" placeholder="Your username" />
+                        <input class="medium-input border-radius-5px margin-25px-bottom required" type="password" name="password" placeholder="Your password" />
+                        <button class="btn btn-large btn-dark-gray btn-round-edge w-100 no-margin-bottom" type="submit">Log in</button>
+                    </form>
+                </main>
+            </div>
+        </div>
+    </div>
+    <!--End modal -->
+
     <!-- start scroll to top -->
     <a class="scroll-top-arrow" href="javascript:void(0);"><i class="feather icon-feather-arrow-up"></i></a>
     <!-- end scroll to top -->
@@ -217,6 +208,7 @@
     <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/theme-vendors.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/micromodal.js' %}"></script>
 
     <!-- revolution js files -->
     <script type="text/javascript" src="{% static 'revolution/js/jquery.themepunch.tools.min.js' %}"></script>
@@ -235,6 +227,8 @@
 
 
     <script type="text/javascript">
+        MicroModal.init();
+
         var user = '{{ request.user }}'
 
         function getToken(name) {

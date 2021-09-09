@@ -29,7 +29,6 @@ def register_page(request):
 @unauthenticated_user
 def login_page(request):
     context = {}
-
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -38,7 +37,7 @@ def login_page(request):
 
         if user is not None:
             login(request, user)
-            return redirect('store:store_page')
+            return redirect('store:products')
         else:
             messages.info(request, 'Username or password is incorrect')
 
@@ -48,4 +47,4 @@ def login_page(request):
 @login_required
 def logout_user(request):
     logout(request)
-    return redirect('accounts:login')
+    return redirect('store:lading')

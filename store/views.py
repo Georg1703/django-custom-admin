@@ -11,14 +11,22 @@ from .forms import OrderTicketForm
 
 
 def get_lading_page(request):
-    return render(request, 'store/lading_page.html')
+    return render(request, 'store/lading.html')
 
 
 def get_company_page(request):
-    return render(request, 'store/company_page.html')
+    return render(request, 'store/company.html')
 
 
-def store(request):
+def get_contact_us_page(request):
+    return render(request, 'store/contact_us.html')
+
+
+def get_product_page(request, product_name):
+    return render(request, 'store/product.html')
+
+
+def get_products_page(request):
 
     if request.user.is_authenticated:
         customer = request.user.customer
@@ -31,12 +39,12 @@ def store(request):
     tags = Tag.objects.all()
     products = Product.objects.all()
     context = {'products': products, 'order_items': order_items, 'tags': tags, 'lang': request.LANGUAGE_CODE}
-    return render(request, 'store/store_page.html', context=context)
+    return render(request, 'store/products.html', context=context)
 
 
 @login_required
 @allowed_groups(['user'])
-def order(request):
+def get_order_page(request):
 
     if request.user.is_authenticated:
         customer = request.user.customer
@@ -49,7 +57,7 @@ def order(request):
         order_items = order['get_order_items']
 
     context = {'items': items, 'order': order, 'order_items': order_items}
-    return render(request, 'store/order_page.html', context=context)
+    return render(request, 'store/order.html', context=context)
 
 
 @login_required
@@ -174,5 +182,5 @@ def get_products_by_tag(request, tag_name):
     tags = Tag.objects.all()
     products = Product.objects.filter(tags__name=tag_name)
     context = {'products': products, 'order_items': order_items, 'tags': tags, 'lang': request.LANGUAGE_CODE}
-    return render(request, 'store/store_page.html', context=context)
+    return render(request, 'store/products.html', context=context)
 
