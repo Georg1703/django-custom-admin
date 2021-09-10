@@ -41,10 +41,7 @@ function updateUserOrder(productId, action){
 
 function renderOrder(data){
     if (product_price = document.getElementById('quantity_' + data.product_id)) {
-        product_price.innerHTML = data.quantity
-    }
-    if (total_price = document.getElementById('total_price')) {
-        total_price.innerHTML = data.get_order_total
+        product_price.value = data.quantity
     }
 
     if (product_total_price = document.getElementById('product_' + data.product_id + '_total_price')) {
@@ -53,6 +50,10 @@ function renderOrder(data){
 
     $('.total_quantity').each(function(i, obj) {
         obj.innerHTML = data.total_quantity
+    });
+
+    $('.total_price').each(function(i, obj) {
+        obj.innerHTML = data.get_order_total
     });
 
     if (data.is_deleted) {

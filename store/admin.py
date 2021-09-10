@@ -4,7 +4,7 @@ from django.contrib import admin
 from .models import Product, Category, ProductImage, Factory, Deposit, ProductPropertyRelation, \
     ProductProperty, BulkSales, ProductBulkSales, ProductTranslation, Language, CategorytTranslation, \
     FactoryTranslation, DepositTranslation, PropertyTranslation, Order, OrderItem, Customer, OrderStatus, \
-    OrderTicket, Tag
+    OrderTicket, Tag, TagTranslation
 
 
 class SoftDelete(admin.ModelAdmin):
@@ -144,7 +144,12 @@ class OrderStatusAdmin(SoftDelete):
     fields = ['name']
 
 
+class TagTranslationAdmin(admin.StackedInline):
+    extra = 1
+    model = TagTranslation
+
 
 @admin.register(Tag)
 class TagAdmin(SoftDelete):
     fields = ['name']
+    inlines = [TagTranslationAdmin]

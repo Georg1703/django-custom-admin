@@ -22,58 +22,21 @@
                 <div class="col-12 filter-content">
                     <ul class="shop-category-style-01 shop-wrapper grid grid-loading grid-4col xl-grid-4col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-extra-large">
                         <li class="grid-sizer"></li>
+                        {% for product in products %}
                         <!-- start category item -->
                         <li class="grid-item wow animate__fadeIn">
                             <div class="shop-product">
                                 <div class="shop-product-image">
-                                    <a href="shop-wide.html"><img src="https://lithohtml.themezaa.com/images/shop-categories-img03.jpg" alt=""/></a>
+                                    <a href="{% url 'store:product' product.name %}"><img src="{{ product.default_image.url }}" alt=""/></a>
                                 </div>
                                 <div class="shop-product-content d-flex align-items-center bg-white padding-30px-lr padding-5px-tb">
-                                    <a href="shop-wide.html" class="alt-font font-weight-500 line-height-18px text-extra-dark-gray d-inline-block align-middle text-uppercase mr-auto">Woman bags</a>
-                                    <a href="shop-wide.html"><i class="line-icon-Arrow-OutRight icon-large text-extra-dark-gray align-middle margin-15px-left"></i></a>
+                                    <a href="{% url 'store:product' product.name %}" class="alt-font font-weight-500 line-height-18px text-extra-dark-gray d-inline-block align-middle text-uppercase mr-auto">{{ product.name }}</a>
+                                    <a href="{% url 'store:product' product.name %}"><i class="line-icon-Arrow-OutRight icon-large text-extra-dark-gray align-middle margin-15px-left"></i></a>
                                 </div>
                             </div>
                         </li>
                         <!-- end category item -->
-                        <!-- start category item -->
-                        <li class="grid-item wow animate__fadeIn" data-wow-delay="0.2s">
-                            <div class="shop-product">
-                                <div class="shop-product-image">
-                                    <a href="shop-wide.html"><img src="https://lithohtml.themezaa.com/images/shop-categories-img05.jpg" alt=""/></a>
-                                </div>
-                                <div class="shop-product-content d-flex align-items-center bg-white padding-30px-lr padding-5px-tb">
-                                    <a href="shop-wide.html" class="alt-font font-weight-500 line-height-18px text-extra-dark-gray d-inline-block align-middle text-uppercase mr-auto">Woman neckline</a>
-                                    <a href="shop-wide.html"><i class="line-icon-Arrow-OutRight icon-large text-extra-dark-gray align-middle margin-15px-left"></i></a>
-                                </div>
-                            </div>
-                        </li>
-                        <!-- end category item -->
-                        <!-- start category item -->
-                        <li class="grid-item wow animate__fadeIn" data-wow-delay="0.4s">
-                            <div class="shop-product">
-                                <div class="shop-product-image">
-                                    <a href="shop-wide.html"><img src="https://lithohtml.themezaa.com/images/shop-categories-img04.jpg" alt=""/></a>
-                                </div>
-                                <div class="shop-product-content d-flex align-items-center bg-white padding-30px-lr padding-5px-tb">
-                                    <a href="shop-wide.html" class="alt-font font-weight-500 line-height-18px text-extra-dark-gray d-inline-block align-middle text-uppercase mr-auto">Woman earrings</a>
-                                    <a href="shop-wide.html"><i class="line-icon-Arrow-OutRight icon-large text-extra-dark-gray align-middle margin-15px-left"></i></a>
-                                </div>
-                            </div>
-                        </li>
-                        <!-- end category item -->
-                        <!-- start category item -->
-                        <li class="grid-item wow animate__fadeIn" data-wow-delay="0.6s">
-                            <div class="shop-product">
-                                <div class="shop-product-image">
-                                    <a href="shop-wide.html"><img src="https://lithohtml.themezaa.com/images/shop-categories-img06.jpg" alt=""/></a>
-                                </div>
-                                <div class="shop-product-content d-flex align-items-center bg-white padding-30px-lr padding-5px-tb">
-                                    <a href="shop-wide.html" class="alt-font font-weight-500 line-height-18px text-extra-dark-gray d-inline-block align-middle text-uppercase mr-auto">Man sandals</a>
-                                    <a href="shop-wide.html"><i class="line-icon-Arrow-OutRight icon-large text-extra-dark-gray align-middle margin-15px-left"></i></a>
-                                </div>
-                            </div>
-                        </li>
-                        <!-- end category item -->
+                        {% endfor %}
                     </ul>
                 </div>
             </div>

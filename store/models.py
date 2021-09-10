@@ -101,10 +101,6 @@ class Product(models.Model):
         if len(self.product_code) == 0:
             self.product_code = get_uuid_code(prefix='prod')
         super(Product, self).save(**kwargs)
-        if self.tags:
-            for tag in self.tags.all():
-                tag_item = TaggedItems(product=self.id, tag=tag)
-                tag_item.save()
 
     def __str__(self):
         return self.name
@@ -226,7 +222,7 @@ class ProductPropertyRelation(models.Model):
     product = models.ForeignKey(Product, default=None, null=True, on_delete=models.SET_NULL)
     property = models.ForeignKey(ProductProperty, null=True, on_delete=models.SET_NULL)
     value = models.CharField(max_length=255)
-
+    lang = models.ForeignKey('Language', null=True, on_delete=models.SET_NULL)
 
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, default=None, null=True, on_delete=models.SET_NULL)
@@ -353,7 +349,9 @@ class PropertyTranslation(models.Model):
 
 
 class TagTranslation(models.Model):
-    property = models.ForeignKey(Tag, on_delete=models.CASCADE)
-    field = models.ForeignKey(TranslablePropertyFields, null=True, on_delete=models.SET_NULL)
+    tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
     lang = models.ForeignKey(Language, null=True, on_delete=models.SET_NULL)
-    value = models.TextField()
+    value = models.CharField(max_length=100)
+
+    class Meta:
+        unique_together = ('tag', 'lang', 'value')

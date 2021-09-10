@@ -11,7 +11,8 @@ from .forms import OrderTicketForm
 
 
 def get_lading_page(request):
-    return render(request, 'store/lading.html')
+    products = Product.objects.all()
+    return render(request, 'store/lading.html', context={'products': products})
 
 
 def get_company_page(request):
@@ -23,7 +24,9 @@ def get_contact_us_page(request):
 
 
 def get_product_page(request, product_name):
-    return render(request, 'store/product.html')
+    product = Product.objects.get(name=product_name)
+    context = {'product': product, 'lang': request.LANGUAGE_CODE}
+    return render(request, 'store/product.html', context=context)
 
 
 def get_products_page(request):
@@ -45,19 +48,7 @@ def get_products_page(request):
 @login_required
 @allowed_groups(['user'])
 def get_order_page(request):
-
-    if request.user.is_authenticated:
-        customer = request.user.customer
-        order, created = Order.objects.get_or_create(customer=customer, placed=False)
-        items = order.orderitem_set.all()
-        order_items = order.get_order_items
-    else:
-        items = []
-        order = {'get_order_items': 0, 'get_order_total': 0}
-        order_items = order['get_order_items']
-
-    context = {'items': items, 'order': order, 'order_items': order_items}
-    return render(request, 'store/order.html', context=context)
+    return render(request, 'store/order.html')
 
 
 @login_required
@@ -70,11 +61,14 @@ def update_item(request):
     customer = request.user.customer
     product = Product.objects.get(id=product_id)
     order, created = Order.objects.get_or_create(customer=customer, placed=False)
+    print(product)
     order_item, created = OrderItem.objects.get_or_create(order=order, product=product)
     is_deleted = False
 
     if action == 'add':
         order_item.quantity = (order_item.quantity + 1)
+        print(order_item)
+        print(order)
         order_item.save()
     elif action == 'down':
         order_item.quantity = (order_item.quantity - 1)
@@ -83,7 +77,7 @@ def update_item(request):
         order_item.delete()
         is_deleted = True
 
-    if order_item.quantity <= 0:
+    if order_item.quantity <= 1:
         order_item.delete()
         is_deleted = True
 
@@ -170,17 +164,7 @@ def order_detail(request, order_code):
 @login_required
 @allowed_groups(['user'])
 def get_products_by_tag(request, tag_name):
-
-    if request.user.is_authenticated:
-        customer = request.user.customer
-        order, created = Order.objects.get_or_create(customer=customer, placed=False)
-        order_items = order.get_order_items
-    else:
-        order = {'get_order_items': 0, 'get_order_total': 0}
-        order_items = order['get_order_items']
-
-    tags = Tag.objects.all()
     products = Product.objects.filter(tags__name=tag_name)
-    context = {'products': products, 'order_items': order_items, 'tags': tags, 'lang': request.LANGUAGE_CODE}
+    context = {'products': products}
     return render(request, 'store/products.html', context=context)
 

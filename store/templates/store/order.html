@@ -2,29 +2,101 @@
 {% load static %}
 {% block title %}{{ block.super}}order page {% endblock title %}
 {% block content %}
-<h1>Order page <span class="total_quantity">{{ order_items }}</span></h1>
-    {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-    <a href="{% url 'store:store_page' %}">Back to store</a><br>
-    {% for item in items %}
-        <div id="order_item_{{ item.product_id }}">
-            <b>name:</b> {{ item.product.name }}&nbsp
-            <b>quantity:</b><span id="quantity_{{ item.product_id }}">{{ item.quantity }}</span>&nbsp
-            <b>unit price:</b> {{ item.product.price_per_unit }}&nbsp&nbsp&nbsp
-            <b>total price:</b> <span id="product_{{ item.product_id }}_total_price">{{ item.get_total }}</span>&nbsp
-            <button data-product="{{ item.product.id }}" data-action="add" class="update-cart">up</button>
-            <button data-product="{{ item.product.id }}" data-action="down" class="update-cart">down</button>
-            <button data-product="{{ item.product.id }}" data-action="remove" class="update-cart">remove</button><br>
+<!-- start page title -->
+    <section class="wow animate__fadeIn bg-light-gray padding-25px-tb page-title-small">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 col-xl-8 col-lg-6">
+                    <h1 class="alt-font text-extra-dark-gray font-weight-500 no-margin-bottom text-center text-lg-left">Shopping cart</h1>
+                </div>
+                <div class="col-12 col-xl-4 col-lg-6 breadcrumb justify-content-center justify-content-lg-end text-small alt-font md-margin-10px-top">
+                    <ul class="xs-text-center">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop-wide.html">Shop</a></li>
+                        <li>Shopping cart</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    {% endfor %}
-    <br><br>Total quantity: <span class="total_quantity">{{ order.get_order_items }}</span>
-    <br><br>Total price: <span id="total_price">{{ order.get_order_total }}</span>
-    <br><br><a href="{% url 'store:place_order' order.order_code %}"><button>Place order</button></a>
+    </section>
+    <!-- end page title -->
+    <!-- start section -->
+    <section class="wow animate__fadeIn">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 padding-70px-right lg-padding-30px-right md-padding-15px-right">
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <table class="table cart-products margin-60px-bottom md-margin-40px-bottom sm-no-margin-bottom">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="alt-font"></th>
+                                        <th scope="col" class="alt-font"></th>
+                                        <th scope="col" class="alt-font">Product</th>
+                                        <th scope="col" class="alt-font">Price</th>
+                                        <th scope="col" class="alt-font">Quantity</th>
+                                        <th scope="col" class="alt-font">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in items %}
+                                        <tr id="order_item_{{ item.product_id }}">
+                                            <td class="product-remove">
+                                                <a href="#" class="btn-default text-large update-cart" data-product="{{ item.product.id }}" data-action="remove">&times;</a>
+                                            </td>
+                                            <td class="product-thumbnail"><a href="{% url 'store:product' item.product.name %}"><img class="cart-product-image" src="{{ item.product.default_image.url }}" alt=""></a></td>
+                                            <td class="product-name">
+                                                <a href="single-product.html">{{ item.product.name }}</a>
+                                            </td>
+                                            <td class="product-price" data-title="Price">{{ item.product.price_per_unit }}</td>
+                                            <td class="product-quantity" data-title="Quantity">
+                                                <div class="quantity">
+                                                    <label class="screen-reader-text">Quantity</label>
+                                                    <input type="button" value="-" class="qty-minus qty-btn update-cart" data-quantity="minus" data-field="quantity" data-product="{{ item.product.id }}" data-action="down">
+                                                    <input class="input-text qty-text" type="number" name="quantity" id="quantity_{{ item.product_id }}" value="{{ item.quantity }}">
+                                                    <input type="button" value="+" class="qty-plus qty-btn update-cart" data-quantity="plus" data-field="quantity" data-product="{{ item.product.id }}" data-action="add">
+                                                </div>
+                                            </td>
+                                            <td class="product-subtotal" data-title="Total" id="product_{{ item.product_id }}_total_price">{{ item.get_total }}</td>
+                                        </tr>
+                                    {% empty %}
+                                        <tr><td>No Products</td><td></td><td></td><td></td><td></td><td></td></tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-6 md-margin-50px-bottom sm-margin-20px-bottom">
+                            <div class="coupon-code-panel">
+                                <input type="text" placeholder="Coupon code">
+                                <a href="#" class="btn apply-coupon-btn text-uppercase">Apply</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center text-md-right md-margin-50px-bottom btn-dual">
+                            <a href="#" class="btn btn-fancy btn-small btn-transparent-light-gray">Empty cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="bg-light-gray padding-50px-all lg-padding-30px-tb lg-padding-20px-lr md-padding-20px-tb">
+                        <span class="alt-font text-large text-extra-dark-gray margin-15px-bottom d-inline-block font-weight-500">Cart totals</span>
+                        <table class="w-100 total-price-table">
+                            <tbody>
+                                <tr class="total-amount">
+                                    <th class="font-weight-500 text-extra-dark-gray">Total</th>
+                                    <td data-title="Total">
+                                        <h6 class="d-block font-weight-500 mb-0 text-extra-dark-gray total_price">
+                                            {{ order.get_order_total }}</h6>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div><a href="checkout.html" class="btn btn-dark-gray btn-large d-block btn-fancy margin-15px-top">Place order</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
 {% endblock content %}
 
 {% block js %}

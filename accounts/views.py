@@ -36,12 +36,15 @@ def login_page(request):
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
-            login(request, user)
-            return redirect('store:products')
+            if user.groups.filter(name='user').exists():
+                login(request, user)
+                return redirect('store:products')
+            else:
+                messages.info(request, 'You don have access to this content')
         else:
             messages.info(request, 'Username or password is incorrect')
 
-    return render(request, 'accounts/login.html', context)
+    return render(request, 'store/lading.html', context)
 
 
 @login_required
