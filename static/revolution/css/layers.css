@@ -837,7 +837,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,0.14902);
 	border-color:#222;
-	border-radius:50px 50px 50px 50px;
+	border-radius:50px;
 	border-style:none;
 	border-width:0;
 	cursor:pointer;
@@ -859,7 +859,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:#000;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	font-family:"Permanent Marker";
@@ -873,7 +873,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -890,7 +890,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -908,7 +908,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -926,7 +926,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -944,7 +944,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:#fff;
@@ -962,7 +962,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,1.00);
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -981,7 +981,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(230,207,163,1.00);
@@ -999,7 +999,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(255,255,255,1.00);
 	border-color:transparent;
-	border-radius:30px 30px 30px 30px;
+	border-radius:30px;
 	border-style:none;
 	border-width:0;
 	box-shadow:rgba(0,0,0,0.1) 0 1px 3px;
@@ -1018,7 +1018,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(0,0,0,1.00);
@@ -1037,7 +1037,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(0,0,0,1.00);
@@ -1055,7 +1055,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1072,7 +1072,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1090,7 +1090,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1108,7 +1108,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1126,7 +1126,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(0,0,0,1.00);
@@ -1144,7 +1144,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(0,0,0,1.00);
@@ -1162,7 +1162,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1180,7 +1180,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1197,7 +1197,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(0,0,0,1.00);
@@ -1215,7 +1215,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1232,7 +1232,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1249,7 +1249,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(255,255,255,0);
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1266,7 +1266,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(255,255,255,0);
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:solid;
 	border-width:0;
 	color:rgba(255,255,255,0.65);
@@ -1277,7 +1277,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1295,7 +1295,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(119,119,119,1.00);
@@ -1313,7 +1313,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:rgba(255,255,255,0);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1329,7 +1329,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1340,7 +1340,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,0.65);
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1358,7 +1358,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,255,222,0.65);
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1369,7 +1369,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1387,7 +1387,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,0.35);
@@ -1405,7 +1405,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:rgba(255,255,255,0);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1422,7 +1422,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1433,7 +1433,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(51,51,51,1.00);
@@ -1450,7 +1450,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(153,153,153,1.00);
@@ -1467,7 +1467,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(153,153,153,1.00);
@@ -1484,7 +1484,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(51,51,51,1.00);
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1503,7 +1503,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(255,255,255,1.00);
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(153,153,153,1.00);
@@ -1514,7 +1514,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1532,7 +1532,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,0.35);
@@ -1550,7 +1550,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,0.65);
@@ -1568,7 +1568,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,0.50);
 	border-color:rgba(211,211,211,1.00);
-	border-radius:50px 50px 50px 50px;
+	border-radius:50px;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1587,7 +1587,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,1.00);
 	border-color:rgba(211,211,211,1.00);
-	border-radius:50px 50px 50px 50px;
+	border-radius:50px;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1598,7 +1598,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1615,7 +1615,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1634,7 +1634,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,0);
 	border-color:rgba(255,255,255,0.50);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:solid;
 	border-width:1px;
 	color:rgba(255,255,255,1.00);
@@ -1653,7 +1653,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:rgba(255,255,255,1.00);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:solid;
 	border-width:1px;
 	color:rgba(255,255,255,1.00);
@@ -1664,7 +1664,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,0);
 	border-color:rgba(255,255,255,0);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:solid;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1683,7 +1683,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,0);
 	border-color:rgba(255,255,255,0.15);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:solid;
 	border-width:1px;
 	color:rgba(255,255,255,1.00);
@@ -1702,7 +1702,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,0);
 	border-color:rgba(255,255,255,1.00);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:solid;
 	border-width:1px;
 	color:rgba(255,255,255,1.00);
@@ -1713,7 +1713,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1731,7 +1731,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,1.00);
 	border-color:rgba(255,255,255,0);
-	border-radius:3px 3px 3px 3px;
+	border-radius:3px;
 	border-style:solid;
 	border-width:2px;
 	color:rgba(255,255,255,1.00);
@@ -1750,7 +1750,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,1.00);
 	border-color:rgba(255,255,255,0.25);
-	border-radius:3px 3px 3px 3px;
+	border-radius:3px;
 	border-style:solid;
 	border-width:2px;
 	color:rgba(255,255,255,1.00);
@@ -1761,7 +1761,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(255,255,255,0);
 	border-color:rgba(255,255,255,0.25);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:solid;
 	border-width:1px;
 	color:rgba(255,255,255,1.00);
@@ -1780,7 +1780,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(255,255,255,1.00);
 	border-color:rgba(255,255,255,1.00);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:solid;
 	border-width:1px;
 	color:rgba(0,0,0,1.00);
@@ -1791,7 +1791,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(168,216,238,1.00);
@@ -1809,7 +1809,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1827,7 +1827,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1845,7 +1845,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,0);
 	border-color:rgba(255,255,255,0.50);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:solid;
 	border-width:1px;
 	color:rgba(255,255,255,1.00);
@@ -1864,7 +1864,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(255,255,255,1.00);
 	border-color:rgba(255,255,255,1.00);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:solid;
 	border-width:1px;
 	color:rgba(0,0,0,1.00);
@@ -1875,7 +1875,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,1.00);
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1893,7 +1893,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,0.35);
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -1912,7 +1912,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,0);
 	border-color:rgba(255,255,255,0.50);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:solid;
 	border-width:1px;
 	color:rgba(255,255,255,1.00);
@@ -1931,7 +1931,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:rgba(255,255,255,1.00);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:solid;
 	border-width:1px;
 	color:rgba(255,255,255,1.00);
@@ -1942,7 +1942,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,0);
 	border-color:rgba(255,255,255,0.15);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:solid;
 	border-width:1px;
 	color:rgba(255,255,255,1.00);
@@ -1961,7 +1961,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,0);
 	border-color:rgba(255,255,255,1.00);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:solid;
 	border-width:1px;
 	color:rgba(255,255,255,1.00);
@@ -1972,7 +1972,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(51,51,51,1.00);
 	border-color:rgba(0,0,0,1.00);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:2px;
 	color:rgba(255,255,255,1.00);
@@ -1991,7 +1991,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(255,255,255,1.00);
 	border-color:rgba(0,0,0,1.00);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:2px;
 	color:rgba(51,51,51,1.00);
@@ -2002,7 +2002,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(10,10,10,0);
 	border-color:rgba(255,255,255,0.50);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:solid;
 	border-width:2px;
 	color:rgba(255,255,255,1.00);
@@ -2021,7 +2021,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,0);
 	border-color:rgba(255,224,129,1.00);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:solid;
 	border-width:2px;
 	color:rgba(255,255,255,1.00);
@@ -2032,7 +2032,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(139,192,39,1.00);
 	border-color:rgba(0,0,0,0);
-	border-radius:30px 30px 30px 30px;
+	border-radius:30px;
 	border-style:solid;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -2051,7 +2051,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(114,168,0,1.00);
 	border-color:rgba(0,0,0,0);
-	border-radius:30px 30px 30px 30px;
+	border-radius:30px;
 	border-style:solid;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -2062,7 +2062,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:rgba(255,255,255,0.25);
-	border-radius:30px 30px 30px 30px;
+	border-radius:30px;
 	border-style:solid;
 	border-width:2px;
 	color:rgba(255,255,255,1.00);
@@ -2080,7 +2080,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(114,168,0,0);
 	border-color:rgba(139,192,39,1.00);
-	border-radius:30px 30px 30px 30px;
+	border-radius:30px;
 	border-style:solid;
 	border-width:2px;
 	color:rgba(255,255,255,1.00);
@@ -2091,7 +2091,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,0);
 	border-color:rgba(255,255,255,0.50);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:solid;
 	border-width:2px;
 	color:rgba(255,255,255,1.00);
@@ -2110,7 +2110,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,0);
 	border-color:rgba(255,255,255,1.00);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:solid;
 	border-width:2px;
 	color:rgba(255,255,255,1.00);
@@ -2121,7 +2121,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(219,28,34,1.00);
 	border-color:rgba(219,28,34,0);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:solid;
 	border-width:2px;
 	color:rgba(255,255,255,1.00);
@@ -2140,7 +2140,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,1.00);
 	border-color:rgba(0,0,0,1.00);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:solid;
 	border-width:2px;
 	color:rgba(255,255,255,1.00);
@@ -2151,7 +2151,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,0);
 	border-color:rgba(255,255,255,0.25);
-	border-radius:30px 30px 30px 30px;
+	border-radius:30px;
 	border-style:solid;
 	border-width:1px;
 	color:rgba(255,255,255,1.00);
@@ -2170,7 +2170,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,0);
 	border-color:rgba(255,255,255,1.00);
-	border-radius:30px 30px 30px 30px;
+	border-radius:30px;
 	border-style:solid;
 	border-width:1px;
 	color:rgba(255,255,255,1.00);
@@ -2181,7 +2181,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,0);
 	border-color:rgba(255,255,255,0.50);
-	border-radius:3px 3px 3px 3px;
+	border-radius:3px;
 	border-style:solid;
 	border-width:2px;
 	color:rgba(255,255,255,1.00);
@@ -2199,7 +2199,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,0,0,0);
 	border-color:rgba(255,255,255,1.00);
-	border-radius:3px 3px 3px 3px;
+	border-radius:3px;
 	border-style:solid;
 	border-width:2px;
 	color:rgba(255,255,255,1.00);
@@ -2210,7 +2210,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(139,192,39,1.00);
 	border-color:rgba(0,0,0,0);
-	border-radius:30px 30px 30px 30px;
+	border-radius:30px;
 	border-style:solid;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -2228,7 +2228,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(114,168,0,1.00);
 	border-color:rgba(0,0,0,0);
-	border-radius:30px 30px 30px 30px;
+	border-radius:30px;
 	border-style:solid;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -2239,7 +2239,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:rgba(33,42,64,0.15);
-	border-radius:30px 30px 30px 30px;
+	border-radius:30px;
 	border-style:solid;
 	border-width:2px;
 	color:rgba(33,42,64,0.50);
@@ -2257,7 +2257,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:rgba(139,192,39,1.00);
-	border-radius:30px 30px 30px 30px;
+	border-radius:30px;
 	border-style:solid;
 	border-width:2px;
 	color:rgba(139,192,39,1.00);
@@ -2268,7 +2268,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:rgba(0,0,0,1.00);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(111,124,130,1.00);
@@ -2287,7 +2287,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:rgba(0,0,0,1.00);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(41,46,49,1.00);
@@ -2306,7 +2306,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(213,0,0,1.00);
@@ -2317,7 +2317,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:rgba(0,0,0,1.00);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(41,46,49,1.00);
@@ -2336,7 +2336,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:rgba(0,0,0,1.00);
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(185,186,187,1.00);
@@ -2355,7 +2355,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,154,238,1.00);
 	border-color:rgba(0,0,0,0);
-	border-radius:30px 30px 30px 30px;
+	border-radius:30px;
 	border-style:solid;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -2373,7 +2373,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,133,214,1.00);
 	border-color:rgba(0,0,0,0);
-	border-radius:30px 30px 30px 30px;
+	border-radius:30px;
 	border-style:solid;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -2384,7 +2384,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:rgba(255,255,255,0.15);
-	border-radius:30px 30px 30px 30px;
+	border-radius:30px;
 	border-style:solid;
 	border-width:2px;
 	color:rgba(255,255,255,1.00);
@@ -2402,7 +2402,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:transparent;
 	border-color:rgba(255,255,255,1.00);
-	border-radius:30px 30px 30px 30px;
+	border-radius:30px;
 	border-style:solid;
 	border-width:2px;
 	color:rgba(255,255,255,1.00);
@@ -2413,7 +2413,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(59,89,153,1.00);
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -2431,7 +2431,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(255,255,255,0);
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(136,153,166,1.00);
@@ -2449,7 +2449,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(255,255,255,1.00);
 	border-color:transparent;
-	border-radius:30px 30px 30px 30px;
+	border-radius:30px;
 	border-style:none;
 	border-width:0;
 	color:rgba(135,153,165,1.00);
@@ -2467,7 +2467,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(0,132,180,1.00);
 	border-color:transparent;
-	border-radius:30px 30px 30px 30px;
+	border-radius:30px;
 	border-style:none;
 	border-width:0;
 	color:rgba(255,255,255,1.00);
@@ -2478,7 +2478,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(255,255,255,0);
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(136,153,166,1.00);
@@ -2496,7 +2496,7 @@ website:   	http://www.themepunch.com
 {
 	background-color:rgba(255,255,255,1.00);
 	border-color:transparent;
-	border-radius:0 0 0 0;
+	border-radius:0;
 	border-style:none;
 	border-width:0;
 	color:rgba(41,47,51,1.00);
@@ -2523,7 +2523,7 @@ website:   	http://www.themepunch.com
     cursor: text;
     border: 0;
     width: 400px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     -webkit-transition: background-color 0.5s;
     -moz-transition: background-color 0.5s;
     -o-transition: background-color 0.5s;
@@ -2531,7 +2531,7 @@ website:   	http://www.themepunch.com
     transition: background-color 0.5s;
     
     
-    border-radius: 0px;
+    border-radius: 0;
 }
 
 
@@ -2543,13 +2543,13 @@ website:   	http://www.themepunch.com
     font-weight: 800;
     font-style: normal;
     font-family: Raleway;
-    padding: 10px 0px 10px 0;
+    padding: 10px 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.BigBold-SubTitle,
@@ -2560,13 +2560,13 @@ website:   	http://www.themepunch.com
     font-weight: 500;
     font-style: normal;
     font-family: Raleway;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left;
     letter-spacing: 1px
 }
@@ -2578,13 +2578,13 @@ website:   	http://www.themepunch.com
     font-weight: 500;
     font-style: normal;
     font-family: Raleway;
-    padding: 15px 50px 15px 50px;
+    padding: 15px 50px;
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0);
     border-color: rgba(255, 255, 255, 0.50);
     border-style: solid;
     border-width: 1px;
-    border-radius: 0px 0px 0px 0px;
+    border-radius: 0;
     text-align: left;
     letter-spacing: 1px
 }
@@ -2596,7 +2596,7 @@ website:   	http://www.themepunch.com
     border-color: rgba(255, 255, 255, 1.00);
     border-style: solid;
     border-width: 1px;
-    border-radius: 0px 0px 0px 0px
+    border-radius: 0
 }
 .tp-caption.FoodCarousel-Content,
 .FoodCarousel-Content {
@@ -2606,13 +2606,13 @@ website:   	http://www.themepunch.com
     font-weight: 500;
     font-style: normal;
     font-family: Raleway;
-    padding: 30px 30px 30px 30px;
+    padding: 30px;
     text-decoration: none;
     background-color: rgba(255, 255, 255, 1.00);
     border-color: rgba(41, 46, 49, 1.00);
     border-style: solid;
     border-width: 1px;
-    border-radius: 0 0 0 0px;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.FoodCarousel-Button,
@@ -2629,7 +2629,7 @@ website:   	http://www.themepunch.com
     border-color: rgba(41, 46, 49, 1.00);
     border-style: solid;
     border-width: 1px;
-    border-radius: 0px 0px 0px 0px;
+    border-radius: 0;
     text-align: left;
     letter-spacing: 1px
 }
@@ -2641,7 +2641,7 @@ website:   	http://www.themepunch.com
     border-color: rgba(41, 46, 49, 1.00);
     border-style: solid;
     border-width: 1px;
-    border-radius: 0px 0px 0px 0px
+    border-radius: 0
 }
 .tp-caption.FoodCarousel-CloseButton,
 .FoodCarousel-CloseButton {
@@ -2657,7 +2657,7 @@ website:   	http://www.themepunch.com
     border-color: rgba(41, 46, 49, 0);
     border-style: solid;
     border-width: 1px;
-    border-radius: 30px 30px 30px 30px;
+    border-radius: 30px;
     text-align: left;
     letter-spacing: 1px
 }
@@ -2669,7 +2669,7 @@ website:   	http://www.themepunch.com
     border-color: rgba(41, 46, 49, 0);
     border-style: solid;
     border-width: 1px;
-    border-radius: 30px 30px 30px 30px
+    border-radius: 30px
 }
 .tp-caption.Video-SubTitle,
 .Video-SubTitle {
@@ -2679,13 +2679,13 @@ website:   	http://www.themepunch.com
     font-weight: 600;
     font-style: normal;
     font-family: Raleway;
-    padding: 5px 5px 5px 5px;
+    padding: 5px;
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.35);
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     letter-spacing: 2px;
     text-align: left
 }
@@ -2697,13 +2697,13 @@ website:   	http://www.themepunch.com
     font-weight: 900;
     font-style: normal;
     font-family: Raleway;
-    padding: 5px 5px 5px 5px;
+    padding: 5px;
     text-decoration: none;
     background-color: rgba(0, 0, 0, 1.00);
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.Travel-BigCaption,
@@ -2714,13 +2714,13 @@ website:   	http://www.themepunch.com
     font-weight: 400;
     font-style: normal;
     font-family: Roboto;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.Travel-SmallCaption,
@@ -2731,13 +2731,13 @@ website:   	http://www.themepunch.com
     font-weight: 300;
     font-style: normal;
     font-family: Roboto;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.Travel-CallToAction,
@@ -2748,13 +2748,13 @@ website:   	http://www.themepunch.com
     font-weight: 500;
     font-style: normal;
     font-family: Roboto;
-    padding: 12px 20px 12px 20px;
+    padding: 12px 20px;
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 1.00);
     border-style: solid;
     border-width: 2px;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 5px;
     text-align: left;
     letter-spacing: 1px
 }
@@ -2766,7 +2766,7 @@ website:   	http://www.themepunch.com
     border-color: rgba(255, 255, 255, 1.00);
     border-style: solid;
     border-width: 2px;
-    border-radius: 5px 5px 5px 5px
+    border-radius: 5px
 }
 
 
@@ -2778,13 +2778,13 @@ website:   	http://www.themepunch.com
     font-weight: 800;
     font-style: normal;
     font-family: Raleway;
-    padding: 0px 0px 0px 0;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.RotatingWords-Button,
@@ -2795,13 +2795,13 @@ website:   	http://www.themepunch.com
     font-weight: 700;
     font-style: normal;
     font-family: Raleway;
-    padding: 20px 50px 20px 50px;
+    padding: 20px 50px;
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0);
     border-color: rgba(255, 255, 255, 0.15);
     border-style: solid;
     border-width: 2px;
-    border-radius: 0px 0px 0px 0px;
+    border-radius: 0;
     text-align: left;
     letter-spacing: 3px
 }
@@ -2813,7 +2813,7 @@ website:   	http://www.themepunch.com
     border-color: rgba(255, 255, 255, 1.00);
     border-style: solid;
     border-width: 2px;
-    border-radius: 0px 0px 0px 0px
+    border-radius: 0
 }
 .tp-caption.RotatingWords-SmallText,
 .RotatingWords-SmallText {
@@ -2823,13 +2823,13 @@ website:   	http://www.themepunch.com
     font-weight: 400;
     font-style: normal;
     font-family: Raleway;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left;
     text-shadow: none
 }
@@ -2845,13 +2845,13 @@ website:   	http://www.themepunch.com
     font-weight: 600;
     font-style: normal;
     font-family: Raleway;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.ContentZoom-SmallSubtitle,
@@ -2862,13 +2862,13 @@ website:   	http://www.themepunch.com
     font-weight: 600;
     font-style: normal;
     font-family: Raleway;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.ContentZoom-SmallIcon,
@@ -2879,13 +2879,13 @@ website:   	http://www.themepunch.com
     font-weight: 400;
     font-style: normal;
     font-family: Raleway;
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.ContentZoom-SmallIcon:hover,
@@ -2895,8 +2895,8 @@ website:   	http://www.themepunch.com
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px
+    border-width: 0;
+    border-radius: 0
 }
 .tp-caption.ContentZoom-DetailTitle,
 .ContentZoom-DetailTitle {
@@ -2906,13 +2906,13 @@ website:   	http://www.themepunch.com
     font-weight: 500;
     font-style: normal;
     font-family: Raleway;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.ContentZoom-DetailSubTitle,
@@ -2923,13 +2923,13 @@ website:   	http://www.themepunch.com
     font-weight: 500;
     font-style: normal;
     font-family: Raleway;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.ContentZoom-DetailContent,
@@ -2940,13 +2940,13 @@ website:   	http://www.themepunch.com
     font-weight: 500;
     font-style: normal;
     font-family: Raleway;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.ContentZoom-Button,
@@ -2957,13 +2957,13 @@ website:   	http://www.themepunch.com
     font-weight: 700;
     font-style: normal;
     font-family: Raleway;
-    padding: 15px 50px 15px 50px;
+    padding: 15px 50px;
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0);
     border-color: rgba(41, 46, 49, 0.50);
     border-style: solid;
     border-width: 1px;
-    border-radius: 0px 0px 0px 0px;
+    border-radius: 0;
     text-align: left;
     letter-spacing: 1px
 }
@@ -2975,7 +2975,7 @@ website:   	http://www.themepunch.com
     border-color: rgba(41, 46, 49, 1.00);
     border-style: solid;
     border-width: 1px;
-    border-radius: 0px 0px 0px 0px
+    border-radius: 0
 }
 .tp-caption.ContentZoom-ButtonClose,
 .ContentZoom-ButtonClose {
@@ -2991,7 +2991,7 @@ website:   	http://www.themepunch.com
     border-color: rgba(41, 46, 49, 0.50);
     border-style: solid;
     border-width: 1px;
-    border-radius: 30px 30px 30px 30px;
+    border-radius: 30px;
     text-align: left;
     letter-spacing: 1px
 }
@@ -3003,7 +3003,7 @@ website:   	http://www.themepunch.com
     border-color: rgba(41, 46, 49, 1.00);
     border-style: solid;
     border-width: 1px;
-    border-radius: 30px 30px 30px 30px
+    border-radius: 30px
 }
 .tp-caption.Newspaper-Title,
 .Newspaper-Title {
@@ -3013,13 +3013,13 @@ website:   	http://www.themepunch.com
     font-weight: 400;
     font-style: normal;
     font-family: "Roboto Slab";
-    padding: 0 0 10px 0;
+    padding: 0 0 10px;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.Newspaper-Subtitle,
@@ -3030,13 +3030,13 @@ website:   	http://www.themepunch.com
     font-weight: 900;
     font-style: normal;
     font-family: Roboto;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.Newspaper-Button,
@@ -3047,13 +3047,13 @@ website:   	http://www.themepunch.com
     font-weight: 700;
     font-style: normal;
     font-family: Roboto;
-    padding: 12px 35px 12px 35px;
+    padding: 12px 35px;
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0);
     border-color: rgba(255, 255, 255, 0.25);
     border-style: solid;
     border-width: 1px;
-    border-radius: 0px 0px 0px 0px;
+    border-radius: 0;
     letter-spacing: 2px;
     text-align: left
 }
@@ -3065,7 +3065,7 @@ website:   	http://www.themepunch.com
     border-color: rgba(255, 255, 255, 1.00);
     border-style: solid;
     border-width: 1px;
-    border-radius: 0px 0px 0px 0px
+    border-radius: 0
 }
 .tp-caption.rtwhitemedium,
 .rtwhitemedium {
@@ -3074,7 +3074,7 @@ website:   	http://www.themepunch.com
     color: rgb(255, 255, 255);
     text-decoration: none;
     background-color: transparent;
-    border-width: 0px;
+    border-width: 0;
     border-color: rgb(0, 0, 0);
     border-style: none;
     text-shadow: none
@@ -3101,7 +3101,7 @@ website:   	http://www.themepunch.com
     color: #fff;
     
     
-    border-radius: 0px;
+    border-radius: 0;
 }
 
 .tp-caption.Twitter-Content a,
@@ -3120,14 +3120,14 @@ website:   	http://www.themepunch.com
         font-weight: 700;
         font-style: normal;
         font-family: "Roboto Condensed";
-        padding: 0px 0px 10px 0px;
+        padding: 0 0 10px;
         text-decoration: none;
         text-align: left;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0px 0px 0px 0px;
+        border-width: 0;
+        border-radius: 0;
         letter-spacing: 5px
     }
     .tp-caption.Concept-SubTitle,
@@ -3138,14 +3138,14 @@ website:   	http://www.themepunch.com
         font-weight: 700;
         font-style: italic;
         font-family: ""Playfair Display"";
-        padding: 0px 0px 10px 0px;
+        padding: 0 0 10px;
         text-decoration: none;
         text-align: left;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0px 0px 0px 0px
+        border-width: 0;
+        border-radius: 0
     }
     .tp-caption.Concept-Content,
     .Concept-Content {
@@ -3155,14 +3155,14 @@ website:   	http://www.themepunch.com
         font-weight: 400;
         font-style: normal;
         font-family: "Roboto Condensed";
-        padding: 0px 0px 0px 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: rgba(0, 0, 0, 0);
         border-color: rgba(255, 255, 255, 1.00);
         border-style: none;
         border-width: 2px;
-        border-radius: 0px 0px 0px 0px
+        border-radius: 0
     }
     .tp-caption.Concept-MoreBtn,
     .Concept-MoreBtn {
@@ -3178,8 +3178,8 @@ website:   	http://www.themepunch.com
         background-color: transparent;
         border-color: rgba(255, 255, 255, 0);
         border-style: solid;
-        border-width: 0px;
-        border-radius: 50px 50px 50px 50px;
+        border-width: 0;
+        border-radius: 50px;
         letter-spacing: 1px;
         text-align: left
     }
@@ -3190,8 +3190,8 @@ website:   	http://www.themepunch.com
         background-color: rgba(255, 255, 255, 0.15);
         border-color: rgba(255, 255, 255, 0);
         border-style: solid;
-        border-width: 0px;
-        border-radius: 50px 50px 50px 50px
+        border-width: 0;
+        border-radius: 50px
     }
     .tp-caption.Concept-LessBtn,
     .Concept-LessBtn {
@@ -3207,8 +3207,8 @@ website:   	http://www.themepunch.com
         background-color: rgba(0, 0, 0, 1.00);
         border-color: rgba(255, 255, 255, 0);
         border-style: solid;
-        border-width: 0px;
-        border-radius: 50px 50px 50px 50px;
+        border-width: 0;
+        border-radius: 50px;
         letter-spacing: 1px;
         text-align: left
     }
@@ -3219,8 +3219,8 @@ website:   	http://www.themepunch.com
         background-color: rgba(255, 255, 255, 1.00);
         border-color: rgba(255, 255, 255, 0);
         border-style: solid;
-        border-width: 0px;
-        border-radius: 50px 50px 50px 50px
+        border-width: 0;
+        border-radius: 50px
     }
     .tp-caption.Concept-SubTitle-Dark,
     .Concept-SubTitle-Dark {
@@ -3230,14 +3230,14 @@ website:   	http://www.themepunch.com
         font-weight: 700;
         font-style: italic;
         font-family: "Playfair Display";
-        padding: 0px 0px 10px 0px;
+        padding: 0 0 10px;
         text-decoration: none;
         text-align: left;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0px 0px 0px 0px
+        border-width: 0;
+        border-radius: 0
     }
     .tp-caption.Concept-Title-Dark,
     .Concept-Title-Dark {
@@ -3247,14 +3247,14 @@ website:   	http://www.themepunch.com
         font-weight: 700;
         font-style: normal;
         font-family: "Roboto Condensed";
-        padding: 0px 0px 10px 0px;
+        padding: 0 0 10px;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0px 0px 0px 0px;
+        border-width: 0;
+        border-radius: 0;
         letter-spacing: 5px
     }
     .tp-caption.Concept-MoreBtn-Dark,
@@ -3271,8 +3271,8 @@ website:   	http://www.themepunch.com
         background-color: transparent;
         border-color: rgba(255, 255, 255, 0);
         border-style: solid;
-        border-width: 0px;
-        border-radius: 50px 50px 50px 50px;
+        border-width: 0;
+        border-radius: 50px;
         letter-spacing: 1px;
         text-align: left
     }
@@ -3283,8 +3283,8 @@ website:   	http://www.themepunch.com
         background-color: rgba(0, 0, 0, 1.00);
         border-color: rgba(255, 255, 255, 0);
         border-style: solid;
-        border-width: 0px;
-        border-radius: 50px 50px 50px 50px
+        border-width: 0;
+        border-radius: 50px
     }
     .tp-caption.Concept-Content-Dark,
     .Concept-Content-Dark {
@@ -3294,14 +3294,14 @@ website:   	http://www.themepunch.com
         font-weight: 400;
         font-style: normal;
         font-family: "Roboto Condensed";
-        padding: 0px 0px 0px 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: rgba(0, 0, 0, 0);
         border-color: rgba(255, 255, 255, 1.00);
         border-style: none;
         border-width: 2px;
-        border-radius: 0px 0px 0px 0px
+        border-radius: 0
     }
     .tp-caption.Concept-Notice,
     .Concept-Notice {
@@ -3311,14 +3311,14 @@ website:   	http://www.themepunch.com
         font-weight: 400;
         font-style: normal;
         font-family: "Roboto Condensed";
-        padding: 0px 0px 0px 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: rgba(0, 0, 0, 0);
         border-color: rgba(255, 255, 255, 1.00);
         border-style: none;
         border-width: 2px;
-        border-radius: 0px 0px 0px 0px;
+        border-radius: 0;
         letter-spacing: 2px
     }
     .tp-caption.Concept-Content a,
@@ -3356,14 +3356,14 @@ website:   	http://www.themepunch.com
         font-weight: 400;
         font-style: normal;
         font-family: "Playfair Display";
-        padding: 0px 0px 0px 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0px 0px 0px 0px
+        border-width: 0;
+        border-radius: 0
     }
     .tp-caption.Creative-SubTitle,
     .Creative-SubTitle {
@@ -3373,14 +3373,14 @@ website:   	http://www.themepunch.com
         font-weight: 400;
         font-style: normal;
         font-family: Lato;
-        padding: 0px 0px 0px 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0px 0px 0px 0px;
+        border-width: 0;
+        border-radius: 0;
         letter-spacing: 2px
     }
     .tp-caption.Creative-Button,
@@ -3391,14 +3391,14 @@ website:   	http://www.themepunch.com
         font-weight: 400;
         font-style: normal;
         font-family: Lato;
-        padding: 15px 50px 15px 50px;
+        padding: 15px 50px;
         text-decoration: none;
         text-align: left;
         background-color: rgba(0, 0, 0, 0);
         border-color: rgba(205, 176, 131, 0.25);
         border-style: solid;
         border-width: 1px;
-        border-radius: 0px 0px 0px 0px;
+        border-radius: 0;
         letter-spacing: 2px
     }
     .tp-caption.Creative-Button:hover,
@@ -3409,7 +3409,7 @@ website:   	http://www.themepunch.com
         border-color: rgba(205, 176, 131, 1.00);
         border-style: solid;
         border-width: 1px;
-        border-radius: 0px 0px 0px 0px
+        border-radius: 0
     }
 
 .tp-caption.subcaption,
@@ -3420,13 +3420,13 @@ website:   	http://www.themepunch.com
         font-weight: 400;
         font-style: normal;
         font-family: roboto;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         background-color: transparent;
         border-color: rgba(0, 0, 0, 1.00);
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-shadow: none;
         text-align: left
     }
@@ -3435,14 +3435,14 @@ website:   	http://www.themepunch.com
         color: rgba(0, 0, 0, 1.00);        
         font-weight: 400;
         font-style: normal;        
-        padding: 0px 0px 0px 0px;
+        padding: 0;
         text-decoration: none;
         text-align: left;
         background-color: rgba(213, 0, 0, 1.00);
         border-color: rgba(255, 255, 255, 1.00);
         border-style: solid;
         border-width: 5px;
-        border-radius: 50px 50px 50px 50px
+        border-radius: 50px
     }
     .tp-caption.RedDot:hover,
     .RedDot:hover {
@@ -3452,7 +3452,7 @@ website:   	http://www.themepunch.com
         border-color: rgba(213, 0, 0, 1.00);
         border-style: solid;
         border-width: 5px;
-        border-radius: 50px 50px 50px 50px
+        border-radius: 50px
     }
 
     .tp-caption.SlidingOverlays-Title,
@@ -3463,14 +3463,14 @@ website:   	http://www.themepunch.com
         font-weight: 400;
         font-style: normal;
         font-family: "Playfair Display";
-        padding: 0px 0px 0px 0px;
+        padding: 0;
         text-decoration: none;
         text-align: left;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0px 0px 0px 0px
+        border-width: 0;
+        border-radius: 0
     }
     .tp-caption.SlidingOverlays-Title,
     .SlidingOverlays-Title {
@@ -3480,14 +3480,14 @@ website:   	http://www.themepunch.com
         font-weight: 400;
         font-style: normal;
         font-family: "Playfair Display";
-        padding: 0px 0px 0px 0px;
+        padding: 0;
         text-decoration: none;
         text-align: left;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0px 0px 0px 0px
+        border-width: 0;
+        border-radius: 0
     }
 
      .tp-caption.Woo-TitleLarge,
@@ -3498,13 +3498,13 @@ website:   	http://www.themepunch.com
         font-weight: 400;
         font-style: normal;
         font-family: "Playfair Display";
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center;
         
     }
@@ -3516,13 +3516,13 @@ website:   	http://www.themepunch.com
         font-weight: 300;
         font-style: normal;
         font-family: Roboto;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: left;
         
     }
@@ -3534,13 +3534,13 @@ website:   	http://www.themepunch.com
         font-weight: 300;
         font-style: normal;
         font-family: Roboto;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center;
         letter-spacing: 2px;
         
@@ -3553,13 +3553,13 @@ website:   	http://www.themepunch.com
         font-weight: 700;
         font-style: normal;
         font-family: Roboto;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center;
         
     }
@@ -3577,7 +3577,7 @@ website:   	http://www.themepunch.com
         border-color: rgba(0, 0, 0, 1.00);
         border-style: solid;
         border-width: 1px;
-        border-radius: 4px 4px 4px 4px;
+        border-radius: 4px;
         text-align: left;
         
     }
@@ -3589,7 +3589,7 @@ website:   	http://www.themepunch.com
         border-color: rgba(0, 0, 0, 1.00);
         border-style: solid;
         border-width: 1px;
-        border-radius: 4px 4px 4px 4px
+        border-radius: 4px
     }
     .tp-caption.Woo-AddToCart,
     .Woo-AddToCart {
@@ -3599,13 +3599,13 @@ website:   	http://www.themepunch.com
         font-weight: 500;
         font-style: normal;
         font-family: Roboto;
-        padding: 12px 35px 12px 35px;
+        padding: 12px 35px;
         text-decoration: none;
         background-color: rgba(254, 207, 114, 1.00);
         border-color: rgba(0, 0, 0, 1.00);
         border-style: solid;
         border-width: 1px;
-        border-radius: 4px 4px 4px 4px;
+        border-radius: 4px;
         text-align: left;
         
     }
@@ -3617,7 +3617,7 @@ website:   	http://www.themepunch.com
         border-color: rgba(0, 0, 0, 1.00);
         border-style: solid;
         border-width: 1px;
-        border-radius: 4px 4px 4px 4px
+        border-radius: 4px
     }
     .tp-caption.Woo-TitleLarge,
     .Woo-TitleLarge {
@@ -3627,13 +3627,13 @@ website:   	http://www.themepunch.com
         font-weight: 400;
         font-style: normal;
         font-family: "Playfair Display";
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center;
         
     }
@@ -3645,13 +3645,13 @@ website:   	http://www.themepunch.com
         font-weight: 300;
         font-style: normal;
         font-family: Roboto;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center;
         letter-spacing: 2px;
         
@@ -3664,13 +3664,13 @@ website:   	http://www.themepunch.com
         font-weight: 700;
         font-style: normal;
         font-family: Roboto;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center;
         
     }
@@ -3688,7 +3688,7 @@ website:   	http://www.themepunch.com
         border-color: rgba(0, 0, 0, 1.00);
         border-style: solid;
         border-width: 1px;
-        border-radius: 4px 4px 4px 4px;
+        border-radius: 4px;
         text-align: left;
         
     }
@@ -3700,7 +3700,7 @@ website:   	http://www.themepunch.com
         border-color: rgba(0, 0, 0, 1.00);
         border-style: solid;
         border-width: 1px;
-        border-radius: 4px 4px 4px 4px
+        border-radius: 4px
     }
     .tp-caption.Woo-AddToCart,
     .Woo-AddToCart {
@@ -3710,13 +3710,13 @@ website:   	http://www.themepunch.com
         font-weight: 500;
         font-style: normal;
         font-family: Roboto;
-        padding: 12px 35px 12px 35px;
+        padding: 12px 35px;
         text-decoration: none;
         background-color: rgba(254, 207, 114, 1.00);
         border-color: rgba(0, 0, 0, 1.00);
         border-style: solid;
         border-width: 1px;
-        border-radius: 4px 4px 4px 4px;
+        border-radius: 4px;
         text-align: left;
         
     }
@@ -3728,7 +3728,7 @@ website:   	http://www.themepunch.com
         border-color: rgba(0, 0, 0, 1.00);
         border-style: solid;
         border-width: 1px;
-        border-radius: 4px 4px 4px 4px
+        border-radius: 4px
     }
 
     .tp-caption.FullScreen-Toggle,
@@ -3745,8 +3745,8 @@ website:   	http://www.themepunch.com
         background-color: rgba(0, 0, 0, 0.50);
         border-color: rgba(255, 255, 255, 0);
         border-style: solid;
-        border-width: 0px;
-        border-radius: 0px 0px 0px 0px;
+        border-width: 0;
+        border-radius: 0;
         letter-spacing: 3px;
         text-align: left
     }
@@ -3757,8 +3757,8 @@ website:   	http://www.themepunch.com
         background-color: rgba(0, 0, 0, 1.00);
         border-color: rgba(255, 255, 255, 0);
         border-style: solid;
-        border-width: 0px;
-        border-radius: 0px 0px 0px 0px
+        border-width: 0;
+        border-radius: 0
     }
 
     .tp-caption.Agency-Title,
@@ -3769,13 +3769,13 @@ website:   	http://www.themepunch.com
     font-weight: 900;
     font-style: normal;
     font-family: lato;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left;
     letter-spacing: 10px
 }
@@ -3787,13 +3787,13 @@ website:   	http://www.themepunch.com
     font-weight: 400;
     font-style: italic;
     font-family: Georgia, serif;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: center
 }
 .tp-caption.Agency-PlayBtn,
@@ -3804,13 +3804,13 @@ website:   	http://www.themepunch.com
     font-weight: 500;
     font-style: normal;
     font-family: Roboto;
-    padding: 0px 0px 0px 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: rgba(255, 255, 255, 1.00);
     border-style: solid;
     border-width: 2px;
-    border-radius: 100px 100px 100px 100px;
+    border-radius: 100px;
     text-align: center
 }
 .tp-caption.Agency-PlayBtn:hover,
@@ -3821,7 +3821,7 @@ website:   	http://www.themepunch.com
     border-color: rgba(255, 255, 255, 1.00);
     border-style: solid;
     border-width: 2px;
-    border-radius: 100px 100px 100px 100px;
+    border-radius: 100px;
     cursor: pointer
 }
 .tp-caption.Agency-SmallText,
@@ -3832,13 +3832,13 @@ website:   	http://www.themepunch.com
     font-weight: 900;
     font-style: normal;
     font-family: lato;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left;
     letter-spacing: 5px
 }
@@ -3850,13 +3850,13 @@ website:   	http://www.themepunch.com
     font-weight: 400;
     font-style: normal;
     font-family: Georgia, serif;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: rgba(51, 51, 51, 1.00);
     border-style: solid;
     border-width: 2px;
-    border-radius: 30px 30px 30px 30px;
+    border-radius: 30px;
     text-align: center
 }
 .tp-caption.Agency-Social:hover,
@@ -3867,7 +3867,7 @@ website:   	http://www.themepunch.com
     border-color: rgba(51, 51, 51, 1.00);
     border-style: solid;
     border-width: 2px;
-    border-radius: 30px 30px 30px 30px;
+    border-radius: 30px;
     cursor: pointer
 }
 .tp-caption.Agency-CloseBtn,
@@ -3878,13 +3878,13 @@ website:   	http://www.themepunch.com
     font-weight: 500;
     font-style: normal;
     font-family: Roboto;
-    padding: 0px 0px 0px 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: rgba(255, 255, 255, 0);
     border-style: none;
-    border-width: 0px;
-    border-radius: 100px 100px 100px 100px;
+    border-width: 0;
+    border-radius: 100px;
     text-align: center
 }
 .tp-caption.Agency-CloseBtn:hover,
@@ -3894,8 +3894,8 @@ website:   	http://www.themepunch.com
     background-color: transparent;
     border-color: rgba(255, 255, 255, 0);
     border-style: none;
-    border-width: 0px;
-    border-radius: 100px 100px 100px 100px;
+    border-width: 0;
+    border-radius: 100px;
     cursor: pointer
 }
 
@@ -3907,13 +3907,13 @@ website:   	http://www.themepunch.com
     font-weight: 400;
     font-style: normal;
     font-family: Georgia, serif;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left;
     letter-spacing: 10px
 }
@@ -3925,13 +3925,13 @@ website:   	http://www.themepunch.com
     font-weight: 400;
     font-style: normal;
     font-family: Georgia, serif;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.Dining-BtnLight,
@@ -3948,7 +3948,7 @@ website:   	http://www.themepunch.com
     border-color: rgba(255, 255, 255, 0.25);
     border-style: solid;
     border-width: 1px;
-    border-radius: 0px 0px 0px 0px;
+    border-radius: 0;
     text-align: left;
     letter-spacing: 2px
 }
@@ -3960,7 +3960,7 @@ website:   	http://www.themepunch.com
     border-color: rgba(255, 255, 255, 1.00);
     border-style: solid;
     border-width: 1px;
-    border-radius: 0px 0px 0px 0px
+    border-radius: 0
 }
 .tp-caption.Dining-Social,
 .Dining-Social {
@@ -3970,13 +3970,13 @@ website:   	http://www.themepunch.com
     font-weight: 400;
     font-style: normal;
     font-family: Georgia, serif;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: rgba(255, 255, 255, 0.25);
     border-style: solid;
     border-width: 1px;
-    border-radius: 30px 30px 30px 30px;
+    border-radius: 30px;
     text-align: center
 }
 .tp-caption.Dining-Social:hover,
@@ -3987,7 +3987,7 @@ website:   	http://www.themepunch.com
     border-color: rgba(255, 255, 255, 1.00);
     border-style: solid;
     border-width: 1px;
-    border-radius: 30px 30px 30px 30px;
+    border-radius: 30px;
     cursor: pointer
 }
 tp-caption.Team-Thumb,
@@ -3998,13 +3998,13 @@ tp-caption.Team-Thumb,
     font-weight: 400;
     font-style: normal;
     font-family: Arial;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.Team-Thumb:hover,
@@ -4014,8 +4014,8 @@ tp-caption.Team-Thumb,
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     cursor: pointer
 }
 .tp-caption.Team-Name,
@@ -4026,13 +4026,13 @@ tp-caption.Team-Thumb,
     font-weight: 900;
     font-style: normal;
     font-family: Roboto;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.Team-Position,
@@ -4043,13 +4043,13 @@ tp-caption.Team-Thumb,
     font-weight: 400;
     font-style: normal;
     font-family: Georgia, serif;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.Team-Description,
@@ -4060,13 +4060,13 @@ tp-caption.Team-Thumb,
     font-weight: 400;
     font-style: normal;
     font-family: Roboto;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.Team-Social,
@@ -4077,13 +4077,13 @@ tp-caption.Team-Thumb,
     font-weight: 400;
     font-style: normal;
     font-family: Arial;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: center
 }
 .tp-caption.Team-Social:hover,
@@ -4093,8 +4093,8 @@ tp-caption.Team-Thumb,
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0px 0px 0px 0px;
+    border-width: 0;
+    border-radius: 0;
     cursor: pointer
 }
 
@@ -4106,13 +4106,13 @@ tp-caption.Team-Thumb,
     font-weight: 500;
     font-style: normal;
     font-family: Roboto;
-    padding: 0px 0px 0px 7px;
+    padding: 0 0 0 7px;
     text-decoration: none;
     background-color: rgba(255, 255, 255, 1.00);
     border-color: rgba(0, 0, 0, 1.00);
     border-style: solid;
-    border-width: 0px;
-    border-radius: 100px 100px 100px 100px;
+    border-width: 0;
+    border-radius: 100px;
     text-align: center
 }
 .tp-caption.VideoControls-Play:hover,
@@ -4122,8 +4122,8 @@ tp-caption.Team-Thumb,
     background-color: rgba(255, 255, 255, 1.00);
     border-color: rgba(0, 0, 0, 1.00);
     border-style: solid;
-    border-width: 0px;
-    border-radius: 100px 100px 100px 100px;
+    border-width: 0;
+    border-radius: 100px;
     cursor: pointer
 }
 .tp-caption.VideoPlayer-Title,
@@ -4134,13 +4134,13 @@ tp-caption.Team-Thumb,
     font-weight: 900;
     font-style: normal;
     font-family: Lato;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left;
     letter-spacing: 10px
 }
@@ -4152,13 +4152,13 @@ tp-caption.Team-Thumb,
     font-weight: 400;
     font-style: italic;
     font-family: Georgia, serif;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: center
 }
 .tp-caption.VideoPlayer-Social,
@@ -4169,13 +4169,13 @@ tp-caption.Team-Thumb,
     font-weight: 400;
     font-style: normal;
     font-family: Arial;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: center
 }
 .tp-caption.VideoPlayer-Social:hover,
@@ -4185,8 +4185,8 @@ tp-caption.Team-Thumb,
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0px 0px 0px 0px;
+    border-width: 0;
+    border-radius: 0;
     cursor: pointer
 }
 .tp-caption.VideoControls-Mute,
@@ -4197,13 +4197,13 @@ tp-caption.Team-Thumb,
     font-weight: 500;
     font-style: normal;
     font-family: Roboto;
-    padding: 0px 0px 0px 0px;
+    padding: 0;
     text-decoration: none;
     background-color: rgba(255, 255, 255, 1.00);
     border-color: rgba(0, 0, 0, 1.00);
     border-style: solid;
-    border-width: 0px;
-    border-radius: 100px 100px 100px 100px;
+    border-width: 0;
+    border-radius: 100px;
     text-align: center
 }
 .tp-caption.VideoControls-Mute:hover,
@@ -4213,8 +4213,8 @@ tp-caption.Team-Thumb,
     background-color: rgba(255, 255, 255, 1.00);
     border-color: rgba(0, 0, 0, 1.00);
     border-style: solid;
-    border-width: 0px;
-    border-radius: 100px 100px 100px 100px;
+    border-width: 0;
+    border-radius: 100px;
     cursor: pointer
 }
 .tp-caption.VideoControls-Pause,
@@ -4225,13 +4225,13 @@ tp-caption.Team-Thumb,
     font-weight: 500;
     font-style: normal;
     font-family: Roboto;
-    padding: 0px 0px 0px 0px;
+    padding: 0;
     text-decoration: none;
     background-color: rgba(255, 255, 255, 1.00);
     border-color: rgba(0, 0, 0, 1.00);
     border-style: solid;
-    border-width: 0px;
-    border-radius: 100px 100px 100px 100px;
+    border-width: 0;
+    border-radius: 100px;
     text-align: center
 }
 .tp-caption.VideoControls-Pause:hover,
@@ -4241,8 +4241,8 @@ tp-caption.Team-Thumb,
     background-color: rgba(255, 255, 255, 1.00);
     border-color: rgba(0, 0, 0, 1.00);
     border-style: solid;
-    border-width: 0px;
-    border-radius: 100px 100px 100px 100px;
+    border-width: 0;
+    border-radius: 100px;
     cursor: pointer
  }
 
@@ -4257,14 +4257,14 @@ tp-caption.Team-Thumb,
     font-weight: 400;
     font-style: normal;
     font-family: Lato;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     text-align: left;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left;
     letter-spacing: 5px
 }
@@ -4274,16 +4274,16 @@ tp-caption.Team-Thumb,
         
     font-weight: 700;
     font-style: normal;    
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     text-align: left;
     background-color: rgba(255, 255, 255, 0.10);
     border-color: rgba(0, 0, 0, 0);
     border-style: solid;
-    border-width: 0px;
-    border-radius: 5px 5px 5px 5px;
+    border-width: 0;
+    border-radius: 5px;
     text-align: left;    
-    box-shadow: inset 0px 2px 0px 0px rgba(0, 0, 0, 0.15)
+    box-shadow: inset 0 2px 0 0 rgba(0, 0, 0, 0.15)
 }
 .tp-caption.SleekLanding-SmallTitle,
 .SleekLanding-SmallTitle {
@@ -4293,14 +4293,14 @@ tp-caption.Team-Thumb,
     font-weight: 900;
     font-style: normal;
     font-family: Lato;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     text-align: left;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left;
     letter-spacing: 2px
 }
@@ -4312,14 +4312,14 @@ tp-caption.Team-Thumb,
     font-weight: 400;
     font-style: normal;
     font-family: Lato;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     text-align: left;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.SleekLanding-Social,
@@ -4330,14 +4330,14 @@ tp-caption.Team-Thumb,
     font-weight: 400;
     font-style: normal;
     font-family: Arial;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     text-align: center;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: center
 }
 .tp-caption.SleekLanding-Social:hover,
@@ -4347,8 +4347,8 @@ tp-caption.Team-Thumb,
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     cursor: pointer
 }
 #rev_slider_429_1_wrapper .tp-loader.spinner2 {
@@ -4366,13 +4366,13 @@ tp-caption.Team-Thumb,
     font-weight: 300;
     font-style: normal;
     font-family: Roboto;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     letter-spacing: 3px;
     text-align: left
 }
@@ -4384,13 +4384,13 @@ tp-caption.Team-Thumb,
     font-weight: 400;
     font-style: normal;
     font-family: "Playfair Display";
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.PostSlider-Content,
@@ -4401,13 +4401,13 @@ tp-caption.Team-Thumb,
     font-weight: 400;
     font-style: normal;
     font-family: Roboto;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.PostSlider-Button,
@@ -4424,7 +4424,7 @@ tp-caption.Team-Thumb,
     border-color: rgba(0, 0, 0, 1.00);
     border-style: solid;
     border-width: 1px;
-    border-radius: 0px 0px 0px 0px;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.PostSlider-Button:hover,
@@ -4435,7 +4435,7 @@ tp-caption.Team-Thumb,
     border-color: rgba(0, 0, 0, 1.00);
     border-style: solid;
     border-width: 1px;
-    border-radius: 0px 0px 0px 0px;
+    border-radius: 0;
     cursor: pointer
 }
 
@@ -4452,13 +4452,13 @@ tp-caption.Team-Thumb,
     font-weight:900;
     font-style:normal;
     font-family:Lato;
-    padding:0 0 0 0px;
+    padding:0;
     text-decoration:none;
     background-color:transparent;
     border-color:transparent;
     border-style:none;
-    border-width:0px;
-    border-radius:0 0 0 0px;
+    border-width:0;
+    border-radius:0;
     text-align:left;
     letter-spacing:10px
 }
@@ -4470,13 +4470,13 @@ tp-caption.Team-Thumb,
     font-weight: 400;
     font-style: italic;
     font-family: Georgia, serif;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.LandingPage-Button,
@@ -4487,13 +4487,13 @@ tp-caption.Team-Thumb,
     font-weight: 500;
     font-style: normal;
     font-family: Roboto;
-    padding: 0px 35px 0px 35px;
+    padding: 0 35px;
     text-decoration: none;
     background-color: rgba(255, 255, 255, 1.00);
     border-color: rgba(0, 0, 0, 1.00);
     border-style: solid;
-    border-width: 0px;
-    border-radius: 0px 0px 0px 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left;
     letter-spacing: 3px
 }
@@ -4504,8 +4504,8 @@ tp-caption.Team-Thumb,
     background-color: rgba(255, 255, 255, 1.00);
     border-color: rgba(0, 0, 0, 1.00);
     border-style: solid;
-    border-width: 0px;
-    border-radius: 0px 0px 0px 0px;
+    border-width: 0;
+    border-radius: 0;
     cursor: pointer
 }
 .tp-caption.App-Content a,
@@ -4525,14 +4525,14 @@ tp-caption.Team-Thumb,
     font-weight: 700;
     font-style: normal;
     font-family: Oswald;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     text-align: left;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.Twitter-Content a,
@@ -4556,14 +4556,14 @@ tp-caption.Team-Thumb,
     font-weight: 400;
     font-style: normal;
     font-family: Lato;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     text-align: center;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: center;
     letter-spacing: 1px
 }
@@ -4575,14 +4575,14 @@ tp-caption.Team-Thumb,
     font-weight: 400;
     font-style: normal;
     font-family: Lato;
-    padding: 0 20px 3px 20px;
+    padding: 0 20px 3px;
     text-decoration: none;
     text-align: left;
     background-color: rgba(0, 154, 238, 1.00);
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.ComingSoon-Count,
@@ -4593,14 +4593,14 @@ tp-caption.Team-Thumb,
     font-weight: 900;
     font-style: normal;
     font-family: Lato;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     text-align: left;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.ComingSoon-CountUnit,
@@ -4611,14 +4611,14 @@ tp-caption.Team-Thumb,
     font-weight: 400;
     font-style: normal;
     font-family: Lato;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     text-align: center;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: center
 }
 .tp-caption.ComingSoon-NotifyMe,
@@ -4629,14 +4629,14 @@ tp-caption.Team-Thumb,
     font-weight: 600;
     font-style: normal;
     font-family: Lato;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     text-align: center;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: center
 }
 
@@ -4650,7 +4650,7 @@ tp-caption.Team-Thumb,
     cursor: text;
     border: 1px solid #fff;
     width: 400px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     -webkit-transition: background-color 0.5s;
     -moz-transition: background-color 0.5s;
     -o-transition: background-color 0.5s;
@@ -4658,7 +4658,7 @@ tp-caption.Team-Thumb,
     transition: background-color 0.5s;
     
     
-    border-radius: 0px;
+    border-radius: 0;
 }
 #mc_embed_signup input#mce-EMAIL[type="email"]:focus {
     background-color: #fff;
@@ -4679,7 +4679,7 @@ tp-caption.Team-Thumb,
     color: #fff;
     
     
-    border-radius: 0px;
+    border-radius: 0;
 }
 #mc_embed_signup input#mc-embedded-subscribe:hover {
     background: #0083d4;
@@ -4697,14 +4697,14 @@ tp-caption.Team-Thumb,
     font-weight: 400;
     font-style: normal;
     font-family: lato;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     text-align: center;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: center;
     letter-spacing: 6px
 }
@@ -4716,14 +4716,14 @@ tp-caption.Team-Thumb,
     font-weight: 400;
     font-style: normal;
     font-family: lato;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     text-align: center;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: center
 }
 .tp-caption.Agency-SmallLink,
@@ -4734,14 +4734,14 @@ tp-caption.Team-Thumb,
     font-weight: 700;
     font-style: normal;
     font-family: lato;
-    padding: 0 0 0px 0;
+    padding: 0;
     text-decoration: none;
     text-align: center;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: center;
     letter-spacing: 2px;
     border-bottom: 1px solid #f87c09 !important
@@ -4753,8 +4753,8 @@ tp-caption.Team-Thumb,
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     cursor: pointer
 }
 .tp-caption.Agency-NavButton,
@@ -4765,14 +4765,14 @@ tp-caption.Team-Thumb,
     font-weight: 500;
     font-style: normal;
     font-family: Roboto;
-    padding: 0px 0px 0px 0px;
+    padding: 0;
     text-decoration: none;
     text-align: center;
     background-color: rgba(255, 255, 255, 1.00);
     border-color: rgba(0, 0, 0, 1.00);
     border-style: solid;
-    border-width: 0px;
-    border-radius: 0px 0px 0px 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: center
 }
 .tp-caption.Agency-NavButton:hover,
@@ -4782,8 +4782,8 @@ tp-caption.Team-Thumb,
     background-color: rgba(51, 51, 51, 1.00);
     border-color: rgba(0, 0, 0, 1.00);
     border-style: solid;
-    border-width: 0px;
-    border-radius: 0px 0px 0px 0px;
+    border-width: 0;
+    border-radius: 0;
     cursor: pointer
 }
 .tp-caption.Agency-SmallLinkGreen,
@@ -4794,14 +4794,14 @@ tp-caption.Team-Thumb,
     font-weight: 700;
     font-style: normal;
     font-family: lato;
-    padding: 0 0 0px 0;
+    padding: 0;
     text-decoration: none;
     text-align: center;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: center;
     letter-spacing: 2px;
     border-bottom: 1px solid #6db19b !important
@@ -4813,8 +4813,8 @@ tp-caption.Team-Thumb,
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     cursor: pointer
 }
 .tp-caption.Agency-SmallLinkBlue,
@@ -4825,14 +4825,14 @@ tp-caption.Team-Thumb,
     font-weight: 700;
     font-style: normal;
     font-family: lato;
-    padding: 0 0 0px 0;
+    padding: 0;
     text-decoration: none;
     text-align: center;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: center;
     letter-spacing: 2px;
     border-bottom: 1px solid #999 !important
@@ -4844,8 +4844,8 @@ tp-caption.Team-Thumb,
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     cursor: pointer
 }
 .tp-caption.Agency-LogoText,
@@ -4856,14 +4856,14 @@ tp-caption.Team-Thumb,
     font-weight: 400;
     font-style: normal;
     font-family: Lato;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     text-align: center;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: center;
     letter-spacing: 1px
 }
@@ -4875,14 +4875,14 @@ tp-caption.Team-Thumb,
     font-weight: 400;
     font-style: normal;
     font-family: "Permanent Marker";
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     text-align: left;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: left
 }
 .tp-caption.Agency-SmallSocial,
@@ -4893,14 +4893,14 @@ tp-caption.Team-Thumb,
     font-weight: 400;
     font-style: normal;
     font-family: Arial;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     text-align: center;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: center
 }
 .tp-caption.Agency-SmallSocial:hover,
@@ -4910,8 +4910,8 @@ tp-caption.Team-Thumb,
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0px 0px 0px 0px;
+    border-width: 0;
+    border-radius: 0;
     cursor: pointer
 }
 .tp-caption.Twitter-Content a,
@@ -4930,14 +4930,14 @@ tp-caption.Team-Thumb,
     font-weight: 900;
     font-style: normal;
     font-family: Roboto;
-    padding: 0px 50px 0px 50px;
+    padding: 0 50px;
     text-decoration: none;
     text-align: left;
     background-color: rgba(0, 104, 92, 1.00);
     border-color: rgba(0, 0, 0, 1.00);
     border-style: solid;
-    border-width: 0px;
-    border-radius: 4px 4px 4px 4px;
+    border-width: 0;
+    border-radius: 4px;
     letter-spacing: 2px
 }
 .tp-caption.CreativeFrontPage-Btn:hover,
@@ -4947,8 +4947,8 @@ tp-caption.Team-Thumb,
     background-color: rgba(0, 0, 0, 0.25);
     border-color: rgba(0, 0, 0, 1.00);
     border-style: solid;
-    border-width: 0px;
-    border-radius: 4px 4px 4px 4px;
+    border-width: 0;
+    border-radius: 4px;
     cursor: pointer
 }
 .tp-caption.CreativeFrontPage-Menu,
@@ -4959,14 +4959,14 @@ tp-caption.Team-Thumb,
     font-weight: 500;
     font-style: normal;
     font-family: roboto;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     text-align: left;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     letter-spacing: 2px
 }
 .tp-flip-index {
@@ -4988,14 +4988,14 @@ tp-caption.Team-Thumb,
     font-weight: 700;
     font-style: normal;
     font-family: BenchNine;
-    padding: 21px 30px 16px 30px;
+    padding: 21px 30px 16px;
     text-decoration: none;
     text-align: left;
     background-color: rgba(255, 255, 255, 0.90);
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     letter-spacing: 3px
 }
 .tp-caption.FullScreenMenu-Title,
@@ -5006,14 +5006,14 @@ tp-caption.Team-Thumb,
     font-weight: 700;
     font-style: normal;
     font-family: BenchNine;
-    padding: 21px 30px 16px 30px;
+    padding: 21px 30px 16px;
     text-decoration: none;
     text-align: left;
     background-color: rgba(17, 17, 17, 0.90);
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px
+    border-width: 0;
+    border-radius: 0
 }
 .tp-caption.Twitter-Content a,
 .tp-caption.Twitter-Content a:visited {
@@ -5031,14 +5031,14 @@ tp-caption.Team-Thumb,
     font-weight: 900;
     font-style: normal;
     font-family: Raleway;
-    padding: 1px 30px 1px 30px;
+    padding: 1px 30px;
     text-decoration: none;
     text-align: left;
     background-color: rgba(138, 0, 255, 1.00);
     border-color: rgba(0, 0, 0, 1.00);
     border-style: solid;
-    border-width: 0px;
-    border-radius: 0px 0px 0px 0px;
+    border-width: 0;
+    border-radius: 0;
     letter-spacing: 3px
 }
 .tp-caption.TechJournal-Button:hover,
@@ -5048,8 +5048,8 @@ tp-caption.Team-Thumb,
     background-color: rgba(255, 255, 255, 1.00);
     border-color: rgba(0, 0, 0, 1.00);
     border-style: solid;
-    border-width: 0px;
-    border-radius: 0px 0px 0px 0px;
+    border-width: 0;
+    border-radius: 0;
     cursor: pointer
 }
 .tp-caption.TechJournal-Big,
@@ -5060,23 +5060,23 @@ tp-caption.Team-Thumb,
     font-weight: 900;
     font-style: normal;
     font-family: Raleway;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     text-align: left;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
-    letter-spacing: 0px
+    border-width: 0;
+    border-radius: 0;
+    letter-spacing: 0
 }
 .rev_slider {
     overflow: hidden;
 }
 .effect_layer {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
 }
@@ -5092,8 +5092,8 @@ tp-caption.Team-Thumb,
     #menu_forcefullwidth {
         z-index: 5000;
         position: fixed !important;
-        top: 0px;
-        left: 0px;
+        top: 0;
+        left: 0;
         width: 100%
     }
     .tp-caption.FullSiteBlock-Title,
@@ -5104,14 +5104,14 @@ tp-caption.Team-Thumb,
         font-weight: 300;
         font-style: normal;
         font-family: Lato;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center
     }
     .tp-caption.FullSiteBlock-SubTitle,
@@ -5122,14 +5122,14 @@ tp-caption.Team-Thumb,
         font-weight: 300;
         font-style: normal;
         font-family: Lato;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center
     }
     .tp-caption.FullSiteBlock-Link,
@@ -5140,14 +5140,14 @@ tp-caption.Team-Thumb,
         font-weight: 300;
         font-style: normal;
         font-family: Lato;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center
     }
     .tp-caption.FullSiteBlock-Link:hover,
@@ -5157,8 +5157,8 @@ tp-caption.Team-Thumb,
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         cursor: pointer
     }
     .tp-caption.FullSiteBlock-DownButton,
@@ -5169,14 +5169,14 @@ tp-caption.Team-Thumb,
         font-weight: 500;
         font-style: normal;
         font-family: Roboto;
-        padding: 1px 1px 1px 1px;
+        padding: 1px;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: rgba(51, 51, 51, 1.00);
         border-style: solid;
         border-width: 1px;
-        border-radius: 30px 30px 30px 30px;
+        border-radius: 30px;
         text-align: center
     }
     .tp-caption.FullSiteBlock-DownButton:hover,
@@ -5187,7 +5187,7 @@ tp-caption.Team-Thumb,
         border-color: rgba(0, 150, 255, 1.00);
         border-style: solid;
         border-width: 1px;
-        border-radius: 30px 30px 30px 30px;
+        border-radius: 30px;
         cursor: pointer
     }
     .tp-caption.FullSiteBlock-Title,
@@ -5198,14 +5198,14 @@ tp-caption.Team-Thumb,
         font-weight: 300;
         font-style: normal;
         font-family: Lato;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center
     }
     .tp-caption.FullSiteBlock-SubTitle,
@@ -5216,14 +5216,14 @@ tp-caption.Team-Thumb,
         font-weight: 300;
         font-style: normal;
         font-family: Lato;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center
     }
     .tp-caption.FullSiteBlock-Link,
@@ -5234,14 +5234,14 @@ tp-caption.Team-Thumb,
         font-weight: 300;
         font-style: normal;
         font-family: Lato;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center
     }
     .tp-caption.FullSiteBlock-Link:hover,
@@ -5251,8 +5251,8 @@ tp-caption.Team-Thumb,
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         cursor: pointer
     }
     .tp-caption.FullSiteBlock-DownButton,
@@ -5263,14 +5263,14 @@ tp-caption.Team-Thumb,
         font-weight: 500;
         font-style: normal;
         font-family: Roboto;
-        padding: 1px 1px 1px 1px;
+        padding: 1px;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: rgba(51, 51, 51, 1.00);
         border-style: solid;
         border-width: 1px;
-        border-radius: 30px 30px 30px 30px;
+        border-radius: 30px;
         text-align: center
     }
     .tp-caption.FullSiteBlock-DownButton:hover,
@@ -5281,7 +5281,7 @@ tp-caption.Team-Thumb,
         border-color: rgba(0, 150, 255, 1.00);
         border-style: solid;
         border-width: 1px;
-        border-radius: 30px 30px 30px 30px;
+        border-radius: 30px;
         cursor: pointer
     }
     .tp-caption.FullSiteBlock-Title,
@@ -5292,14 +5292,14 @@ tp-caption.Team-Thumb,
         font-weight: 300;
         font-style: normal;
         font-family: Lato;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center
     }
     .tp-caption.FullSiteBlock-SubTitle,
@@ -5310,14 +5310,14 @@ tp-caption.Team-Thumb,
         font-weight: 300;
         font-style: normal;
         font-family: Lato;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center
     }
     .tp-caption.FullSiteBlock-DownButton,
@@ -5328,14 +5328,14 @@ tp-caption.Team-Thumb,
         font-weight: 500;
         font-style: normal;
         font-family: Roboto;
-        padding: 1px 1px 1px 1px;
+        padding: 1px;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: rgba(51, 51, 51, 1.00);
         border-style: solid;
         border-width: 1px;
-        border-radius: 30px 30px 30px 30px;
+        border-radius: 30px;
         text-align: center
     }
     .tp-caption.FullSiteBlock-DownButton:hover,
@@ -5346,7 +5346,7 @@ tp-caption.Team-Thumb,
         border-color: rgba(0, 150, 255, 1.00);
         border-style: solid;
         border-width: 1px;
-        border-radius: 30px 30px 30px 30px;
+        border-radius: 30px;
         cursor: pointer
     }
     .tp-caption.FullSiteBlock-Title,
@@ -5357,14 +5357,14 @@ tp-caption.Team-Thumb,
         font-weight: 300;
         font-style: normal;
         font-family: Lato;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center
     }
     .tp-caption.FullSiteBlock-SubTitle,
@@ -5375,14 +5375,14 @@ tp-caption.Team-Thumb,
         font-weight: 300;
         font-style: normal;
         font-family: Lato;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center
     }
     .tp-caption.FullSiteBlock-Link,
@@ -5393,14 +5393,14 @@ tp-caption.Team-Thumb,
         font-weight: 300;
         font-style: normal;
         font-family: Lato;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center
     }
     .tp-caption.FullSiteBlock-Link:hover,
@@ -5410,8 +5410,8 @@ tp-caption.Team-Thumb,
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         cursor: pointer
     }
     .tp-caption.FullSiteBlock-DownButton,
@@ -5422,14 +5422,14 @@ tp-caption.Team-Thumb,
         font-weight: 500;
         font-style: normal;
         font-family: Roboto;
-        padding: 1px 1px 1px 1px;
+        padding: 1px;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: rgba(51, 51, 51, 1.00);
         border-style: solid;
         border-width: 1px;
-        border-radius: 30px 30px 30px 30px;
+        border-radius: 30px;
         text-align: center
     }
     .tp-caption.FullSiteBlock-DownButton:hover,
@@ -5440,7 +5440,7 @@ tp-caption.Team-Thumb,
         border-color: rgba(0, 150, 255, 1.00);
         border-style: solid;
         border-width: 1px;
-        border-radius: 30px 30px 30px 30px;
+        border-radius: 30px;
         cursor: pointer
     }
     .rev_slider {
@@ -5448,8 +5448,8 @@ tp-caption.Team-Thumb,
     }
     .effect_layer {
         position: absolute;
-        top: 0px;
-        left: 0px;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
     }
@@ -5463,7 +5463,7 @@ tp-caption.Team-Thumb,
         width: 100%;
         height: 100%;
         position: relative;
-        margin: 0px;
+        margin: 0;
         box-sizing: border-box;
         transition: all 0.3s;
         -webkit-transition: all 0.3s;
@@ -5473,9 +5473,9 @@ tp-caption.Team-Thumb,
         display: block;
         box-sizing: border-box;
         position: relative;
-        -webkit-box-shadow: inset 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
-        -moz-box-shadow: inset 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
-        box-shadow: inset 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
+        -webkit-box-shadow: inset 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
+        -moz-box-shadow: inset 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
+        box-shadow: inset 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
     }
     .gyges .tp-thumb:hover .tp-thumb-img-wrap,
     .gyges .tp-thumb.selected .tp-thumb-img-wrap {
@@ -5494,14 +5494,14 @@ tp-caption.Team-Thumb,
         font-weight: 300;
         font-style: normal;
         font-family: Lato;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center
     }
     .tp-caption.FullSiteBlock-SubTitle,
@@ -5512,14 +5512,14 @@ tp-caption.Team-Thumb,
         font-weight: 300;
         font-style: normal;
         font-family: Lato;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center
     }
     .tp-caption.FullSiteBlock-Link,
@@ -5530,14 +5530,14 @@ tp-caption.Team-Thumb,
         font-weight: 300;
         font-style: normal;
         font-family: Lato;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center
     }
     .tp-caption.FullSiteBlock-Link:hover,
@@ -5547,8 +5547,8 @@ tp-caption.Team-Thumb,
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         cursor: pointer
     }
     .tp-caption.FullSiteBlock-SubTitle,
@@ -5559,14 +5559,14 @@ tp-caption.Team-Thumb,
         font-weight: 300;
         font-style: normal;
         font-family: Lato;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center
     }
     .tp-caption.FullSiteBlock-SubTitle,
@@ -5577,14 +5577,14 @@ tp-caption.Team-Thumb,
         font-weight: 300;
         font-style: normal;
         font-family: Lato;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center
     }
     .tp-caption.FullSiteBlock-FooterLink,
@@ -5595,14 +5595,14 @@ tp-caption.Team-Thumb,
         font-weight: 300;
         font-style: normal;
         font-family: Lato;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         text-align: left;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: left
     }
     .tp-caption.FullSiteBlock-FooterLink:hover,
@@ -5612,8 +5612,8 @@ tp-caption.Team-Thumb,
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         cursor: pointer
     }
     .fb-share-button.fb_iframe_widget iframe {
@@ -5634,8 +5634,8 @@ tp-caption.Team-Thumb,
     #menu_forcefullwidth {
         z-index: 5000;
         position: fixed !important;
-        top: 0px;
-        left: 0px;
+        top: 0;
+        left: 0;
         width: 100%
     }
     #tp-menubg {
@@ -5662,7 +5662,7 @@ tp-caption.Team-Thumb,
         cursor: text;
         border: 0;
         width: 400px;
-        margin-bottom: 0px;
+        margin-bottom: 0;
         -webkit-transition: background-color 0.5s;
         -moz-transition: background-color 0.5s;
         -o-transition: background-color 0.5s;
@@ -5737,14 +5737,14 @@ tp-caption.Team-Thumb,
         font-weight: 300;
         font-style: normal;
         font-family: Lato;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         text-align: center
     }
     .tp-caption.ParallaxWebsite-FooterItem,
@@ -5755,14 +5755,14 @@ tp-caption.Team-Thumb,
         font-weight: 400;
         font-style: normal;
         font-family: Lato;
-        padding: 0 0 0 0px;
+        padding: 0;
         text-decoration: none;
         text-align: left;
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px
+        border-width: 0;
+        border-radius: 0
     }
     .tp-caption.ParallaxWebsite-FooterItem:hover,
     .ParallaxWebsite-FooterItem:hover {
@@ -5771,8 +5771,8 @@ tp-caption.Team-Thumb,
         background-color: transparent;
         border-color: transparent;
         border-style: none;
-        border-width: 0px;
-        border-radius: 0 0 0 0px;
+        border-width: 0;
+        border-radius: 0;
         cursor: pointer
     }
     .fb-share-button.fb_iframe_widget iframe {
@@ -5793,13 +5793,13 @@ tp-caption.Team-Thumb,
     font-weight: 300;
     font-style: normal;
     font-family: Lato;
-    padding: 0 0 0 0px;
+    padding: 0;
     text-decoration: none;
     text-align: center;
     background-color: transparent;
     border-color: transparent;
     border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
+    border-width: 0;
+    border-radius: 0;
     text-align: center;
 }

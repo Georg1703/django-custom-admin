@@ -4,7 +4,7 @@
  * @copyright 2018 ThemePunch
 */
 
-;(function() {
+(function() {
 	
 	"use strict";
 	

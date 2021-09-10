@@ -24,15 +24,15 @@ website:    http://www.themepunch.com
  }
 .dione .tp-arr-imgwrapper {
  width:100px;
- left:0px;
+ left:0;
  position:absolute;
  height:100%;
- top:0px;
+ top:0;
  overflow:hidden;
  }
 .dione.tp-rightarrow .tp-arr-imgwrapper {
 left:auto;
-right:0px;
+right:0;
 }
 
 .dione .tp-arr-imgholder {
@@ -40,18 +40,18 @@ background-position:center center;
 background-size:cover;
 width:100px;
 height:100%;
-top:0px;
+top:0;
 visibility:hidden;
 transform:translateX(-50px);
 -webkit-transform:translateX(-50px);
 transition:all 0.3s;
 -webkit-transition:all 0.3s;
 opacity:0;
-left:0px;
+left:0;
 }
 
 .dione.tparrows.tp-rightarrow .tp-arr-imgholder {
-  right:0px;
+  right:0;
   left:auto;
   transform:translateX(50px);
  -webkit-transform:translateX(50px);
@@ -85,8 +85,8 @@ opacity:0;
 }
 
 .dione.tparrows:hover .tp-arr-imgholder {
- transform:translateX(0px);
--webkit-transform:translateX(0px);
+ transform:translateX(0);
+-webkit-transform:translateX(0);
 opacity:1;
 visibility:visible;
 }
@@ -101,7 +101,7 @@ visibility:visible;
     padding:3px;
     background:#000;
     background-color:rgba(0,0,0,0.25);
-    margin:0px;
+    margin:0;
     box-sizing:border-box;
     transition:all 0.3s;
     -webkit-transition:all 0.3s;
@@ -112,9 +112,9 @@ visibility:visible;
    display:block;
    box-sizing:border-box;
    position:relative;
-    -webkit-box-shadow: inset 5px 5px 10px 0px rgba(0,0,0,0.25);
-  -moz-box-shadow: inset 5px 5px 10px 0px rgba(0,0,0,0.25);
-  box-shadow: inset 5px 5px 10px 0px rgba(0,0,0,0.25);
+    -webkit-box-shadow: inset 5px 5px 10px 0 rgba(0,0,0,0.25);
+  -moz-box-shadow: inset 5px 5px 10px 0 rgba(0,0,0,0.25);
+  box-shadow: inset 5px 5px 10px 0 rgba(0,0,0,0.25);
   width:44px;
   height:44px;
   background-size:cover;
@@ -169,7 +169,7 @@ visibility:visible;
         width: 0;
     height: 0;
     border-style: solid;
-    border-width: 8px 8px 0 8px;
+    border-width: 8px 8px 0;
     border-color: rgba(0,0,0,0.75) transparent transparent transparent;
         bottom:-8px;
    }

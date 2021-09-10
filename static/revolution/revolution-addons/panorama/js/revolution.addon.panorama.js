@@ -4,7 +4,7 @@
  * @copyright 2017 ThemePunch
 */
 
-;(function() {
+(function() {
 	
 	var $, 
 		engine,

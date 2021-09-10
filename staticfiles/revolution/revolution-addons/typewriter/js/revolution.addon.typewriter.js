@@ -61,7 +61,7 @@
 
 */
 
-;(function() {
+(function() {
 	
 	var $,
 		css,
