@@ -161,8 +161,8 @@ class Order(models.Model):
         if len(self.order_code) == 0:
             self.order_code = get_uuid_code(prefix='ord')
 
-        if self.id:
-            order_ticket = OrderTicket(customer=self.customer, order=self, message=self.order_status)
+        if not self.id:
+            order_ticket = OrderTicket(customer=self.customer, order=self, message=self.order_status, type=1)
             order_ticket.save()
 
         super(Order, self).save(**kwargs)
@@ -179,6 +179,7 @@ class OrderTicket(models.Model):
     order = models.ForeignKey(Order, null=True, on_delete=models.SET_NULL)
     customer = models.ForeignKey(Customer, null=True, on_delete=models.SET_NULL)
     type = models.IntegerField(choices=TicketType.choices, default=2)
+    subject = models.CharField(max_length=255, default='')
     message = models.TextField(null=True)
     date_added = models.DateTimeField(auto_now_add=True, null=True)
     is_active = models.BooleanField(default=True)

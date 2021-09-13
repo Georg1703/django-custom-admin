@@ -2,36 +2,175 @@
 {% load static %}
 {% block title %}{{ block.super}}order history page {% endblock title %}
 {% block content %}
-<h1>Order {{ order.order_code }} detail</h1>
-    <a href="{% url 'store:order_history' %}">Back to order history</a><br><br><br>
-    {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-    {% for item in order.orderitem_set.all %}
-        <div id="order_item_{{ item.product.id }}">
-            <b>name:</b> {{ item.product.name }}&nbsp
-            <b>quantity:</b><span id="quantity_{{ item.product_id }}">{{ item.quantity }}</span>&nbsp
-            <b>unit price:</b> {{ item.product.price_per_unit }}&nbsp&nbsp&nbsp
-            <b>total price:</b> <span id="product_{{ item.product_id }}_total_price">{{ item.get_total }}</span>&nbsp
+    <!-- start section -->
+    <section class="wow animate__fadeIn">
+        <div class="container">
+            <div class="margin-55px-bottom h5">Order - {{ order.order_code }}</div>
+                <div class="col-lg-8 margin-70px-bottom" style="margin-left: -15px">
+                    <div class="bg-light-gray padding-20px-all lg-padding-30px-tb lg-padding-20px-lr md-padding-20px-tb">
+                        <table class="col-12">
+                                <tr class="total-amount">
+                                    <th class="font-weight-500 text-extra-dark-gray">Total price</th>
+                                    <td data-title="Total">
+                                        <h6 class="d-block font-weight-500 mb-0 text-extra-dark-gray total_price">
+                                            {{ order.get_order_total }}</h6>
+                                    </td>
+                                    <th class="font-weight-500 text-extra-dark-gray">Total quantity</th>
+                                    <td data-title="Total">
+                                        <h6 class="d-block font-weight-500 mb-0 text-extra-dark-gray total_price">
+                                            {{ order.get_order_items }}</h6>
+                                    </td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <table class="table cart-products md-margin-40px-bottom sm-no-margin-bottom">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="alt-font"></th>
+                                        <th scope="col" class="alt-font">Product</th>
+                                        <th scope="col" class="alt-font">Price</th>
+                                        <th scope="col" class="alt-font">Quantity</th>
+                                        <th scope="col" class="alt-font">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in order.orderitem_set.all %}
+                                        <tr>
+                                            <td class="product-thumbnail"><a href="{% url 'store:product' item.product.name %}"><img class="cart-product-image" src="{{ item.product.default_image.url }}" alt=""></a></td>
+                                            <td class="product-name">
+                                                <a href="{% url 'store:product' item.product.name %}">{{ item.product.name }}</a>
+                                            </td>
+                                            <td class="product-price" data-title="Price">{{ item.product.price_per_unit }}</td>
+                                            <td class="product-quantity" data-title="Quantity">{{ item.quantity }}</td>
+                                            <td class="product-subtotal" data-title="Total">{{ item.get_total }}</td>
+                                        </tr>
+                                    {% empty %}
+                                        <tr><td>No Products</td><td></td><td></td><td></td><td></td><td></td></tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-6 md-margin-50px-bottom sm-margin-20px-bottom"></div>
+                    </div>
+                </div>
+                <div class="offset-1">
+                    <!-- start process step item -->
+                    <div class="col-12 p-0 process-step-style-02 wow animate__fadeInUp" data-wow-delay="0.1s">
+                        <div class="process-step-item">
+                            <div class="process-step-icon-wrap">
+                                <div class="process-step-icon text-center border-all border-color-fast-blue border-width-2px bg-fast-blue alt-font font-weight-500">1</div>
+                                <span class="process-step-item-box-bfr bg-medium-gray"></span>
+                            </div>
+                            <div class="process-content last-paragraph-no-margin">
+                                <span class="alt-font d-block font-weight-500 text-extra-dark-gray margin-5px-bottom">Status changed</span>
+                                <p class="w-60 md-w-80 xs-w-100">Placed</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end progress step item -->
+                    <!-- start process step item -->
+                    <div class="col-12 p-0 process-step-style-02 wow animate__fadeInUp" data-wow-delay="0.1s">
+                        <div class="process-step-item">
+                            <div class="process-step-icon-wrap">
+                                <div class="process-step-icon text-center border-all border-color-fast-blue border-width-2px bg-fast-blue alt-font font-weight-500">1</div>
+                                <span class="process-step-item-box-bfr bg-medium-gray"></span>
+                            </div>
+                            <div class="process-content last-paragraph-no-margin">
+                                <span class="alt-font d-block font-weight-500 text-extra-dark-gray margin-5px-bottom">Status changed</span>
+                                <p class="w-60 md-w-80 xs-w-100">Placed</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end progress step item -->
+                    <!-- start process step item -->
+                    <div class="col-12 p-0 process-step-style-02 wow animate__fadeInUp" data-wow-delay="0.1s">
+                        <div class="process-step-item">
+                            <div class="process-step-icon-wrap">
+                                <div class="process-step-icon text-center border-all border-color-fast-blue border-width-2px bg-fast-blue alt-font font-weight-500">1</div>
+                                <span class="process-step-item-box-bfr bg-medium-gray"></span>
+                            </div>
+                            <div class="process-content last-paragraph-no-margin">
+                                <span class="alt-font d-block font-weight-500 text-extra-dark-gray margin-5px-bottom">Status changed</span>
+                                <p class="w-60 md-w-80 xs-w-100">Placed</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end progress step item -->
+                </div>
+            </div>
         </div>
-    {% endfor %}
-    <br><br>Total quantity: <span class="total_quantity">{{ order.get_order_items }}</span>
-    <br><br>Total price: <span id="total_price">{{ order.get_order_total }}</span>
-    <br><br>Order status: <span id="total_price"><b>{{ order.order_status.name }}</b></span><br>
-    {% for ticket in tickets %}
-        <p><b>{{ ticket.get_type_display }}</b> {{ ticket.message }}</p>
-    {% endfor %}
-    {% if order.order_status.name == "placed" %}
-        <form action = "" method = "post">
-            {% csrf_token %}
-            {{ form }}
-            <input type="submit" value="Submit">
-        </form>
+    </section>
+    <!-- end section -->
+    {% if tickets_message %}
+        <!-- start section -->
+        <section class="big-section wow animate__fadeIn">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 text-center margin-seven-bottom">
+                        <h6 class="alt-font text-extra-dark-gray font-weight-500">Comments history</h6>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-10 px-0">
+                        <div class="panel-group accordion-event accordion-style-04" id="comment-accordion" data-active-icon="icon-feather-minus" data-inactive-icon="icon-feather-plus">
+                            {% for ticket in tickets_message %}
+                                <!-- start accordion item -->
+                                <div class="panel border-color-black-transparent">
+                                    <div class="panel-heading active-accordion">
+                                        <span class="panel-time">{{ ticket.date_added|date:'H:i d/m/Y' }}</span>
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#comment-accordion" href="#accordion-style-comment-accordion-{{ ticket.id }}">
+                                            <div class="panel-title">
+                                                <span class="text-extra-dark-gray d-inline-block font-weight-700">{{ ticket.subject }}</span>
+                                                <i class="text-extra-dark-gray feather icon-feather-minus"></i>
+                                            </div>
+                                        </a>
+                                        <span class="panel-speaker">
+                                            {% if not ticket.customer_id %}
+                                                Administrator
+                                            {% else %}
+                                                You
+                                            {% endif %}
+                                        </span>
+                                    </div>
+                                    <div id="accordion-style-comment-accordion-{{ ticket.id }}" class="panel-collapse collapse" data-parent="#accordion1">
+                                        <div class="panel-body">{{ ticket.message }}</div>
+                                    </div>
+                                </div>
+                                <!-- end accordion item -->
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
     {% endif %}
+    <!-- start section -->
+    <section id="comments" class="pt-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-9 margin-4-rem-bottom wow animate__fadeIn">
+                    <h6 class="alt-font text-extra-dark-gray font-weight-500 margin-5px-bottom">Write a comments</h6>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-9 wow animate__fadeIn">
+                    <form action = "" method = "post">
+                        {% csrf_token %}
+                        {{ form }}
+{#                        <input type="submit" name="submit">#}
+                        <input class="btn btn-medium btn-dark-gray mb-0 btn-round-edge-small" type="submit" name="submit" value="Post Comment">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
 {% endblock content %}
 
 {% block js %}

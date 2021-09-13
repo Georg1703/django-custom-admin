@@ -1,14 +1,46 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}{{ block.super}}order history page {% endblock title %}
+
 {% block content %}
-<h1>Order history</h1>
-    <a href="{% url 'store:store_page' %}">Back to store</a><br><br><br>
-    {% for order in orders %}
-        <br><br><br><a href="{% url 'store:order_detail' order.order_code %}"><b>Order: {{ order.order_code }}</b></a>
-    Total quantity: <span class="total_quantity">{{ order.get_order_items }}</span>
-    Total price: <span id="total_price">{{ order.get_order_total }}</span>
-    {% endfor %}
+    <!-- start section -->
+    <section class="wow animate__fadeIn">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 padding-70px-right lg-padding-30px-right md-padding-15px-right">
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <table class="table cart-products margin-60px-bottom md-margin-40px-bottom sm-no-margin-bottom">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="alt-font"></th>
+                                        <th scope="col" class="alt-font">Order code</th>
+                                        <th scope="col" class="alt-font">Quantity</th>
+                                        <th scope="col" class="alt-font">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="order_body">
+                                    {% for order in orders %}
+                                        <tr>
+                                            <td class="product-thumbnail"><a href=""></a></td>
+                                            <td class="product-name">
+                                                <a href="{% url 'store:order_detail' order.order_code %}">{{ order.order_code }}</a>
+                                            </td>
+                                            <td>{{ order.get_order_items }}</td>
+                                            <td>{{ order.get_order_total }}</td>
+                                        </tr>
+                                    {% empty %}
+                                        <tr><td>No orders yet</td><td></td><td></td><td></td><td></td><td></td></tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
 {% endblock content %}
 
 {% block js %}

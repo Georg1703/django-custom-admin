@@ -1,4 +1,5 @@
 var updateBtns = document.getElementsByClassName('update-cart')
+var placeOrderBtn = document.getElementById('place_order')
 
 for (var i = 0; i < updateBtns.length; i++) {
       updateBtns[i].addEventListener('click', function(){
@@ -12,6 +13,39 @@ for (var i = 0; i < updateBtns.length; i++) {
         }
       });
 }
+
+placeOrderBtn.addEventListener('click', function (){
+    var order_code = this.dataset.order;
+
+    var url = '/place_order/'
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrftoken,
+        },
+        body: JSON.stringify({'order_code': order_code})
+    })
+
+        .then((response) =>{
+            return response.json()
+        })
+
+        .then((data) => {
+            if (data.message == 'success') {
+                renderOrder({
+                    'quantity': 0,
+                    'total_quantity': 0,
+                    'get_order_total':  0,
+                    'product_total_price': 0,
+                    'is_deleted': false,
+                    'delete_all': true
+                })
+            }
+        })
+
+});
 
 
 function updateUserOrder(productId, action){
@@ -34,7 +68,6 @@ function updateUserOrder(productId, action){
         .then((data) => {
             console.log('data:', data)
             renderOrder(data)
-            // location.reload()
         })
 }
 
@@ -58,5 +91,13 @@ function renderOrder(data){
 
     if (data.is_deleted) {
         $('#order_item_' + data.product_id).remove()
+        $('#cart_item_' + data.product_id).remove()
+    } else if(data.delete_all) {
+        order_body = document.getElementById('order_body')
+        cart_body = document.getElementById('cart_body')
+        order_body.innerHTML = ''
+        cart_body.innerHTML = ''
     }
 }
+
+

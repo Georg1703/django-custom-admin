@@ -38,7 +38,7 @@
                                         <th scope="col" class="alt-font">Total</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="order_body">
                                     {% for item in items %}
                                         <tr id="order_item_{{ item.product_id }}">
                                             <td class="product-remove">
@@ -65,15 +65,12 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="col-md-6 md-margin-50px-bottom sm-margin-20px-bottom">
-                            <div class="coupon-code-panel">
-                                <input type="text" placeholder="Coupon code">
-                                <a href="#" class="btn apply-coupon-btn text-uppercase">Apply</a>
+                        <div class="col-md-6 md-margin-50px-bottom sm-margin-20px-bottom"></div>
+                        {% if items %}
+                            <div class="col-md-6 text-center text-md-right md-margin-50px-bottom btn-dual">
+                                <a href="#" class="btn btn-fancy btn-small btn-transparent-light-gray update-cart" data-product="all" data-action="remove_all">Empty cart</a>
                             </div>
-                        </div>
-                        <div class="col-md-6 text-center text-md-right md-margin-50px-bottom btn-dual">
-                            <a href="#" class="btn btn-fancy btn-small btn-transparent-light-gray">Empty cart</a>
-                        </div>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -90,7 +87,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <div><a href="checkout.html" class="btn btn-dark-gray btn-large d-block btn-fancy margin-15px-top">Place order</a></div>
+                        <div><a href="javascript:void(0)" class="btn btn-dark-gray btn-large d-block btn-fancy margin-15px-top" id="place_order" data-order="{{ order.order_code }}">Place order</a></div>
                     </div>
                 </div>
             </div>

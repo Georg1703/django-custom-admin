@@ -59,16 +59,15 @@ def update_item(request):
     action = data['action']
 
     customer = request.user.customer
-    product = Product.objects.get(id=product_id)
     order, created = Order.objects.get_or_create(customer=customer, placed=False)
-    print(product)
-    order_item, created = OrderItem.objects.get_or_create(order=order, product=product)
-    is_deleted = False
+
+    if action != 'remove_all':
+        product = Product.objects.get(id=product_id)
+        order_item, created = OrderItem.objects.get_or_create(order=order, product=product)
+        is_deleted = False
 
     if action == 'add':
         order_item.quantity = (order_item.quantity + 1)
-        print(order_item)
-        print(order)
         order_item.save()
     elif action == 'down':
         order_item.quantity = (order_item.quantity - 1)
@@ -76,8 +75,10 @@ def update_item(request):
     elif action == 'remove':
         order_item.delete()
         is_deleted = True
+    elif action == 'remove_all':
+        OrderItem.objects.filter(order=order).delete()
 
-    if order_item.quantity <= 1:
+    if order_item and order_item.quantity <= 0:
         order_item.delete()
         is_deleted = True
 
@@ -94,7 +95,9 @@ def update_item(request):
 
 @login_required
 @allowed_groups(['user'])
-def place_order(request, order_code):
+def place_order(request):
+    data = json.loads(request.body)
+    order_code = data['order_code']
 
     if request.user.is_authenticated:
         order = Order.objects.get(order_code=order_code)
@@ -102,14 +105,9 @@ def place_order(request, order_code):
             order.placed = True
             order_status = 1
             order.save()
-            messages.success(request, 'Order was placed !')
-            return redirect('/order')
+            return JsonResponse({'message': 'success'})
         else:
-            messages.success(request, 'Order is empty !')
-            return redirect('/order')
-    else:
-        messages.success(request, 'Order was not placed !')
-        return redirect('/order')
+            return JsonResponse({'message': 'failed'})
 
 
 @login_required
@@ -118,11 +116,11 @@ def order_history(request):
 
     if request.user.is_authenticated:
         customer = request.user.customer
-        order = Order.objects.filter(customer=customer, placed=True).all()
+        orders = Order.objects.filter(customer=customer, placed=True).all()
     else:
-        order = {'get_order_items': 0, 'get_order_total': 0}
+        orders = {'get_order_items': 0, 'get_order_total': 0}
 
-    context = {'orders': order}
+    context = {'orders': orders}
     return render(request, 'store/order_history.html', context=context)
 
 
@@ -131,12 +129,14 @@ def order_history(request):
 def order_detail(request, order_code):
 
     order = Order.objects.get(order_code=order_code)
-    tickets = order.orderticket_set.all()
+    ticket_status = order.orderticket_set.filter(type=1)
+    ticket_message = order.orderticket_set.filter(type=2)
     form = OrderTicketForm(initial={'order': order_code})
 
     context = {
         'order': order,
-        'tickets': tickets,
+        'tickets_message': ticket_message,
+        'tickets_status': ticket_status,
         'form': form
     }
 
@@ -145,11 +145,12 @@ def order_detail(request, order_code):
 
         if form.is_valid():
             message = form.cleaned_data['message']
+            subject = form.cleaned_data['subject']
             order = Order.objects.get(order_code=order_code)
             customer = request.user.customer
 
             print(order.order_code)
-            ticket = OrderTicket(message=message, customer=customer, order=order)
+            ticket = OrderTicket(subject=subject, message=message, customer=customer, order=order)
             ticket.save()
             messages.success(request, 'Comment was saved !')
             return redirect('store:order_detail', order_code=order.order_code)
