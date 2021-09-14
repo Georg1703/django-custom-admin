@@ -142,6 +142,10 @@ class Order(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     is_active = models.BooleanField(default=True)
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.__original_status = self.order_status
+
     @property
     def get_order_total(self):
         orderitems = self.orderitem_set.all()
@@ -160,10 +164,6 @@ class Order(models.Model):
     def save(self, **kwargs):
         if len(self.order_code) == 0:
             self.order_code = get_uuid_code(prefix='ord')
-
-        if not self.id:
-            order_ticket = OrderTicket(customer=self.customer, order=self, message=self.order_status, type=1)
-            order_ticket.save()
 
         super(Order, self).save(**kwargs)
 

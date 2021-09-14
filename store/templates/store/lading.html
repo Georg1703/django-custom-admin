@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load translation %}
+{% load static %}
 {% block title %}{{ block.super}}lading page {% endblock title %}
 {% block content %}
     <!-- start revolution slider -->
@@ -188,6 +189,90 @@
                     </div>
                 </div>
                 <!-- end feature box item -->
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+    <!-- start section -->
+    <section class="bg-light-gray wow animate__fadeIn">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 tab-style-02">
+                    <!-- start tab navigation -->
+                    <ul class="nav nav-tabs justify-content-center text-center alt-font margin-6-rem-bottom sm-margin-3-rem-bottom">
+                        <li class="nav-item"><a data-toggle="tab" href="#research" class="nav-link active"><i class="ti-light-bulb icon-small"></i><span class="nav-link-green">Development</span></a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#strategy"><i class="ti-timer icon-small"></i><span class="nav-link-green">Performance</span></a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#management"><i class="ti-pie-chart icon-small"></i><span class="nav-link-green">Analytics</span></a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#concept"><i class="ti-crown icon-small"></i><span class="nav-link-green">Concept</span></a></li>
+                    </ul>
+                    <!-- end tab navigation -->
+                    <div class="tab-content">
+                        <!-- start tab item -->
+                        <div id="research" class="tab-pane fade in active show">
+                            <div class="row align-items-lg-center">
+                                <div class="col-12 col-lg-4 col-md-12 md-margin-6-rem-bottom sm-margin-4-rem-bottom">
+                                    <img src="{% static 'images/history-630x399.png' %}" alt="" />
+                                </div>
+                                <div class="col-12 col-lg-4 col-md-6 padding-4-rem-left lg-padding-2-rem-left md-padding-15px-left sm-margin-30px-bottom">
+                                    <h6 class="alt-font font-weight-500 text-extra-dark-gray w-95 md-w-100">We are idea driven, working with a strong focus on design and user experience.</h6>
+                                </div>
+                                <div class="col-12 col-lg-4 col-md-6 last-paragraph-no-margin">
+                                    <span class="alt-font text-extra-medium d-block text-extra-dark-gray margin-20px-bottom font-weight-500">Transform your ideas. We know that good design means good business.</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, nostrud exercitation ullamco laboris.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end tab item -->
+                        <!-- start tab item -->
+                        <div id="strategy" class="tab-pane fade">
+                            <div class="row align-items-lg-center">
+                                <div class="col-12 col-lg-4 col-md-12 md-margin-6-rem-bottom sm-margin-4-rem-bottom">
+                                    <img src="{% static 'images/history-630x399.png' %}" alt="" />
+                                </div>
+                                <div class="col-12 col-lg-4 col-md-6 padding-4-rem-left lg-padding-2-rem-left md-padding-15px-left sm-margin-30px-bottom">
+                                    <h6 class="alt-font font-weight-500 text-extra-dark-gray w-95 md-w-100">We are idea driven, working with a strong focus on design and user experience.</h6>
+                                </div>
+                                <div class="col-12 col-lg-4 col-md-6 last-paragraph-no-margin">
+                                    <span class="alt-font text-extra-medium d-block text-extra-dark-gray margin-20px-bottom font-weight-500">Transform your ideas. We know that good design means good business.</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, nostrud exercitation ullamco laboris.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end tab item -->
+                        <!-- start tab item -->
+                        <div id="management" class="tab-pane fade">
+                            <div class="row align-items-lg-center">
+                                <div class="col-12 col-lg-4 col-md-12 md-margin-6-rem-bottom sm-margin-4-rem-bottom">
+                                    <img src="{% static 'images/history-630x399.png' %}" alt="" />
+                                </div>
+                                <div class="col-12 col-lg-4 col-md-6 padding-4-rem-left lg-padding-2-rem-left md-padding-15px-left sm-margin-30px-bottom">
+                                    <h6 class="alt-font font-weight-500 text-extra-dark-gray w-95 md-w-100">We are idea driven, working with a strong focus on design and user experience.</h6>
+                                </div>
+                                <div class="col-12 col-lg-4 col-md-6 last-paragraph-no-margin">
+                                    <span class="alt-font text-extra-medium d-block text-extra-dark-gray margin-20px-bottom font-weight-500">Transform your ideas. We know that good design means good business.</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, nostrud exercitation ullamco laboris.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end tab item -->
+                        <!-- start tab item -->
+                        <div id="concept" class="tab-pane fade">
+                            <div class="row align-items-lg-center">
+                                <div class="col-12 col-lg-4 col-md-12 md-margin-6-rem-bottom sm-margin-4-rem-bottom">
+                                    <img src="{% static 'images/history-630x399.png' %}" alt="" />
+                                </div>
+                                <div class="col-12 col-lg-4 col-md-6 padding-4-rem-left lg-padding-2-rem-left md-padding-15px-left sm-margin-30px-bottom">
+                                    <h6 class="alt-font font-weight-500 text-extra-dark-gray w-95 md-w-100">We are idea driven, working with a strong focus on design and user experience.</h6>
+                                </div>
+                                <div class="col-12 col-lg-4 col-md-6 last-paragraph-no-margin">
+                                    <span class="alt-font text-extra-medium d-block text-extra-dark-gray margin-20px-bottom font-weight-500">Transform your ideas. We know that good design means good business.</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, nostrud exercitation ullamco laboris.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end tab item -->
+                    </div>
+                </div>
             </div>
         </div>
     </section>

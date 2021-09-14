@@ -30,7 +30,7 @@
                                     <a href="{% url 'store:product' product.name %}"><img src="{{ product.default_image.url }}" alt=""/></a>
                                 </div>
                                 <div class="shop-product-content d-flex align-items-center bg-white padding-30px-lr padding-5px-tb">
-                                    <a href="{% url 'store:product' product.name %}" class="alt-font font-weight-500 line-height-18px text-extra-dark-gray d-inline-block align-middle text-uppercase mr-auto">{{ product.name }}</a>
+                                    <a href="{% url 'store:product' product.name %}" class="alt-font font-weight-500 line-height-18px text-extra-dark-gray d-inline-block align-middle text-uppercase mr-auto">{% translate_prod product lang 1 %}</a>
                                     <a href="{% url 'store:product' product.name %}"><i class="line-icon-Arrow-OutRight icon-large text-extra-dark-gray align-middle margin-15px-left"></i></a>
                                 </div>
                             </div>

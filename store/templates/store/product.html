@@ -44,8 +44,8 @@
                         <div class="breadcrumb text-small p-0">
                             <!-- start breadcrumb -->
                             <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="shop-wide.html">Shop</a></li>
+                                <li><a href="{% url 'store:lading' %}">Home</a></li>
+                                <li><a href="{% url 'store:products' %}">Products</a></li>
                                 <li>{% translate_prod product lang 1 %}</li>
                             </ul>
                             <!-- end breadcrumb -->
@@ -65,7 +65,7 @@
                         {% if product.productbulksales_set %}
                             <div class="margin-4-rem-top">
                                 <div class="margin-4-rem-bottom">
-                                    <label class="size-chart text-uppercase w-60px margin-10px-left">
+                                    <label class="size-chart text-uppercase w-60px">
                                         <a class="modal-popup alt-font text-extra-small text-decoration-line-bottom" href="#modal-popup">Size Guide</a>
                                     </label>
                                     <div id="modal-popup" class="white-popup-block mfp-hide w-55 mx-auto position-relative bg-white modal-popup-main padding-5-rem-all xl-w-70 md-w-80 md-padding-4-rem-all xs-w-95 xs-padding-3-rem-all">
@@ -113,41 +113,43 @@
         </div>
     </section>
     <!-- end section -->
-    <!-- start section -->
-    <section class="border-top border-width-1px border-color-medium-gray pt-0 wow animate__fadeIn">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 p-0 tab-style-07">
-                    <ul class="nav nav-tabs justify-content-center text-center alt-font font-weight-500 text-uppercase margin-9-rem-bottom border-bottom border-color-medium-gray md-margin-50px-bottom sm-margin-35px-bottom">
-                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#additionalinformation">Additional information</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="tab-content">
-                <!-- start tab item -->
-                <div id="additionalinformation" class="tab-pane fade in active show">
-                    <div class="row align-items-center">
-                        <div class="col-12">
-                            <table class="table-style-02">
-                                <tbody>
-                                    {% for property in product.productpropertyrelation_set.all|get_lang:lang %}
-                                        <tr>
-                                            <th class="text-extra-dark-gray font-weight-500">{% translate_property property.property lang 1 %}</th>
-                                            <td>{{ property.value }}</td>
-                                        </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
+    {% if product.productpropertyrelation_set.all %}
+        <!-- start section -->
+        <section class="border-top border-width-1px border-color-medium-gray pt-0 wow animate__fadeIn">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 p-0 tab-style-07">
+                        <ul class="nav nav-tabs justify-content-center text-center alt-font font-weight-500 text-uppercase margin-9-rem-bottom border-bottom border-color-medium-gray md-margin-50px-bottom sm-margin-35px-bottom">
+                            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#additionalinformation">Additional information</a></li>
+                        </ul>
                     </div>
                 </div>
-                <!-- end tab item -->
             </div>
-        </div>
-    </section>
-    <!-- end section -->
+            <div class="container">
+                <div class="tab-content">
+                    <!-- start tab item -->
+                    <div id="additionalinformation" class="tab-pane fade in active show">
+                        <div class="row align-items-center">
+                            <div class="col-12">
+                                <table class="table-style-02">
+                                    <tbody>
+                                        {% for property in product.productpropertyrelation_set.all|get_lang:lang %}
+                                            <tr>
+                                                <th class="text-extra-dark-gray font-weight-500">{% translate_property property.property lang 1 %}</th>
+                                                <td>{{ property.value }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end tab item -->
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+    {% endif %}
     <!-- start section -->
     {% if product.similar_products %}
     <section class="border-top border-width-1px border-color-medium-gray wow animate__fadeIn">
@@ -174,7 +176,7 @@
                                         </a>
                                         <div class="product-overlay bg-gradient-extra-midium-gray-transparent"></div>
                                         <div class="product-hover-bottom text-center padding-30px-tb">
-                                            <a href="javascript:void(0)" class="product-link-icon move-top-bottom update-cart" data-product="{{ product.id }}" data-action="add" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart"><i class="feather icon-feather-shopping-cart"></i></a>
+                                            <a href="javascript:void(0)" class="product-link-icon move-top-bottom update-cart" id="add_to_cart" data-product="{{ product.id }}" data-action="add" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart"><i class="feather icon-feather-shopping-cart"></i></a>
                                             <a href="{% url 'store:product' similar_product.name %}" class="product-link-icon move-top-bottom" data-toggle="tooltip" data-placement="top" title="" data-original-title="Quick shop"><i class="feather icon-feather-zoom-in"></i></a>
                                         </div>
                                     </div>

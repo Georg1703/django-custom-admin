@@ -53,7 +53,7 @@
                                                 <div class="quantity">
                                                     <label class="screen-reader-text">Quantity</label>
                                                     <input type="button" value="-" class="qty-minus qty-btn update-cart" data-quantity="minus" data-field="quantity" data-product="{{ item.product.id }}" data-action="down">
-                                                    <input class="input-text qty-text" type="number" name="quantity" id="quantity_{{ item.product_id }}" value="{{ item.quantity }}">
+                                                    <input class="input-text qty-text" type="number" name="quantity" id="quantity_{{ item.product_id }}" value="{{ item.quantity }}" data-product="{{ item.product.id }}">
                                                     <input type="button" value="+" class="qty-plus qty-btn update-cart" data-quantity="plus" data-field="quantity" data-product="{{ item.product.id }}" data-action="add">
                                                 </div>
                                             </td>
@@ -98,4 +98,5 @@
 
 {% block js %}
     <script src="{% static "store/js/cart.js" %}"></script>
+    <script src="{% static "store/js/place_order.js" %}"></script>
 {% endblock js %}

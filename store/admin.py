@@ -116,6 +116,10 @@ class OrderTicketAdmin(admin.StackedInline):
     model = OrderTicket
     exclude = ['is_active', 'type', 'customer']
 
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        return qs.filter(type=2)
+
 
 @admin.register(Order)
 class OrderAdmin(SoftDelete):

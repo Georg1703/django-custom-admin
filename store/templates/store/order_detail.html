@@ -6,26 +6,26 @@
     <section class="wow animate__fadeIn">
         <div class="container">
             <div class="margin-55px-bottom h5">Order - {{ order.order_code }}</div>
-                <div class="col-lg-8 margin-70px-bottom" style="margin-left: -15px">
-                    <div class="bg-light-gray padding-20px-all lg-padding-30px-tb lg-padding-20px-lr md-padding-20px-tb">
-                        <table class="col-12">
-                                <tr class="total-amount">
-                                    <th class="font-weight-500 text-extra-dark-gray">Total price</th>
-                                    <td data-title="Total">
-                                        <h6 class="d-block font-weight-500 mb-0 text-extra-dark-gray total_price">
-                                            {{ order.get_order_total }}</h6>
-                                    </td>
-                                    <th class="font-weight-500 text-extra-dark-gray">Total quantity</th>
-                                    <td data-title="Total">
-                                        <h6 class="d-block font-weight-500 mb-0 text-extra-dark-gray total_price">
-                                            {{ order.get_order_items }}</h6>
-                                    </td>
-                                </tr>
-                        </table>
-                    </div>
-                </div>
             <div class="row">
                 <div class="col-lg-8">
+                    <div class="col-lg-12 margin-70px-bottom">
+                        <div class="bg-light-gray padding-20px-all lg-padding-30px-tb lg-padding-20px-lr md-padding-20px-tb">
+                            <table class="col-12">
+                                    <tr class="total-amount">
+                                        <th class="font-weight-500 text-extra-dark-gray">Total price</th>
+                                        <td data-title="Total">
+                                            <h6 class="d-block font-weight-500 mb-0 text-extra-dark-gray total_price">
+                                                {{ order.get_order_total }}</h6>
+                                        </td>
+                                        <th class="font-weight-500 text-extra-dark-gray">Total quantity</th>
+                                        <td data-title="Total">
+                                            <h6 class="d-block font-weight-500 mb-0 text-extra-dark-gray total_price">
+                                                {{ order.get_order_items }}</h6>
+                                        </td>
+                                    </tr>
+                            </table>
+                        </div>
+                    </div>
                     <div class="row align-items-center">
                         <div class="col-12">
                             <table class="table cart-products md-margin-40px-bottom sm-no-margin-bottom">
@@ -55,52 +55,25 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="col-md-6 md-margin-50px-bottom sm-margin-20px-bottom"></div>
                     </div>
                 </div>
                 <div class="offset-1">
-                    <!-- start process step item -->
-                    <div class="col-12 p-0 process-step-style-02 wow animate__fadeInUp" data-wow-delay="0.1s">
-                        <div class="process-step-item">
-                            <div class="process-step-icon-wrap">
-                                <div class="process-step-icon text-center border-all border-color-fast-blue border-width-2px bg-fast-blue alt-font font-weight-500">1</div>
-                                <span class="process-step-item-box-bfr bg-medium-gray"></span>
-                            </div>
-                            <div class="process-content last-paragraph-no-margin">
-                                <span class="alt-font d-block font-weight-500 text-extra-dark-gray margin-5px-bottom">Status changed</span>
-                                <p class="w-60 md-w-80 xs-w-100">Placed</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end progress step item -->
-                    <!-- start process step item -->
-                    <div class="col-12 p-0 process-step-style-02 wow animate__fadeInUp" data-wow-delay="0.1s">
-                        <div class="process-step-item">
-                            <div class="process-step-icon-wrap">
-                                <div class="process-step-icon text-center border-all border-color-fast-blue border-width-2px bg-fast-blue alt-font font-weight-500">1</div>
-                                <span class="process-step-item-box-bfr bg-medium-gray"></span>
-                            </div>
-                            <div class="process-content last-paragraph-no-margin">
-                                <span class="alt-font d-block font-weight-500 text-extra-dark-gray margin-5px-bottom">Status changed</span>
-                                <p class="w-60 md-w-80 xs-w-100">Placed</p>
+                    {% for ticket in tickets_status %}
+                        <!-- start process step item -->
+                        <div class="col-12 p-0 process-step-style-02 wow animate__fadeInUp" data-wow-delay="0.1s">
+                            <div class="process-step-item">
+                                <div class="process-step-icon-wrap">
+                                    <div class="process-step-icon text-center border-all border-color-fast-green border-width-2px bg-fast-green alt-font font-weight-500">1</div>
+                                    <span class="process-step-item-box-bfr bg-medium-gray"></span>
+                                </div>
+                                <div class="process-content last-paragraph-no-margin">
+                                    <span class="alt-font d-block font-weight-500 text-extra-dark-gray margin-5px-bottom">Status changed</span>
+                                    <p class="w-60 md-w-80 xs-w-100">{{ ticket.message }}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- end progress step item -->
-                    <!-- start process step item -->
-                    <div class="col-12 p-0 process-step-style-02 wow animate__fadeInUp" data-wow-delay="0.1s">
-                        <div class="process-step-item">
-                            <div class="process-step-icon-wrap">
-                                <div class="process-step-icon text-center border-all border-color-fast-blue border-width-2px bg-fast-blue alt-font font-weight-500">1</div>
-                                <span class="process-step-item-box-bfr bg-medium-gray"></span>
-                            </div>
-                            <div class="process-content last-paragraph-no-margin">
-                                <span class="alt-font d-block font-weight-500 text-extra-dark-gray margin-5px-bottom">Status changed</span>
-                                <p class="w-60 md-w-80 xs-w-100">Placed</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end progress step item -->
+                        <!-- end progress step item -->
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -108,7 +81,7 @@
     <!-- end section -->
     {% if tickets_message %}
         <!-- start section -->
-        <section class="big-section wow animate__fadeIn">
+        <section class="padding-20px-top wow animate__fadeIn">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-12 text-center margin-seven-bottom">
@@ -154,12 +127,12 @@
     <section id="comments" class="pt-0">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12 col-lg-9 margin-4-rem-bottom wow animate__fadeIn">
+                <div class="col-12 col-lg-10 margin-4-rem-bottom wow animate__fadeIn">
                     <h6 class="alt-font text-extra-dark-gray font-weight-500 margin-5px-bottom">Write a comments</h6>
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-12 col-lg-9 wow animate__fadeIn">
+                <div class="col-12 col-lg-10 wow animate__fadeIn">
                     <form action = "" method = "post">
                         {% csrf_token %}
                         {{ form }}

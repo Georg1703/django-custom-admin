@@ -1,4 +1,5 @@
 {% load static %}
+{% load translation %}
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -94,7 +95,7 @@
                     </div>
                     {% if user.is_authenticated %}
                         <div class="header-cart-icon dropdown">
-                            <a href="{% url 'store:order' %}"><i class="feather icon-feather-shopping-bag"></i><span class="cart-count alt-font bg-fast-blue text-white total_quantity">{{ order.get_order_items }}</span></a>
+                            <a href="{% url 'store:order' %}"><i class="feather icon-feather-shopping-bag"></i><span class="cart-count alt-font bg-fast-blue text-white total_quantity">{{ order_total_items }}</span></a>
                             <ul class="dropdown-menu cart-item-list" id="cart_body">
                                 {% for item in items %}
                                     <li class="cart-item align-items-center" id="cart_item_{{ item.product_id }}">
@@ -103,13 +104,13 @@
                                             <a href="{% url 'store:product' item.product.name %}"><img src="{{ item.product.default_image.url }}" class="cart-thumb" alt="" /></a>
                                         </div>
                                         <div class="product-detail alt-font">
-                                            <a href="{% url 'store:product' item.product.name %}">{{ item.product.name }}</a>
+                                            <a href="{% url 'store:product' item.product.name %}">{% translate_prod item.product lang 1 %}</a>
                                             <span class="item-ammount">{{ item.product.promo_price }}</span>
                                         </div>
                                     </li>
                                 {% endfor %}
                                 <li class="cart-item cart-total">
-                                    <div class="alt-font margin-15px-bottom"><span class="w-50 d-inline-block text-medium text-uppercase">Total:</span><span class="w-50 d-inline-block text-right text-medium font-weight-500 total_price">{{ order.get_order_total }}</span></div>
+                                    <div class="alt-font margin-15px-bottom"><span class="w-50 d-inline-block text-medium text-uppercase">Total:</span><span class="w-50 d-inline-block text-right text-medium font-weight-500 total_price">{{ order_total_price }}</span></div>
                                     <a href="{% url 'store:order' %}" class="btn btn-small btn-dark-gray">view cart</a>
                                     <a href="{% url 'store:order_history' %}" class="btn btn-small btn-dark-gray">order history</a>
                                 </li>
@@ -160,17 +161,6 @@
                         <p class="w-85 margin-15px-bottom">27 Eden walk eden centre, Orchard view, Paris, France</p>
                         <div><i class="feather icon-feather-phone-call icon-very-small margin-10px-right"></i>+1 234 567 8910</div>
                         <div><i class="feather icon-feather-mail icon-very-small margin-10px-right"></i><a href="mailto:info@yourdomain.com">info@yourdomain.com</a></div>
-                    </div>
-                    <!-- end footer column -->
-                    <!-- start footer column -->
-                    <div class="col-12 col-lg-3 col-sm-6">
-                        <span class="alt-font font-weight-500 d-block text-white margin-20px-bottom">Follow us on Instagram</span>
-                        <div class="w-100 d-inline-block margin-10px-top">
-                            <ul class="instafeed-grid instafeed-wrapper grid grid-3col xl-grid-3col lg-grid-3col md-grid-3col sm-grid-3col xs-grid-3col gutter-small" data-total="3">
-                                <li class="grid-item"><figure><a href="#" data-href="{{link}}" target="_blank"><img src="#" data-src="{{image}}" class="insta-image" alt="" /><span class="insta-counts"><i class="fab fa-instagram"></i>{{likes}}</span></a></figure></li>
-                            </ul>
-                            <a class="alt-font text-extra-small text-uppercase font-weight-500 margin-20px-top d-inline-block" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram icon-extra-small align-middle margin-10px-right text-dark-golden-yellow"></i><span class="d-inline-block align-middle text-dark-golden-yellow">Follow instagram</span></a>
-                        </div>
                     </div>
                     <!-- end footer column -->
                 </div>
@@ -269,6 +259,35 @@
             return cookieValue;
         }
         const csrftoken = getToken('csrftoken');
+
+        function renderOrder(data){
+
+            if (product_price = document.getElementById('quantity_' + data.product_id)) {
+                product_price.value = data.quantity
+            }
+
+            if (product_total_price = document.getElementById('product_' + data.product_id + '_total_price')) {
+                product_total_price.innerHTML = data.product_total_price
+            }
+
+            $('.total_quantity').each(function(i, obj) {
+                obj.innerHTML = data.total_quantity
+            });
+
+            $('.total_price').each(function(i, obj) {
+                obj.innerHTML = data.get_order_total
+            });
+
+            if (data.is_deleted) {
+                $('#order_item_' + data.product_id).remove()
+                $('#cart_item_' + data.product_id).remove()
+            } else if(data.delete_all) {
+                order_body = document.getElementById('order_body')
+                cart_body = document.getElementById('cart_body')
+                order_body.innerHTML = ''
+                cart_body.innerHTML = ''
+            }
+        }
     </script>
     {% block js %}{% endblock js %}
 </body>

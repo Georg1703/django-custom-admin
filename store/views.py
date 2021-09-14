@@ -57,14 +57,13 @@ def update_item(request):
     data = json.loads(request.body)
     product_id = data['productId']
     action = data['action']
+    quantity = data['quantity']
 
     customer = request.user.customer
     order, created = Order.objects.get_or_create(customer=customer, placed=False)
-
-    if action != 'remove_all':
-        product = Product.objects.get(id=product_id)
-        order_item, created = OrderItem.objects.get_or_create(order=order, product=product)
-        is_deleted = False
+    product = Product.objects.get(id=product_id)
+    order_item, created = OrderItem.objects.get_or_create(order=order, product=product)
+    is_deleted = False
 
     if action == 'add':
         order_item.quantity = (order_item.quantity + 1)
@@ -72,11 +71,12 @@ def update_item(request):
     elif action == 'down':
         order_item.quantity = (order_item.quantity - 1)
         order_item.save()
+    elif action == 'set_quantity':
+        order_item.quantity = int(quantity)
+        order_item.save()
     elif action == 'remove':
         order_item.delete()
         is_deleted = True
-    elif action == 'remove_all':
-        OrderItem.objects.filter(order=order).delete()
 
     if order_item and order_item.quantity <= 0:
         order_item.delete()
@@ -90,6 +90,26 @@ def update_item(request):
         'is_deleted': is_deleted,
         'product_id': product_id,
     }
+
+    return JsonResponse(context)
+
+
+@login_required
+@allowed_groups(['user'])
+def remove_all_items_from_cart(request):
+    customer = request.user.customer
+    order, created = Order.objects.get_or_create(customer=customer, placed=False)
+
+    OrderItem.objects.filter(order=order).delete()
+
+    context = {
+        'quantity': 0,
+        'total_quantity': 0,
+        'get_order_total': 0,
+        'product_total_price': 0,
+        'delete_all': True
+    }
+
     return JsonResponse(context)
 
 
@@ -103,7 +123,6 @@ def place_order(request):
         order = Order.objects.get(order_code=order_code)
         if order.orderitem_set.count() > 0:
             order.placed = True
-            order_status = 1
             order.save()
             return JsonResponse({'message': 'success'})
         else:
@@ -129,8 +148,8 @@ def order_history(request):
 def order_detail(request, order_code):
 
     order = Order.objects.get(order_code=order_code)
-    ticket_status = order.orderticket_set.filter(type=1)
     ticket_message = order.orderticket_set.filter(type=2)
+    ticket_status = order.orderticket_set.filter(type=1)
     form = OrderTicketForm(initial={'order': order_code})
 
     context = {

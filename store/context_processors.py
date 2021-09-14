@@ -12,4 +12,10 @@ def store_processor(request):
             order, created = Order.objects.get_or_create(customer=customer, placed=False)
             items = order.orderitem_set.all()
 
-    return {'order': order, 'tags': tags, 'items': items, 'lang': request.LANGUAGE_CODE, 'user': request.user}
+    return {'order': order,
+            'order_total_items': order.get_order_items,
+            'order_total_price': order.get_order_total,
+            'tags': tags,
+            'items': items,
+            'lang': request.LANGUAGE_CODE,
+            'user': request.user}
