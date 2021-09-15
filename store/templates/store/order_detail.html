@@ -5,7 +5,7 @@
     <!-- start section -->
     <section class="wow animate__fadeIn">
         <div class="container">
-            <div class="margin-55px-bottom h5">Order - {{ order.order_code }}</div>
+            <div class="margin-55px-bottom h5">Order - {{ order_detail.order_code }}</div>
             <div class="row">
                 <div class="col-lg-8">
                     <div class="col-lg-12 margin-70px-bottom">
@@ -15,12 +15,12 @@
                                         <th class="font-weight-500 text-extra-dark-gray">Total price</th>
                                         <td data-title="Total">
                                             <h6 class="d-block font-weight-500 mb-0 text-extra-dark-gray total_price">
-                                                {{ order.get_order_total }}</h6>
+                                                {{ order_detail.get_order_total }}</h6>
                                         </td>
                                         <th class="font-weight-500 text-extra-dark-gray">Total quantity</th>
                                         <td data-title="Total">
                                             <h6 class="d-block font-weight-500 mb-0 text-extra-dark-gray total_price">
-                                                {{ order.get_order_items }}</h6>
+                                                {{ order_detail.get_order_items }}</h6>
                                         </td>
                                     </tr>
                             </table>
@@ -39,7 +39,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for item in order.orderitem_set.all %}
+                                    {% for item in order_detail.orderitem_set.all %}
                                         <tr>
                                             <td class="product-thumbnail"><a href="{% url 'store:product' item.product.name %}"><img class="cart-product-image" src="{{ item.product.default_image.url }}" alt=""></a></td>
                                             <td class="product-name">
@@ -58,17 +58,17 @@
                     </div>
                 </div>
                 <div class="offset-1">
-                    {% for ticket in tickets_status %}
+                    {% for key, value in tickets_status.items %}
                         <!-- start process step item -->
                         <div class="col-12 p-0 process-step-style-02 wow animate__fadeInUp" data-wow-delay="0.1s">
                             <div class="process-step-item">
                                 <div class="process-step-icon-wrap">
-                                    <div class="process-step-icon text-center border-all border-color-fast-green border-width-2px bg-fast-green alt-font font-weight-500">1</div>
+                                    <div class="process-step-icon text-center border-all border-color-fast-green border-width-2px bg-fast-green alt-font font-weight-500">{{ forloop.counter }}</div>
                                     <span class="process-step-item-box-bfr bg-medium-gray"></span>
                                 </div>
                                 <div class="process-content last-paragraph-no-margin">
-                                    <span class="alt-font d-block font-weight-500 text-extra-dark-gray margin-5px-bottom">Status changed</span>
-                                    <p class="w-60 md-w-80 xs-w-100">{{ ticket.message }}</p>
+                                    <span class="alt-font d-block font-weight-500 text-extra-dark-gray margin-5px-bottom">{{ value.date|date:'H:i d/m/Y' }}</span>
+                                    <p class="w-60 md-w-80 xs-w-100">{{ value.status }}</p>
                                 </div>
                             </div>
                         </div>

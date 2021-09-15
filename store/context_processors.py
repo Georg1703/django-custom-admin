@@ -13,8 +13,6 @@ def store_processor(request):
             items = order.orderitem_set.all()
 
     return {'order': order,
-            'order_total_items': order.get_order_items,
-            'order_total_price': order.get_order_total,
             'tags': tags,
             'items': items,
             'lang': request.LANGUAGE_CODE,

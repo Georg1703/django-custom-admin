@@ -2,6 +2,7 @@ import uuid
 from django.db import models
 from django.utils.html import mark_safe
 from django.contrib.auth.models import User
+from simple_history.models import HistoricalRecords
 
 
 def user_directory_path(instance, filename):
@@ -141,6 +142,7 @@ class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     is_active = models.BooleanField(default=True)
+    history = HistoricalRecords()
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -171,14 +173,8 @@ class Order(models.Model):
 
 
 class OrderTicket(models.Model):
-
-    class TicketType(models.IntegerChoices):
-        order_status = 1
-        message = 2
-
     order = models.ForeignKey(Order, null=True, on_delete=models.SET_NULL)
     customer = models.ForeignKey(Customer, null=True, on_delete=models.SET_NULL)
-    type = models.IntegerField(choices=TicketType.choices, default=2)
     subject = models.CharField(max_length=255, default='')
     message = models.TextField(null=True)
     date_added = models.DateTimeField(auto_now_add=True, null=True)
@@ -224,6 +220,7 @@ class ProductPropertyRelation(models.Model):
     property = models.ForeignKey(ProductProperty, null=True, on_delete=models.SET_NULL)
     value = models.CharField(max_length=255)
     lang = models.ForeignKey('Language', null=True, on_delete=models.SET_NULL)
+
 
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, default=None, null=True, on_delete=models.SET_NULL)

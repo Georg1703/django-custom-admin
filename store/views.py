@@ -8,6 +8,7 @@ import json
 from accounts.decorators import allowed_groups
 from .models import Product, Order, OrderItem, OrderTicket, Customer
 from .forms import OrderTicketForm
+from . import services
 
 
 def get_lading_page(request):
@@ -148,12 +149,12 @@ def order_history(request):
 def order_detail(request, order_code):
 
     order = Order.objects.get(order_code=order_code)
-    ticket_message = order.orderticket_set.filter(type=2)
-    ticket_status = order.orderticket_set.filter(type=1)
+    ticket_message = order.orderticket_set.filter()
+    ticket_status = services.get_order_status_history(order)
     form = OrderTicketForm(initial={'order': order_code})
 
     context = {
-        'order': order,
+        'order_detail': order,
         'tickets_message': ticket_message,
         'tickets_status': ticket_status,
         'form': form

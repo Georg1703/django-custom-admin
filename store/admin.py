@@ -114,11 +114,7 @@ class OrderItemAdmin(admin.StackedInline):
 class OrderTicketAdmin(admin.StackedInline):
     extra = 1
     model = OrderTicket
-    exclude = ['is_active', 'type', 'customer']
-
-    def get_queryset(self, request):
-        qs = super().get_queryset(request)
-        return qs.filter(type=2)
+    exclude = ['is_active', 'customer']
 
 
 @admin.register(Order)

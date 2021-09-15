@@ -1,5 +1,6 @@
 {% load static %}
 {% load translation %}
+{% load i18n %}
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -31,11 +32,9 @@
         <nav class="navbar navbar-expand-lg navbar-boxed navbar-light bg-white border-bottom border-color-white-transparent header-light fixed-top header-reverse-scroll">
             <div class="container-fluid nav-header-container">
                 <div class="col-auto col-sm-6 col-lg-2 mr-auto pl-lg-0">
-                    <a class="navbar-brand" href="{% url 'store:lading' %}">
-                        <img src="{% static 'images/logo-fast-blue-black.png' %}" data-at2x="{% static 'images/logo-white@2x.png' %}" class="default-logo" alt="">
-                        <img src="{% static 'images/logo-fast-blue-black.png' %}" data-at2x="{% static 'images/logo-fast-blue-black@2x.png' %}" class="alt-logo" alt="">
-                        <img src="{% static 'images/logo-fast-blue-black.png' %}" data-at2x="{% static 'images/logo-fast-blue-black@2x.png' %}" class="mobile-logo" alt="">
-                    </a>
+                    <div>
+                        <a href="{% url 'store:lading' %}"><img src="{% static 'images/spdepo_logo.svg' %}" alt="" width="150px"></a>
+                    </div>
                 </div>
                 <div class="col-auto menu-order px-lg-0">
                     <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
@@ -46,19 +45,19 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav alt-font">
-                            <li class="nav-item dropdown megamenu">
+                            <li class="nav-item">
                                 <a href="{% url 'store:lading' %}" class="nav-link">Home</a>
                                 <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
                             </li>
-                            <li class="nav-item dropdown simple-dropdown">
+                            <li class="nav-item">
                                 <a href="{% url 'store:products' %}" class="nav-link">Products</a>
                                 <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
                             </li>
-                            <li class="nav-item dropdown simple-dropdown">
+                            <li class="nav-item">
                                 <a href="{% url 'store:company' %}" class="nav-link">Company</a>
                                 <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
                             </li>
-                            <li class="nav-item dropdown megamenu">
+                            <li class="nav-item">
                                 <a href="{% url 'store:contact_us' %}" class="nav-link">Contact us</a>
                                 <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
                             </li>
@@ -84,18 +83,24 @@
                         <!-- end search input -->
                     </div>
                     <div class="header-language dropdown d-lg-inline-block">
-                        <a href="javascript:void(0);"><i class="feather icon-feather-globe"></i></a>
-                        <ul class="dropdown-menu alt-font">
-                            <li><a href="javascript:void(0);" title="English"><span class="icon-country"><img src="{% static 'images/country-flag-16X16/usa.png' %}" alt=""></span>English</a></li>
-                            <li><a href="javascript:void(0);" title="England"><span class="icon-country"><img src="{% static 'images/country-flag-16X16/england.png' %}" alt=""></span>England</a></li>
-                            <li><a href="javascript:void(0);" title="France"><span class="icon-country"><img src="{% static 'images/country-flag-16X16/france.png' %}" alt=""></span>France</a></li>
-                            <li><a href="javascript:void(0);" title="Russian"><span class="icon-country"><img src="{% static 'images/country-flag-16X16/russian.png' %}" alt=""></span>Russian</a></li>
-                            <li><a href="javascript:void(0);" title="Spain"><span class="icon-country"><img src="{% static 'images/country-flag-16X16/spain.png' %}" alt=""></span>Spain</a></li>
-                        </ul>
+                        <form action="{% url 'set_language' %}" method="post" class="header-language dropdown" id="language_form">
+                            {% csrf_token %}
+                            <input type="hidden" name="language" id="language_sw">
+                            <a href="javascript:void(0);"><i class="feather icon-feather-globe"></i></a>
+                            <ul class="dropdown-menu alt-font">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+
+                                {% for language in languages %}
+                                    <li><a href="javascript:void(0);" title="{{ language.name_local }}" class="language_sw" data-language="{{ language.code }}"><span class="icon-country"><img src="{% static 'images/country-flag-16X16/en.png' %}" alt=""></span>{{ language.name_local }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </form>
                     </div>
                     {% if user.is_authenticated %}
                         <div class="header-cart-icon dropdown">
-                            <a href="{% url 'store:order' %}"><i class="feather icon-feather-shopping-bag"></i><span class="cart-count alt-font bg-fast-blue text-white total_quantity">{{ order_total_items }}</span></a>
+                            <a href="{% url 'store:order' %}"><i class="feather icon-feather-shopping-bag"></i><span class="cart-count alt-font bg-fast-green text-white total_quantity">{{ order.get_order_items }}</span></a>
                             <ul class="dropdown-menu cart-item-list" id="cart_body">
                                 {% for item in items %}
                                     <li class="cart-item align-items-center" id="cart_item_{{ item.product_id }}">
@@ -110,7 +115,7 @@
                                     </li>
                                 {% endfor %}
                                 <li class="cart-item cart-total">
-                                    <div class="alt-font margin-15px-bottom"><span class="w-50 d-inline-block text-medium text-uppercase">Total:</span><span class="w-50 d-inline-block text-right text-medium font-weight-500 total_price">{{ order_total_price }}</span></div>
+                                    <div class="alt-font margin-15px-bottom"><span class="w-50 d-inline-block text-medium text-uppercase">Total:</span><span class="w-50 d-inline-block text-right text-medium font-weight-500 total_price">{{ order.get_order_total }}</span></div>
                                     <a href="{% url 'store:order' %}" class="btn btn-small btn-dark-gray">view cart</a>
                                     <a href="{% url 'store:order_history' %}" class="btn btn-small btn-dark-gray">order history</a>
                                 </li>
@@ -287,6 +292,17 @@
                 order_body.innerHTML = ''
                 cart_body.innerHTML = ''
             }
+        }
+
+        //Monitor language switcher and on click, change language
+        language_switcher = document.getElementsByClassName('language_sw')
+        for(i = 0; i < language_switcher.length; i++) {
+            language_switcher[i].addEventListener('click', function (){
+                language_sw = document.getElementById('language_sw')
+                language_code = this.dataset.language
+                language_sw.value =language_code
+                document.getElementById('language_form').submit()
+            })
         }
     </script>
     {% block js %}{% endblock js %}

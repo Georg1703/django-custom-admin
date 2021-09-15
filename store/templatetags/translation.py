@@ -26,7 +26,7 @@ def translate_prod(product, language, field):
         return product.producttranslation_set.filter(product=product, lang=lang.id, field=field).first()
 
     lang = Language.objects.get(name='en')
-    return product.producttranslation_set.filter(product=product, lang=lang.id, field=field).first()\
+    return product.producttranslation_set.filter(product=product, lang=lang.id, field=field).first()
 
 
 @register.simple_tag
@@ -62,4 +62,5 @@ def translate_tag(tag, language):
         return tag.tagtranslation_set.filter(tag=tag, lang=lang.id).first()
 
     lang = Language.objects.get(name='en')
-    return tag.tagtranslation_set.filter(tag=tag, lang=lang.id).first()
+    tag = tag.tagtranslation_set.filter(tag=tag, lang=lang.id).first()
+    return tag.value

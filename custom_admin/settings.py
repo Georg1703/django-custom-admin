@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+from django.utils.translation import ugettext_lazy as _
 from pathlib import Path
 import os
 
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
 
     'store',
     'accounts',
+    'simple_history'
 ]
 
 MIDDLEWARE = [
@@ -53,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'simple_history.middleware.HistoryRequestMiddleware',
 ]
 
 ROOT_URLCONF = 'custom_admin.urls'
@@ -115,6 +118,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+
+LANGUAGES = [
+    ('ro', _('Romanian')),
+    ('en', _('English')),
+    ('ru', _('Russian')),
+]
 
 TIME_ZONE = 'UTC'
 
