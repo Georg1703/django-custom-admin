@@ -93,7 +93,7 @@
                                 {% get_language_info_list for LANGUAGES as languages %}
 
                                 {% for language in languages %}
-                                    <li><a href="javascript:void(0);" title="{{ language.name_local }}" class="language_sw" data-language="{{ language.code }}"><span class="icon-country"><img src="{% static 'images/country-flag-16X16/en.png' %}" alt=""></span>{{ language.name_local }}</a></li>
+                                    <li><a href="javascript:void(0);" title="{{ language.name_local }}" class="language_sw" data-language="{{ language.code }}"><span class="icon-country"><img src="{% static 'images/country-flag-16X16/'%}{{language.code}}.png" alt=""></span>{{ language.name_local }}</a></li>
                                 {% endfor %}
                             </ul>
                         </form>
